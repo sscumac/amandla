@@ -1,7 +1,6 @@
 class Place < ApplicationRecord
   belongs_to :user
-
-  # WISHLIST... Does it belong to a wishlist_items oir has many wishlist_items???????
+  acts_as_taggable_on :tags # or whatever you would like to call your tag list.
 
   # has_many_attached :photos
   delegate :reviews, to: :visit
