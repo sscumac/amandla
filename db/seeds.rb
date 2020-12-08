@@ -1,3 +1,5 @@
+require "open-uri"
+
 Review.destroy_all
 Answer.destroy_all
 Question.destroy_all
@@ -10,12 +12,16 @@ User.destroy_all
 
 ilse = User.create!(
   email: "ilse@amandla.com",
-  password: "password"
+  password: "password",
+  first_name: "Ilse",
+  last_name: "Rodriguez"
 )
 
 sebastian = User.create!(
   email: "sebastian@amandla.com",
-  password: "password"
+  password: "password",
+  first_name: "Sebastian",
+  last_name: "Schumacher"
 )
 
 fair_tacos = Place.create!(
@@ -26,7 +32,13 @@ fair_tacos = Place.create!(
     story: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget tincidunt augue, sit amet tincidunt nisl. Nunc ultrices, orci non ultrices vulputate, libero turpis facilisis ante, at ultricies ipsum nulla nec odio. Integer ut euismod libero. Maecenas augue lorem, varius tincidunt libero in, hendrerit vestibulum sapien. Nam volutpat urna ipsum, ut fermentum metus venenatis et. Sed ac lectus eget nisl consectetur vehicula at vel sapien. Donec et tortor sit amet turpis dictum iaculis vitae a nisi. Quisque risus risus, facilisis a vulputate non, facilisis non ipsum. Suspendisse aliquam metus vitae ante hendrerit varius. Vestibulum vitae urna sit amet mauris commodo finibus. Nulla cursus molestie mauris ut vehicula. Nunc eget erat nulla."
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
+
+# image related
+file = URI.open('https://themerrythought.com/wp-content/uploads/IMG_6615.jpg')
+fair_tacos.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
 fair_tacos.save!
+
 
 
 wishlist_item_1 = WishlistItem.create!(

@@ -2,7 +2,7 @@ class Place < ApplicationRecord
   belongs_to :user
   acts_as_taggable_on :tags # or whatever you would like to call your tag list.
 
-  # has_many_attached :photos
+  has_one_attached :photo
   delegate :reviews, to: :visit
   has_many :visits, dependent: :destroy
   has_many :wishlist_items

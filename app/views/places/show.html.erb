@@ -1,6 +1,15 @@
-<h1> <%= @place.name %> </h1>
-<h5>About this place:</h5>
-<h6> <%= @place.address %> </h6>
-<h6> <%= @place.category %> </h6>
-<h6> <%= @place.story %> </h6>
+<div class="container pt-3">
+  <%= cl_image_tag @place.photo.key, crop: :fill %>
+  <h1>Name: <%= @place.name %> </h1>
+  <h5>About this place:</h5>
+  <p>Tags: <% @place.tag_list.each do |tag|%>
+      <%= "#{tag} " %><br>
+    <% end %> </p>
+  <h6>Address: <%= @place.address %> </h6>
+  <h6>Category: <%= @place.category %> </h6>
+  <h6>Our story: <%= @place.story %> </h6>
+</div>
+
+
+
 

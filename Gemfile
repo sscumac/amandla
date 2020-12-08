@@ -7,6 +7,8 @@ ruby '2.6.6'
 
 # gem for tags
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
 
 # --------------- #
 
