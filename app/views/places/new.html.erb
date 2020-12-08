@@ -1,18 +1,14 @@
 
-<div class="head-container">
-  <%# <img src="https://images.unsplash.com/photo-1548080339-6d214afb7c18?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bmV3JTIwY2FmZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60https://images.unsplash.com/photo-1548080339-6d214afb7c18?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bmV3JTIwY2FmZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" width="400" height="auto"> %>
-</div>
-
 <div class="form container">
-  <h2>Add your place</h2>
+  <h2>Add your business</h2>
       <%= simple_form_for [@place] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :category, as: :radio_buttons, collection: Place.all_cats %>
-        <%= f.input :address %>
-        <%= f.input :story %>
-        <%= f.input :tag_list, as: :check_boxes, collection: Place.all_tags %> 
-        <%= f.input :photo, as: :file %>
-        <%= f.submit "Submit me",  class:"btn-main" %>
+        <%= f.input :name, :label => "What's your business name?" %>
+        <%= f.input :address, :label => "What's the address?" %>
+        <%= f.input :category, :label => "Type of business", as: :radio_buttons, collection: Place.all_cats %>
+        <%= f.input :tag_list, :label => "Which critiria do you fulfil?", as: :check_boxes, collection: Place.all_tags %> 
+        <%= f.input :story, :label => "Tell us more (will be displayed)" %>  
+        <%= f.input :photo, :label => "Add images of you and your business", as: :file %>
+        <%= f.submit "Create",  class:"btn-main" %>
       <% end %>
     </div>
   </div>
