@@ -15,4 +15,30 @@ class Place < ApplicationRecord
   validates :address, presence: true
   validates :category, presence: true
   validates :story, presence: true, length: { minimum: 75 }
+
+  # list of tags with method
+  
+  def self.all_tags
+    [
+    "veggie",
+    "LGBT-friendly",
+    "woman owened",
+    "local products",
+    "fair trade",
+    "fully organic",
+    "green energy"
+    ]
+  end
+
+  # list of categories with method
+  def self.all_cats
+    [
+    "Restaurant",
+    "Bar",
+    "Cafe",
+    "Clothing Store",
+    "Nightclub",
+    "Art Gallery"
+    ]
+  end
 end
