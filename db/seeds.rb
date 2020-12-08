@@ -1,3 +1,4 @@
+Review.destroy_all
 Answer.destroy_all
 Question.destroy_all
 WishlistItem.destroy_all
@@ -41,10 +42,22 @@ question_1 = Question.create!(
   content: "Where do the Tacos come from?"
 )
 
+question_2 = Question.create!(
+  user: sebastian,
+  place: fair_tacos,
+  content: "Where do babies come from?"
+)
+
 answer_1 = Answer.create!(
   user: ilse,
   question: question_1,
   content: "Mexico of course!"
+)
+
+review_1 = Review.create!(
+  visit: visit_1,
+  content: "This was amazing, ohmy God tacos be so good...!",
+  rating: 5
 )
 
 puts "total users: #{User.count}"
@@ -53,6 +66,7 @@ puts "total wishlist_items: #{WishlistItem.count}"
 puts "total visits: #{Visit.count}"
 puts "total questions: #{Question.count}"
 puts "total answers: #{Answer.count}"
+puts "total reviews: #{Review.count}"
 
 
 # TODO: add tasks when the Gem is ready
