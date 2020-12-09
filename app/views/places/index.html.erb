@@ -1,8 +1,33 @@
-<div class= "container pt-3">
-  <h3> Here are the places </h3>
-    <% @places.each do |place| %>
-      <%= link_to place.name.capitalize, place_path(place) %>
-    <% end %>
+<div class="index-container">
+
+  <div class="top-container">
+    Places in Barcelona
+    <div class="icons" >
+        <div>Filter</div>
+        <div class="right-icon"> <img src="../../app/assets/images/map_icon_top.png"> Map</div> 
+    </div>
+  </div>
+  <div class="card-container">
+      <% @places.each do |place| %>
+        <%= link_to place_path(place), class: "place-card-link" do %>
+          <div class="place-card">
+            <div class="card-image" style="background-image: linear-gradient(180deg, rgba(52, 100, 109, 0.08) 0%, rgba(15, 29, 31, 0.96) 100%), url(<%= cl_image_path place.photo.key, crop: :fit%>)">
+              <div class="card-place-name"><%= place.name.capitalize %></div>
+              <% place.tag_list.each do |tag| %>
+                <div><%= tag %></div>
+              <% end %>
+            </div>
+            <div class="card-details">
+              <div class="item">4,9</div>
+              <div class="item">0,3 km</div>
+            </div>
+              
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+
 </div>
 
 
