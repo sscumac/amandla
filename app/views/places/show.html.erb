@@ -1,13 +1,39 @@
 <div class="container pt-3">
-  <%= cl_image_tag @place.photo.key, crop: :fill %>
-  <h1>Name: <%= @place.name %> </h1>
-  <h5>About this place:</h5>
-  <p>Tags: <% @place.tag_list.each do |tag|%>
-      <%= "#{tag} " %><br>
-    <% end %> </p>
-  <h6>Address: <%= @place.address %> </h6>
-  <h6>Category: <%= @place.category %> </h6>
-  <h6>Our story: <%= @place.story %> </h6>
+  <h1><%= @place.name %> </h1>
+
+  <div class="container banner-show">
+    <%= cl_image_tag @place.photo.key, crop: :fill %>
+  </div>
+
+  <div class="container card-show">
+    <p><% @place.tag_list.each do |tag|%>
+        <%= "#{tag} " %><br>
+      <% end %> </p>
+    <!-- <h6>Address: <%= @place.address %> </h6> -->
+    <!-- <h6>Category: <%= @place.category %> </h6> -->
+    <h6> USER NAME HERE </h6>
+  </div>
+
+  <div class="container show-carrousel">
+
+  </div>
+
+  <div class="container about-show">
+    <h6>Our story: <%= @place.story %> </h6>
+  </div>
+
+  <div class="container question-answer">
+
+  </div>
+
+  <div class="container ratings-show">
+
+  </div>
+
+  <div class="container map-show">
+
+  </div>
+
 </div>
 
 
