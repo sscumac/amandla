@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-wrapper">
+  <div class="layer">
+
+    <div clas="container">
+    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <div class="home-content">
+        <div class="logo"></div>
+        <div class="home-text-icon">
+          <h2>Help create the change</h2>
+          <i class="fas fa-map-marker-alt"></i>
+          <h5>Support bussinesses that are aligned with your beliefs.</h5>
+          <div class="search-bar">
+            <%= form_tag places_path do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Find by location" %>
+              <%= button_tag(type: "submit", class: "btn-search") do %>
+                <i class="fas fa-search"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
