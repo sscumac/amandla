@@ -15,33 +15,58 @@
       <%= "#{tag} " %><br>
     <% end %> </p>
   <p><%= @place.user.about_me %></p>
-</div>
 
 
-  <div class="show-carrousel">
+
+    <div class="show-carrousel">
+
+        <img src="https://res.cloudinary.com/dpnjiruwh/image/upload/v1607529121/images_xf4hsk.jpg" class="w-100">
+
+    </div>
+
+
+    <div class="story-show">
+      <h5>About <%= @place.name %> </h5>
+      <p><%= @place.story %> </p>
+    </div>
+
+    <div class="question-answer">
+      <h5>Ask <%= @place.user.first_name %> anything: </h5>
+      <h6>Q: Where are your coffee beans sourced?</h6>
+      <p>Ricky, 13th Dec 2019</p>
+      <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere are your coffee beans sourced?</h6>
+      <hr>
+      <h6>Q: Where are your coffee beans sourced?</h6>
+      <p>Ricky, 13th Dec 2019</p>
+      <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere are your coffee beans sourced?</h6>
+      <div class="d-flex justify-content-around mt-3 ml-0">
+        <button type="button" class="btn btn-info">Ask the owner</button>
+        <button type="button" class="btn btn-link">Show more</button>
+      </div>
+
+
+    </div>
+
+
+
+    <div class="map-show">
+
+    </div>
 
   </div>
 
-  <div class="story-show">
-    <h5>About <%= @place.name %> </h5>
-    <p><%= @place.story %> </p>
-  </div>
-
-  <div class="question-answer">
-    <h5>Ask <%= @place.user.first_name %> anything: </h5>
-
-  </div>
 
   <div class="ratings-show">
+    <div class="d-flex justify-content-left mt-3 ml-0">
+        <i class="fas fa-seedling"></i> <p>4.9</p>
+        </div>
+        <p>Ricky, 13th Dec 2019</p>
+        <h6>They have the best coffee on earth! You should try their cold drip!</h6>
+        <div class="d-flex justify-content-left mt-3 ml-0">
+        <i class="fas fa-seedling"></i> <p>4.5</p>
+        </div>
 
-  </div>
-
-  <div class="map-show">
-
-  </div>
-
-
-
+    </div>
 
 
 
