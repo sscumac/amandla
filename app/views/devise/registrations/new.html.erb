@@ -16,6 +16,10 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "last name" }%>
+    <%= f.input :about_me,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "about me" }%>
     <%= f.input :photo, as: :file %>
     <%= f.input :password,
                 required: true,
