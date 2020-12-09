@@ -12,4 +12,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "places/new"
+@import "places/new";
+
+@import "components/_banner-show";
+@import "components/_card-show";
+@import "components/_story-show";
+@import "components/_question-answer";
