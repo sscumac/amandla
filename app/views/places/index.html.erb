@@ -1,8 +1,9 @@
+<%= render 'shared/navbar_main' %>
 <div class= "container pt-3">
   <h3> Here are the places </h3>
     <% @places.each do |place| %>
       <%= link_to place.name.capitalize, place_path(place) %>
     <% end %>
 </div>
-
+<%= render 'shared/navbar_bottom' %>
 
