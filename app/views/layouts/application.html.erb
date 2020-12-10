@@ -6,8 +6,8 @@
     <%= csp_meta_tag %>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/1bca7065ce.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600;800&display=swap" rel="stylesheet">    <script src="https://kit.fontawesome.com/1bca7065ce.js" crossorigin="anonymous"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,13 +15,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
-    <% unless action_name == 'home' || action_name == 'root'%>
-      <%= render 'shared/navbar' %>
-    <% end %>
+  <body style="background-color: #fef9ef" >
+
     <%= render 'shared/flashes' %>
-
+    <div class="spacing">
     <%= yield %>
-
+    </div>
   </body>
 </html>
