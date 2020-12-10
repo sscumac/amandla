@@ -31,7 +31,8 @@ fair_tacos = Place.create!(
     name: "Fair Tacos",
     category: "Restaurant",
     user: ilse,
-    story: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget tincidunt augue, sit amet tincidunt nisl. Nunc ultrices, orci non ultrices vulputate, libero turpis facilisis ante, at ultricies ipsum nulla nec odio. Integer ut euismod libero. Maecenas augue lorem, varius tincidunt libero in, hendrerit vestibulum sapien. Nam volutpat urna ipsum, ut fermentum metus venenatis et. Sed ac lectus eget nisl consectetur vehicula at vel sapien. Donec et tortor sit amet turpis dictum iaculis vitae a nisi. Quisque risus risus, facilisis a vulputate non, facilisis non ipsum. Suspendisse aliquam metus vitae ante hendrerit varius. Vestibulum vitae urna sit amet mauris commodo finibus. Nulla cursus molestie mauris ut vehicula. Nunc eget erat nulla."
+    story: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget tincidunt augue, sit amet tincidunt nisl. Nunc ultrices, orci non ultrices vulputate, libero turpis facilisis ante, at ultricies ipsum nulla nec odio. Integer ut euismod libero. Maecenas augue lorem, varius tincidunt libero in, hendrerit vestibulum sapien. Nam volutpat urna ipsum, ut fermentum metus venenatis et. Sed ac lectus eget nisl consectetur vehicula at vel sapien. Donec et tortor sit amet turpis dictum iaculis vitae a nisi. Quisque risus risus, facilisis a vulputate non, facilisis non ipsum. Suspendisse aliquam metus vitae ante hendrerit varius. Vestibulum vitae urna sit amet mauris commodo finibus. Nulla cursus molestie mauris ut vehicula. Nunc eget erat nulla.",
+    google_maps_url: "https://goo.gl/maps/4pmmFKCFF252nzMW9"
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
 
