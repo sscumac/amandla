@@ -1,0 +1,90 @@
+
+.place-card {
+  height: 250px;
+  width: 350px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.card-container {
+  text-align: center;
+}
+
+.place-card-link {
+  text-decoration: none;
+  color: black;
+   &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.index-container {
+  width: 375px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card-image {
+  background-size: cover;
+  height: 180px;
+  background-position: center center;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+}
+
+.card-image i {
+   position: absolute;
+   top: 14px;
+   right: 18px;
+   font-size: 28px;
+   opacity: 0.8;
+}
+ 
+
+.card-place-name {
+  padding-top: 60px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.card-details {
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-details i {
+  color: #299D90;
+  padding-right: 2px;
+}
+
+.card-details .item {
+  padding: 15px;
+  color: black;
+  font-weight: bold;
+  color: #1D373C;
+}
+
+.icons {
+  color: #299D90;
+  font-weight: bold;
+}
+
+.card-tags {
+  color: rgba(252, 237, 203, 1);
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}
