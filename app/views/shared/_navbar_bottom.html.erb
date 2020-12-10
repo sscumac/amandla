@@ -25,13 +25,13 @@
 
     <% if user_signed_in? %>
       <div class="nav-item">
-       <%=  link_to edit_user_registration_path do %>
+       <%=  link_to pages_path do %>
         <i class="fas fa-user"></i>
         <% end %>
       </div>
     <% else %>
       <div class="nav-item">
-       <%=  link_to new_user_session_path do %>
+       <%=  link_to pages_path do %>
         <i class="far fa-user"></i>
         <% end %>
       </div>
