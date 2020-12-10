@@ -1,9 +1,35 @@
+
 <%= render 'shared/navbar_main' %>
-<div class= "container pt-3">
-  <h3> Here are the places </h3>
-    <% @places.each do |place| %>
-      <%= link_to place.name.capitalize, place_path(place) %>
-    <% end %>
+<div class="index-container">
+
+  <div class="top-container">
+    Places in Barcelona
+    <div class="icons" >
+        <div><i class="fas fa-sliders-h"></i>Filter</div>
+        <div class="right-icon"> <i class="fas fa-map-marked-alt"></i> Map</div> 
+    </div>
+  </div>
+  <div class="card-container">
+      <% @places.each do |place| %>
+        <%= link_to place_path(place), class: "place-card-link" do %>
+          <div class="place-card">
+            <div class="card-image" style="background-image: linear-gradient(180deg, rgba(52, 100, 109, 0.08) 0%, rgba(15, 29, 31, 0.6) 100%), url(<%= cl_image_path place.photo.key, crop: :fit%>)">
+              <i class="fas fa-heart"></i>
+              <div class="card-place-name"><%= place.name.capitalize %></div>
+              <% place.tag_list.each do |tag| %>
+                <div class="card-tags"><%= tag %></div>
+              <% end %>
+            </div>
+            <div class="card-details">
+              <div class="item"><i class="fas fa-seedling"></i>4,9</div>
+              <div class="item">0,3 km</div>
+            </div>
+              
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
 </div>
 <div id="map"
      style="width: 100%; height: 600px;"

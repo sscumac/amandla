@@ -3,7 +3,7 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= cl_image_path @place.photo.key, crop: :fill %>)">
   <h1><%= @place.name %> </h1>
   <h6><%= @place.category %> </h6>
-  <h6>Ratings (placeholder)</h6>
+  <h6 class="rating-place"><i class="fas fa-seedling"></i> 4.5</h6>
   <div class="avatar-show avatar-bordered" style="background-image: url(https://kitt.lewagon.com/placeholder/users/krokrob);">
   </div>
 
@@ -12,11 +12,21 @@
 
 
 <div class="card-show">
-  <p><%= @place.user.first_name %> </p>
-  <p><% @place.tag_list.each do |tag|%>
-      <%= "#{tag} " %><br>
-    <% end %> </p>
-  <p><%= @place.user.about_me %></p>
+  <p><strong><%= @place.user.first_name %></strong>  </p>
+
+  <div class="d-flex justify-content-center">
+    <% @place.tag_list.each do |tag|%>
+      <div class="text-center mx-1">
+        <i class="fab fa-envira tag-icons"></i>
+       <p id="text-green"><%= tag  %></p>
+      </div>
+
+    <% end %>
+  </div>
+
+
+
+  <p><strong><%= (@place.user.about_me).upcase %></strong> </p>
 
 
 
@@ -28,55 +38,76 @@
 
 
     <div class="story-show">
-      <h5>About <%= @place.name %> </h5>
+      <h5 id="about-place">About <%= @place.name %> </h5>
       <p><%= @place.story %> </p>
     </div>
 
-    <div class="question-answer">
+    <div class="question-answer p-2">
       <h5>Ask <%= @place.user.first_name %> anything: </h5>
-      <h6>Q: Where are your coffee beans sourced?</h6>
+      <h6> <strong>Q:</strong>  Where are your coffee beans sourced?</h6>
       <p>Ricky, 13th Dec 2019</p>
-      <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere are your coffee beans sourced?</h6>
+      <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere.</h6>
       <hr>
-      <h6>Q: Where are your coffee beans sourced?</h6>
+      <h6> <strong>Q:</strong>  Where are your coffee beans sourced?</h6>
       <p>Ricky, 13th Dec 2019</p>
-      <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere are your coffee beans sourced?</h6>
-      <div class="d-flex justify-content-around mt-3 ml-0">
-        <button type="button" class="btn btn-info">Ask the owner</button>
-        <button type="button" class="btn btn-link">Show more</button>
+      <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere.</h6>
+      <div class="d-flex justify-content-between mt-3 mr-2">
+        <button type="button" class="ask-show">ASK THE OWNER</button>
+        <button type="button" class="show-more">SHOW MORE <i class="fas fa-caret-down"></i></button>
+      </div>
+    </div>
+
+    <div class="ratings-show pt-3 p-2">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-start mt-3 ml-0 ratings-global">
+          <i class="fas fa-seedling" id="leaf"></i> <p id="rating-number">4.9</p>
+        </div>
+        <div class="d-flex justify-content-end">
+          <p class="opinions">3 Opinions</p>
+        </div>
+      </div>
+
+
+      <p id="who-said">Ricky, 13th Dec 2019</p>
+      <h6 class="ratings-people">They have the best coffee on earth! You should try their cold drip!</h6>
+      <div class="d-flex justify-content-left mt-3 ml-0 little-rating">
+        <p id="really-little">4.5</p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+      </div>
+      <hr>
+      <p id="who-said">Ricky, 13th Dec 2019</p>
+      <h6 class="ratings-people">They have the best coffee on earth! You should try their cold drip!</h6>
+      <div class="d-flex justify-content-left mt-3 ml-0 little-rating">
+        <p id="really-little">4.5</p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+      </div>
+      <hr>
+      <p id="who-said">Ricky, 13th Dec 2019</p>
+      <h6 class="ratings-people">They have the best coffee on earth! You should try their cold drip!</h6>
+      <div class="d-flex justify-content-left mt-3 ml-0 little-rating">
+        <p id="really-little">4.5</p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+      </div>
+      <hr>
+      <div class="d-flex justify-content-between mt-3 mr-2">
+        <button type="button" class="ask-show">LEAVE AN OPINION</button>
+        <button type="button" class="show-more-ratings"><strong>SHOW MORE <i class="fas fa-caret-down"></i></strong> </button>
       </div>
 
 
     </div>
 
-
   <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
 </div>
 
 
-    <div class="map-show">
-
-    </div>
-
   </div>
-
-
-  <div class="ratings-show">
-    <div class="d-flex justify-content-left mt-3 ml-0">
-        <i class="fas fa-seedling"></i> <p>4.9</p>
-        </div>
-        <p>Ricky, 13th Dec 2019</p>
-        <h6>They have the best coffee on earth! You should try their cold drip!</h6>
-        <div class="d-flex justify-content-left mt-3 ml-0">
-        <i class="fas fa-seedling"></i> <p>4.5</p>
-        </div>
 
     </div>
 <%= render 'shared/navbar_bottom' %>
 
 
 
+
+<% #add googlr maps link to place,place_visits_path(@place) %>
+<%= link_to "lets go!", place_visits_path(@place), method: :post, class: 'card-link' %>
