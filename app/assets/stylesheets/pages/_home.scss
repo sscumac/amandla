@@ -1,1 +1,81 @@
 // Specific CSS for your home-page
+
+.home-wrapper {
+  background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=668&q=80");
+  height: 100vh;
+}
+
+.layer {
+    background-color: rgba(39, 70, 83, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.home-content {
+  padding: 90px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:100vh;
+  text-align: center;
+}
+
+.home-text-icon {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-link {
+  text-align: right;
+  color: #F7D383;
+  font-family: Roboto;
+}
+
+.logo {
+  width: 200px;
+  height:200px;
+  background-color: #299D90;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 500;
+  color: #FEF9EF;
+
+}
+
+h5 {
+ font-family: Roboto;
+ font-size: 18px;
+ font-weight: 100;
+ color: #FEF9EF;
+ text-align: center;
+ margin-left: 0;
+ margin-right: 0;
+}
+
+.fa-map-marker-alt {
+  color: #F7D383;
+  text-align: center;
+  font-size: 60px;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.form-control {
+  opacity: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);;
+  border-radius: 5px;
+  background-color: #FEF9EF;
+
+}
