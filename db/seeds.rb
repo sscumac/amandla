@@ -33,6 +33,8 @@ fair_tacos = Place.create!(
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
 
+
+
 # image related
 file = URI.open('https://themerrythought.com/wp-content/uploads/IMG_6615.jpg')
 fair_tacos.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
