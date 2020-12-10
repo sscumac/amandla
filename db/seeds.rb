@@ -31,7 +31,11 @@ fair_tacos = Place.create!(
     name: "Fair Tacos",
     category: "Restaurant",
     user: ilse,
+    
+    google_maps_url: "https://goo.gl/maps/4pmmFKCFF252nzMW9"
+
     story: "Hensel was established in 1998 as a little family business. We love what we do and our coffees are made with love."
+
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
 
