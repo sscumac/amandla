@@ -1,14 +1,31 @@
 <%= render 'shared/navbar_pages', title: 'Add your business' %>
 <div class="form container">
-  <h2>Add your business</h2>
       <%= simple_form_for [@place] do |f| %>
         <%= f.input :name, :label => "What's your business name?" %>
         <%= f.input :address, :label => "What's the address?" %>
-        <%= f.input :category, :label => "Type of business", as: :radio_buttons, collection: Place.all_cats %>
-        <%= f.input :tag_list, :label => "Which critiria do you fulfil?", as: :check_boxes, collection: Place.all_tags %>
+        <%= f.input :category, as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            :label => "Type of business",
+            as: :radio_buttons, collection: Place.all_cats %>
+
+        <%= f.input :tag_list, as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            :label => "Which critiria do you fulfil?",
+            as: :check_boxes, collection: Place.all_tags %>
+
         <%= f.input :story, :label => "Tell us more (will be displayed)" %>
-        <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, :label => "Add 📸 of you and your business", as: :file %>
-        <%= f.submit "Create ",  class:"btn-main" %>
+        <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'},
+            label_html: { class: 'upload-photo'},
+            label: '📷 Upload a photo',
+            as: :file %>
+        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+        <%= f.submit "Create",  class:"btn-create-business" %>
       <% end %>
     </div>
   </div>
