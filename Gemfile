@@ -9,6 +9,7 @@ ruby '2.6.6'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+gem 'geocoder'
 
 # --------------- #
 

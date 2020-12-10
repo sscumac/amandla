@@ -1,14 +1,14 @@
-
+<%= render 'shared/navbar_pages', title: 'Add your business' %>
 <div class="form container">
   <h2>Add your business</h2>
       <%= simple_form_for [@place] do |f| %>
         <%= f.input :name, :label => "What's your business name?" %>
         <%= f.input :address, :label => "What's the address?" %>
         <%= f.input :category, :label => "Type of business", as: :radio_buttons, collection: Place.all_cats %>
-        <%= f.input :tag_list, :label => "Which critiria do you fulfil?", as: :check_boxes, collection: Place.all_tags %> 
-        <%= f.input :story, :label => "Tell us more (will be displayed)" %>  
+        <%= f.input :tag_list, :label => "Which critiria do you fulfil?", as: :check_boxes, collection: Place.all_tags %>
+        <%= f.input :story, :label => "Tell us more (will be displayed)" %>
         <%= f.input :photo, :label => "Add images of you and your business", as: :file %>
-        <%= f.submit "Create",  class:"btn-main" %>
+        <%= f.submit "Create ",  class:"btn-main" %>
       <% end %>
     </div>
   </div>
