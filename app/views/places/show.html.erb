@@ -1,3 +1,4 @@
+<%= render 'shared/navbar_main' %>
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= cl_image_path @place.photo.key, crop: :fill %>)">
   <h1><%= @place.name %> </h1>
   <h6><%= @place.category %> </h6>
@@ -54,9 +55,6 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 </div>
-=======
-
-
 
     <div class="map-show">
 
@@ -76,6 +74,7 @@
         </div>
 
     </div>
+<%= render 'shared/navbar_bottom' %>
 
 
 

@@ -1,12 +1,31 @@
-.navbar-lewagon {
+.navbar-amandla {
   justify-content: space-between;
-  background: white;
+  background: #1D373C;
+  height: 67px;
+  width:100vh;
+
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-amandla .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-amandla .navbar-brand img {
+  width: 80px;
+}
+
+.nav-link {
+  color: #F7D383 !important;
+}
+
+.nav-title {
+  color: #F7D383;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+
+.fa-times, .fa-search, .fa-user, .fa-heart {
+  color: #F7D383;
 }

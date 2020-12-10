@@ -16,12 +16,10 @@
   </head>
 
   <body>
-    <% unless action_name == 'home' || action_name == 'root'%>
-      <%= render 'shared/navbar' %>
-    <% end %>
+
     <%= render 'shared/flashes' %>
-
+    <div class="spacing">
     <%= yield %>
-
+    </div>
   </body>
 </html>

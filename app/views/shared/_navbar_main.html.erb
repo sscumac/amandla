@@ -1,12 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<div class="navbar navbar-expand-sm navbar-light navbar-amandla">
+  <div class="container px-3">
+    <%=  link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/dpnjiruwh/image/upload/v1607523164/Amandla_logo_yellow-01_xtdkfg.png" %>
+      <% end %>
+  </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+<!-- a conditional if title is set then don't do the regular navbar but the special title and if logo is true also show the amandla logo -->
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -23,7 +22,6 @@
           <% else %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
-
 
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
