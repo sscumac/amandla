@@ -14,14 +14,16 @@ ilse = User.create!(
   email: "ilse@amandla.com",
   password: "password",
   first_name: "Ilse",
-  last_name: "Rodriguez"
+  last_name: "Rodriguez",
+  about_me: "I am a lover of all things organic, raw, natural and 0km produced!"
 )
 
 sebastian = User.create!(
   email: "sebastian@amandla.com",
   password: "password",
   first_name: "Sebastian",
-  last_name: "Schumacher"
+  last_name: "Schumacher",
+  about_me: "I love all places that serve raw vegan food and raw vegan ice-cream!"
 )
 
 fair_tacos = Place.create!(
