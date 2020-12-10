@@ -27,7 +27,7 @@ sebastian = User.create!(
 )
 
 fair_tacos = Place.create!(
-    address: "Torrent de la Olla 202, 08012 Barcelona",
+    address: "Carrer del Torrent de l'Olla, 202, 08012 Barcelona",
     name: "Fair Tacos",
     category: "Restaurant",
     user: ilse,

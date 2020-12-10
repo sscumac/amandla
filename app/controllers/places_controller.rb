@@ -1,7 +1,8 @@
 class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
-    @places = Place.all
+
+    filter_by_location
 
     @markers = @places.geocoded.map do |place|
       {
@@ -42,5 +43,13 @@ class PlacesController < ApplicationController
 
   def place_params
     params.require(:place).permit(:name, :address, :category, :story, :photo, tag_list: [])
+  end
+
+  def filter_by_location
+    if params[:query].present?
+      @places = Place.near(params[:query], 10)
+    else
+      @places = Place.all
+    end
   end
 end
