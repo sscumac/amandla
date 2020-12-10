@@ -1,3 +1,4 @@
+<%= render 'shared/navbar_pages', title: 'Sign up' %>
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -16,6 +17,10 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "last name" }%>
+    <%= f.input :about_me,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "about me" }%>
     <%= f.input :photo, as: :file %>
     <%= f.input :password,
                 required: true,
@@ -32,3 +37,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<%= render 'shared/navbar_bottom' %>

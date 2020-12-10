@@ -1,15 +1,82 @@
-<div class="container pt-3">
-  <%= cl_image_tag @place.photo.key, crop: :fill %>
-  <h1>Name: <%= @place.name %> </h1>
-  <h5>About this place:</h5>
-  <p>Tags: <% @place.tag_list.each do |tag|%>
-      <%= "#{tag} " %><br>
-    <% end %> </p>
-  <h6>Address: <%= @place.address %> </h6>
-  <h6>Category: <%= @place.category %> </h6>
-  <h6>Our story: <%= @place.story %> </h6>
+
+<%= render 'shared/navbar_main' %>
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= cl_image_path @place.photo.key, crop: :fill %>)">
+  <h1><%= @place.name %> </h1>
+  <h6><%= @place.category %> </h6>
+  <h6>Ratings (placeholder)</h6>
+  <div class="avatar-show avatar-bordered" style="background-image: url(https://kitt.lewagon.com/placeholder/users/krokrob);">
+  </div>
+
 </div>
 
+
+
+<div class="card-show">
+  <p><%= @place.user.first_name %> </p>
+  <p><% @place.tag_list.each do |tag|%>
+      <%= "#{tag} " %><br>
+    <% end %> </p>
+  <p><%= @place.user.about_me %></p>
+
+
+
+    <div class="show-carrousel">
+
+        <img src="https://res.cloudinary.com/dpnjiruwh/image/upload/v1607529121/images_xf4hsk.jpg" class="w-100">
+
+    </div>
+
+
+    <div class="story-show">
+      <h5>About <%= @place.name %> </h5>
+      <p><%= @place.story %> </p>
+    </div>
+
+    <div class="question-answer">
+      <h5>Ask <%= @place.user.first_name %> anything: </h5>
+      <h6>Q: Where are your coffee beans sourced?</h6>
+      <p>Ricky, 13th Dec 2019</p>
+      <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere are your coffee beans sourced?</h6>
+      <hr>
+      <h6>Q: Where are your coffee beans sourced?</h6>
+      <p>Ricky, 13th Dec 2019</p>
+      <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere are your coffee beans sourced?</h6>
+      <div class="d-flex justify-content-around mt-3 ml-0">
+        <button type="button" class="btn btn-info">Ask the owner</button>
+        <button type="button" class="btn btn-link">Show more</button>
+      </div>
+
+
+    </div>
+
+
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+</div>
+
+
+    <div class="map-show">
+
+    </div>
+
+  </div>
+
+
+  <div class="ratings-show">
+    <div class="d-flex justify-content-left mt-3 ml-0">
+        <i class="fas fa-seedling"></i> <p>4.9</p>
+        </div>
+        <p>Ricky, 13th Dec 2019</p>
+        <h6>They have the best coffee on earth! You should try their cold drip!</h6>
+        <div class="d-flex justify-content-left mt-3 ml-0">
+        <i class="fas fa-seedling"></i> <p>4.5</p>
+        </div>
+
+    </div>
+<%= render 'shared/navbar_bottom' %>
 
 
 
