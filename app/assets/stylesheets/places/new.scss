@@ -4,8 +4,153 @@
   background-size: cover;
   width: 375px;
 }
+.form {
+  padding: 30px 15px 15px 15px;
+  font-family: montserrat;
+  color: #1D373C;
+}
 
 .form-container {
   margin-top: 20px;
   max-width: 375px;
+}
+
+.string{
+  font-family: montserrat;
+  color: #1D373C;
+}
+
+.category-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  flex: 0 0 30%;
+  padding-bottom: 20px;
+
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label::after {
+  font-family: FontAwesome;
+  font-size: 40px;
+  color: #F7D383;
+  font-weight: normal;
+  font-style: normal;
+  display: block;
+  text-decoration: inherit;
+  position: center;
+}
+
+.category-selector + label {
+  font-family: montserrat;
+  color: #1D373C;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  padding: 10px 10px 30px 10px;
+  border: 2px solid #F7D383;
+  border-radius: 4px;
+  background-color: #FEF9EF;
+  position:relative;
+}
+
+.category-selector:checked + label {
+  color: #299D90 !important;
+  border: 2px solid #299D90;
+  border-radius: 4px;
+}
+
+.category-item {
+  position: relative;
+}
+
+#place_category_bar + label::after {
+  content: "\f561";
+}
+
+#place_category_bar:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+
+
+#place_category_restaurant + label::after {
+  content: "\f2e7";
+}
+
+#place_category_restaurant:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+
+
+#place_category_cafe + label::after {
+  content: "\f0f4";
+}
+
+#place_category_cafe:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+#place_category_clothing_store + label::after {
+  content: "\f553";
+}
+
+#place_category_clothing_store:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+#place_category_nightclub + label::after {
+  content: "\f79f";
+}
+
+#place_category_nightclub:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+#place_category_art_gallery + label::after {
+  content: "\f53f";
+}
+
+#place_category_art_gallery:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+
+#place_tag_list_veggie + label::after {
+  content: "\f06c";
+}
+
+#place_tag_list_fair_trade + label::after {
+  content: "\f2b5";
+}
+
+#place_tag_list_woman_owened +label::after {
+ content: "\f226";
+}
+
+#place_tag_list_fully_organic +label::after {
+ content: "\f4d8";
+}
+
+#place_tag_list_lgbt-friendly +label::after {
+ content: "\f75b";
+}
+
+#place_tag_list_local_products +label::after {
+ content: "\f4d8";
+}
+
+#place_tag_list_green_energy +label::after {
+ content: "\f4d8";
 }
