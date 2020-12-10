@@ -5,19 +5,23 @@
         <div class="user-image" style="margin-top: 20px;">
           <div class="avatar avatar-bordered py-10" style="background-image: url(https://kitt.lewagon.com/placeholder/users/krokrob);"></div>
         </div>
+        <br>
         <div class="account-items">
           <div class="account-item">
             <%= link_to "Messages", "#", class: "account-link" %>
           </div>
-          <br>
+
           <div class="account-item">
-            <%= link_to "Recently viewed", "#", class: "account-link" %>
+            <%= link_to "Recently visited", "#", class: "account-link" %>
           </div>
-          <br>
+
+          <div class="account-item">
+            <%= link_to "Add your business", new_place_path, class: "account-link" %>
+          </div>
+          <hr>
           <div class="account-item">
             <%= link_to "Edit profile", edit_user_registration_path, class: "account-link" %>
           </div>
-          <br>
           <div class="account-item">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "account-link" %>
           </div>

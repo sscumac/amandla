@@ -7,7 +7,7 @@
         <%= f.input :category, :label => "Type of business", as: :radio_buttons, collection: Place.all_cats %>
         <%= f.input :tag_list, :label => "Which critiria do you fulfil?", as: :check_boxes, collection: Place.all_tags %>
         <%= f.input :story, :label => "Tell us more (will be displayed)" %>
-        <%= f.input :photo, :label => "Add images of you and your business", as: :file %>
+        <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, :label => "Add 📸 of you and your business", as: :file %>
         <%= f.submit "Create ",  class:"btn-main" %>
       <% end %>
     </div>
