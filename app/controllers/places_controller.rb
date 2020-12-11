@@ -4,14 +4,14 @@ class PlacesController < ApplicationController
     # raise
     filter_by_location
 
-    # @markers = @places.geocoded.map do |place|
-    #   {
-    #     lat: place.latitude,
-    #     lng: place.longitude,
-    #     infoWindow: render_to_string(partial: "info_window", locals: { place: place }),
-    #     image_url: helpers.asset_url('https://res.cloudinary.com/dpnjiruwh/image/upload/v1607530616/download_ahvevg.png')
-    #   }
-    # end
+    @markers = @places.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { place: place }),
+        image_url: helpers.asset_url('https://res.cloudinary.com/dpnjiruwh/image/upload/v1607530616/download_ahvevg.png')
+      }
+    end
   end
 
   def show
@@ -47,9 +47,9 @@ class PlacesController < ApplicationController
 
   def filter_by_location
     if params[:location].present?
-      @places = Place.near(params[:location], 10)
+      @places = Place.geocoded.near(params[:location], 10)
     else
-      @places = Place.all
+      @places = Place.geocoded
     end
     if params[:category].present?
       @places = @places.select { |place| place.category == params[:category] }
