@@ -1,0 +1,7 @@
+<div class= "container pt-3">
+  <h3> Here are your visited places </h3>
+    <% @visits.each do |visit| %>
+      <p> <%= visit.place.name %> -
+      <%= visit.created_at %></p>
+    <% end %>
+</div>
