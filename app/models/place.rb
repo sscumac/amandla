@@ -23,13 +23,12 @@ class Place < ApplicationRecord
   
   def self.all_tags
     [
-    "veggie",
+    "plant-based",
     "LGBT-friendly",
-    "woman owened",
-    "local products",
+    "women owned",
+    "locally sourced",
     "fair trade",
-    "fully organic",
-    "green energy"
+    "organic"
     ]
   end
 
@@ -39,9 +38,9 @@ class Place < ApplicationRecord
     "Restaurant",
     "Bar",
     "Cafe",
-    "Clothing Store",
-    "Nightclub",
-    "Art Gallery"
+    "Groceries",
+    "Clothing and Fabrics",
+    "Beauty and Wellness"
     ]
   end
 end
