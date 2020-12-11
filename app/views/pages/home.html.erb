@@ -11,8 +11,8 @@
           <h5>SUPPORT BUSINESSES THAT ARE ALIGNED<br>WITH YOUR.</h5>
           <div class="search-bar">
             <%= form_tag places_path do %>
-              <%= text_field_tag :query,
-                params[:query],
+              <%= text_field_tag :location,
+                params[:location],
                 class: "form-control",
                 placeholder: "Introduce your location" %>
               <%= button_tag(type: "submit", class: "btn-search") do %>
