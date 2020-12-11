@@ -2,7 +2,6 @@
   justify-content: space-between;
   background: #1D373C;
   height: 67px;
-
 }
 
 .navbar-amandla .navbar-collapse {
@@ -25,6 +24,8 @@
   text-align: center;
 }
 
-.fa-times, .fa-search, .fa-user, .fa-heart {
+.navbar-amandla i {
+  font-size: 27px;
   color: #F7D383;
 }
+

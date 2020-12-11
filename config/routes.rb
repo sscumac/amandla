@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get "pages", to: "pages#account"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :places, only: [:index, :show, :new, :create] do
-    resources :reviews, only: [:index, :show, :new, :create]
+    resources :visits, only: [:create]
+  end
+  resources :visits, only: [:index] do
+    resources :reviews, only: [:new, :create]
   end
 end

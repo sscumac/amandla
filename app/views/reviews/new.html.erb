@@ -1,8 +1,12 @@
 <div class="container">
-  <h1><%= place.name %> </h1>
-  <%= simple_form_for [@place, @review] do |f| %>
-    <%= f.input :rating, collection: 0..5 %>
+  <h1><%= @visit.place.name %> </h1>
+  <%= simple_form_for [@visit, @review] do |f| %>
+    <%= f.input :rating, wrapper_html: { class: 'fab fa-envira' }, collection: 0..5 %>
     <%= f.input :content%>
-    <%= f.submit "SUBMIT",  class:"btn-main" %>
+    <%= f.submit "SUBMIT",  class:"btn-create-business" %>
   <% end %>
 </div>
+
+
+
+
