@@ -1,0 +1,25 @@
+=> [[32m#<Place:0x00007f0400f3b780[0m
+  id: [1;34m1[0m,
+  address: [31m[1;31m"[0m[31mTorrent de la Olla 202, 08012 Barcelona[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mFair Tacos[1;31m"[0m[31m[0m,
+  category: [31m[1;31m"[0m[31mRestaurant[1;31m"[0m[31m[0m,
+  story:
+   [31m[1;31m"[0m[31mLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget tincidunt augue, sit amet tincidunt nisl. Nunc ultrices, orci non ultrices vulputate, libero turpis facilisis ante, at ultricies ipsum nulla nec odio. Integer ut euismod libero. Maecenas augue lorem, varius tincidunt libero in, hendrerit vestibulum sapien. Nam volutpat urna ipsum, ut fermentum metus venenatis et. Sed ac lectus eget nisl consectetur vehicula at vel sapien. Donec et tortor sit amet turpis dictum iaculis vitae a nisi. Quisque risus risus, facilisis a vulputate non, facilisis non ipsum. Suspendisse aliquam metus vitae ante hendrerit varius. Vestibulum vitae urna sit amet mauris commodo finibus. Nulla cursus molestie mauris ut vehicula. Nunc eget erat nulla.[1;31m"[0m[31m[0m,
+  user_id: [1;34m1[0m,
+  created_at: [1;34;4mWed[0m, [1;34m09[0m [1;34;4mDec[0m [1;34m2020[0m [1;34m10[0m:[1;34m25[0m:[1;34m18[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m09[0m [1;34;4mDec[0m [1;34m2020[0m [1;34m10[0m:[1;34m25[0m:[1;34m20[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  latitude: [1;36mnil[0m,
+  longitude: [1;36mnil[0m,
+  tag_list: [1;36mnil[0m[32m>[0m,
+ [32m#<Place:0x00007f04010248e0[0m
+  id: [1;34m2[0m,
+  address: [31m[1;31m"[0m[31mCarrer de la Verge 10, Barcelona, Catalunya, Spanien[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mOrganic Orgasm[1;31m"[0m[31m[0m,
+  category: [31m[1;31m"[0m[31mNightclub[1;31m"[0m[31m[0m,
+  story: [31m[1;31m"[0m[31mThe best nightclub in the world. Even better than Berghain. For Real. See you there![1;31m"[0m[31m[0m,
+  user_id: [1;34m2[0m,
+  created_at: [1;34;4mThu[0m, [1;34m10[0m [1;34;4mDec[0m [1;34m2020[0m [1;34m13[0m:[1;34m43[0m:[1;34m28[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mThu[0m, [1;34m10[0m [1;34;4mDec[0m [1;34m2020[0m [1;34m13[0m:[1;34m43[0m:[1;34m29[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  latitude: [1;36mnil[0m,
+  longitude: [1;36mnil[0m,
+  tag_list: [1;36mnil[0m[32m>[0m]

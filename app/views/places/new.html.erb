@@ -8,7 +8,7 @@
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
-            :label => "Type of business",
+            :label => "Type of business (Choose only one)",
             as: :radio_buttons, collection: Place.all_cats %>
 
         <%= f.input :tag_list, as: :radio_buttons,
@@ -16,15 +16,20 @@
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
-            :label => "Which critiria do you fulfil?",
+            :label => "Which critiria do you fulfil? (Choose as many you need)",
             as: :check_boxes, collection: Place.all_tags %>
 
         <%= f.input :story, :label => "Tell us more (will be displayed)" %>
-        <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'},
-            label_html: { class: 'upload-photo'},
+
+        <div class="d-flex justify-content-between pb-3">
+          <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'},
+            wrapper_html: { class: 'mb-0 d-flex align-items-center'},
+            label_html: { class: 'upload-photo mb-0'},
             label: '📷 Upload a photo',
             as: :file %>
-        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+          <%= image_tag "", width: 200, class: "hidden", id: "photo-preview" %>
+        </div>
+
         <%= f.submit "Create",  class:"btn-create-business" %>
       <% end %>
     </div>

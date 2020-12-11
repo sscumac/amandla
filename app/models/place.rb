@@ -3,15 +3,14 @@ class Place < ApplicationRecord
   acts_as_taggable_on :tags # or whatever you would like to call your tag list.
 
   has_one_attached :photo
-  delegate :reviews, to: :visit
   has_many :visits, dependent: :destroy
+  has_many :reviews, through: :visits
   has_many :wishlist_items
   has_many :questions, dependent: :destroy
   has_many :answers, through: :questions, dependent: :destroy
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  
 
   validates :name, presence: true
   validates :address, presence: true
@@ -20,28 +19,27 @@ class Place < ApplicationRecord
   validates :google_maps_url, presence: true
 
   # list of tags with method
-  
+
   def self.all_tags
     [
-    "veggie",
+    "plant-based",
     "LGBT-friendly",
-    "woman owened",
-    "local products",
+    "women owned",
+    "locally sourced",
     "fair trade",
-    "fully organic",
-    "green energy"
+    "organic",
+    "vegetarian"
     ]
   end
-
   # list of categories with method
   def self.all_cats
     [
     "Restaurant",
     "Bar",
     "Cafe",
-    "Clothing Store",
-    "Nightclub",
-    "Art Gallery"
+    "Groceries",
+    "Clothing and Fabrics",
+    "Beauty and Wellness"
     ]
   end
 end

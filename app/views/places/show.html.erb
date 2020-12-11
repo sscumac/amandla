@@ -29,13 +29,13 @@
   <p><strong><%= (@place.user.about_me).upcase %></strong> </p>
 
 
-
     <div class="show-carrousel">
 
         <img src="https://res.cloudinary.com/dpnjiruwh/image/upload/v1607529121/images_xf4hsk.jpg" class="w-100">
 
     </div>
 
+<div>
 
     <div class="story-show">
       <h5 id="about-place">About <%= @place.name %> </h5>
@@ -63,37 +63,32 @@
           <i class="fas fa-seedling" id="leaf"></i> <p id="rating-number">4.9</p>
         </div>
         <div class="d-flex justify-content-end">
-          <p class="opinions">3 Opinions</p>
+          <p class="opinions"> <%= Review.count %> reviews</p>
         </div>
       </div>
 
+      <% @place.reviews.first(3).each do |review| %>
+        <p id="who-said"> <%= review.visit.user.first_name %>, <%= review.created_at.strftime("%b %d, %Y") %> </p>
 
-      <p id="who-said">Ricky, 13th Dec 2019</p>
-      <h6 class="ratings-people">They have the best coffee on earth! You should try their cold drip!</h6>
-      <div class="d-flex justify-content-left mt-3 ml-0 little-rating">
-        <p id="really-little">4.5</p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
-      </div>
-      <hr>
-      <p id="who-said">Ricky, 13th Dec 2019</p>
-      <h6 class="ratings-people">They have the best coffee on earth! You should try their cold drip!</h6>
-      <div class="d-flex justify-content-left mt-3 ml-0 little-rating">
-        <p id="really-little">4.5</p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
-      </div>
-      <hr>
-      <p id="who-said">Ricky, 13th Dec 2019</p>
-      <h6 class="ratings-people">They have the best coffee on earth! You should try their cold drip!</h6>
-      <div class="d-flex justify-content-left mt-3 ml-0 little-rating">
-        <p id="really-little">4.5</p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
-      </div>
-      <hr>
+        <h6 class="ratings-people"><%= review.content  %></h6>
+        <div class="d-flex justify-content-left mt-3 ml-0 little-rating">
+          <p id="really-little">4.5</p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+        </div>
+        <hr>
+      <% end %>
+
       <div class="d-flex justify-content-between mt-3 mr-2">
-        <button type="button" class="ask-show">LEAVE AN OPINION</button>
+        <% # TODO: Refactor this into model methods %>
+        <% if current_user.visits.any? { |visit| visit.place == @place } %>
+          <%= button_to "LEAVE AN OPINION", new_visit_review_path(current_user.visits.find_by(place: @place)), class: "ask-show", method: :get %>
+        <% end %>
+
         <button type="button" class="show-more-ratings"><strong>SHOW MORE <i class="fas fa-caret-down"></i></strong> </button>
       </div>
 
 
     </div>
-
+</div>
   <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"

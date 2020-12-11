@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :visits, only: [:create]
     resources :wishlist_items, only: [:create]
   end
-  resources :visits, only: [:index]
+  resources :visits, only: [:index] do
+    resources :reviews, only: [:new, :create]
+  end
   resources :wishlist_items, only: [:index, :destroy]
 end

@@ -1,0 +1,62 @@
+.category-selector:checked + label {
+  color: #299D90 !important;
+  border: 2px solid #299D90;
+  border-radius: 4px;
+}
+
+.category-item {
+  position: relative;
+}
+
+#place_category_bar + label::after {
+  content: "\f561";
+}
+
+#place_category_bar:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+
+
+#place_category_restaurant + label::after {
+  content: "\f2e7";
+}
+
+#place_category_restaurant:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+
+
+#place_category_cafe + label::after {
+  content: "\f0f4";
+}
+
+#place_category_cafe:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+#place_category_clothing_store + label::after {
+  content: "\f553";
+}
+
+#place_category_clothing_store:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+#place_category_nightclub + label::after {
+  content: "\f79f";
+}
+
+#place_category_nightclub:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+#place_category_art_gallery + label::after {
+  content: "\f53f";
+}
+
+#place_category_art_gallery:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
