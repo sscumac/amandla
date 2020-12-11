@@ -25,7 +25,11 @@
                 <% end  %>
               <% end %>
             <%= link_to place_path(place), class: "place-card-link" do %>
+            <% if place.photo.attached? %>
             <div class="card-image" style="background-image: linear-gradient(180deg, rgba(52, 100, 109, 0.08) 0%, rgba(15, 29, 31, 0.6) 100%), url(<%= cl_image_path place.photo.key, crop: :fit%>)">
+            <% else %>
+            <div class="card-image" style="background-image: linear-gradient(180deg, rgba(52, 100, 109, 0.08) 0%, rgba(15, 29, 31, 0.6) 100%), url(<%= cl_image_path "p1xxchyw9ygjdeiqaa1sp47g2zgw", crop: :fit%>)">
+            <% end %>
 
               <div class="card-place-name"><%= place.name.capitalize %></div>
               <% place.tag_list.each do |tag| %>
