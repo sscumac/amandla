@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "pages", to: "pages#account"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :places, only: [:index, :show, :new, :create] do 
+  resources :places, only: [:index, :show, :new, :create] do
     resources :visits, only: [:create]
+    resources :wishlist_items, only: [:create]
   end
   resources :visits, only: [:index]
+  resources :wishlist_items, only: [:index, :destroy]
 end
