@@ -17,7 +17,6 @@
   color: #299D90;
 }
 
-
 #place_category_restaurant + label::after {
   content: "\f2e7";
 }
@@ -27,7 +26,6 @@
   color: #299D90;
 }
 
-
 #place_category_cafe + label::after {
   content: "\f0f4";
 }
@@ -36,27 +34,27 @@
   border-color: #299D90;
   color: #299D90;
 }
-#place_category_clothing_store + label::after {
+#place_category_clothing_and_fabrics + label::after {
   content: "\f553";
 }
 
-#place_category_clothing_store:checked + label {
+#place_category_clothing_and_fabrics:checked + label {
   border-color: #299D90;
   color: #299D90;
 }
-#place_category_nightclub + label::after {
-  content: "\f79f";
+#place_category_groceries + label::after {
+  content: "\f07a";
 }
 
-#place_category_nightclub:checked + label {
+#place_category_groceries:checked + label {
   border-color: #299D90;
   color: #299D90;
 }
-#place_category_art_gallery + label::after {
-  content: "\f53f";
+#place_category_beauty_and_wellness + label::after {
+  content: "\f5bb";
 }
 
-#place_category_art_gallery:checked + label {
+#place_category_beauty_and_wellness:checked + label {
   border-color: #299D90;
   color: #299D90;
 }

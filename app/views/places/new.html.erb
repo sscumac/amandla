@@ -18,6 +18,7 @@
             input_html: {class: 'category-selector'},
             :label => "Which critiria do you fulfil? (Choose as many you need)",
             as: :check_boxes, collection: Place.all_tags %>
+            <%= f.input :google_maps_url, :label => "What's your google.map link?" %>
 
         <%= f.input :story, :label => "Tell us more (will be displayed)" %>
 
@@ -27,7 +28,7 @@
             label_html: { class: 'upload-photo mb-0'},
             label: '📷 Upload a photo',
             as: :file %>
-          <%= image_tag "", width: 200, class: "hidden", id: "photo-preview" %>
+          <%= image_tag "", width: 200, class: "d-none", id: "photo-preview" %>
         </div>
 
         <%= f.submit "Create",  class:"btn-create-business" %>
