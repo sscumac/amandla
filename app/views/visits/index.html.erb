@@ -1,7 +1,14 @@
+<%= render 'shared/navbar_pages', title: "Visits" %>
 <div class= "container pt-3">
-  <h3> Here are your visited places </h3>
+  <h4> Here are your visited places: </h4>
     <% @visits.each do |visit| %>
       <p> <%= visit.place.name %> -
-      <%= visit.created_at %></p>
+      <%= visit.created_at.strftime("%b %d, %Y") %></p>
+
+      <%= button_to "LEAVE AN OPINION", new_visit_review_path(visit), class: "ask-show", method: :get %>
     <% end %>
 </div>
+<%= render 'shared/navbar_bottom' %>
+
+
+

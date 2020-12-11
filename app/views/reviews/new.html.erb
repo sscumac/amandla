@@ -1,7 +1,8 @@
-<div class="container">
+<%= render 'shared/navbar_pages', title: "Leave a review" %>
+<div class="container p-3">
   <h1><%= @visit.place.name %> </h1>
   <%= simple_form_for [@visit, @review] do |f| %>
-    <%= f.input :rating, wrapper_html: { class: 'fab fa-envira' }, collection: 0..5 %>
+    <%= f.input :rating, collection: 0..5 %>
     <%= f.input :content%>
     <%= f.submit "SUBMIT",  class:"btn-create-business" %>
   <% end %>

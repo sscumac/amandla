@@ -14,10 +14,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @visit = Visit.find(params[:visit_id])
+    @place = @visit.place
     @review = Review.new(review_params)
-    @review.user = current_user
+    @review.visit = @visit
     if @review.save
-      redirect_to review_path(@review) #place_path(@place) ??????
+      redirect_to place_path(@place)
     else
       render :new # jumps to view "new"
     end
@@ -29,3 +31,4 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:content, :rating)
   end
 end
+
