@@ -8,22 +8,22 @@
       <% end %>
     </div>
 
-    <% if controller_name == "wishlist" %>
+    <% if controller_name == "wishlist_items" %>
 
     <div class="nav-item">
-     <%=  link_to "#" do %>
+     <%=  link_to wishlist_items_path do %>
       <i class="fas fa-heart"></i>
       <% end %>
     <% else %>
     <div class="nav-item">
-     <%=  link_to "#" do %>
+     <%=  link_to wishlist_items_path do %>
       <i class="far fa-heart"></i>
       <% end %>
     <% end %>
 
     </div>
 
-    <% if user_signed_in? %>
+    <% if controller_name == "pages" && action_name == "account" %>
       <div class="nav-item">
        <%=  link_to pages_path do %>
         <i class="fas fa-user"></i>

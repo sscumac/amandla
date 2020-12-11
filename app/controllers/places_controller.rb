@@ -4,7 +4,8 @@ class PlacesController < ApplicationController
     # raise
     filter_by_location
 
-    @markers = @places.geocoded.map do |place|
+    @markers = @places.map do |place|
+
       {
         lat: place.latitude,
         lng: place.longitude,
@@ -16,7 +17,6 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
-
     @markers = [{
       lat: @place.latitude,
       lng: @place.longitude,
@@ -47,9 +47,9 @@ class PlacesController < ApplicationController
 
   def filter_by_location
     if params[:location].present?
-      @places = Place.near(params[:location], 10)
+      @places = Place.geocoded.near(params[:location], 10)
     else
-      @places = Place.all
+      @places = Place.geocoded
     end
     if params[:category].present?
       @places = @places.select { |place| place.category == params[:category] }
