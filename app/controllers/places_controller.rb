@@ -1,16 +1,17 @@
 class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
-    @places = Place.all
+    # raise
+    filter_by_location
 
-    @markers = @places.geocoded.map do |place|
-      {
-        lat: place.latitude,
-        lng: place.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { place: place }),
-        image_url: helpers.asset_url('https://res.cloudinary.com/dpnjiruwh/image/upload/v1607530616/download_ahvevg.png')
-      }
-    end
+    # @markers = @places.geocoded.map do |place|
+    #   {
+    #     lat: place.latitude,
+    #     lng: place.longitude,
+    #     infoWindow: render_to_string(partial: "info_window", locals: { place: place }),
+    #     image_url: helpers.asset_url('https://res.cloudinary.com/dpnjiruwh/image/upload/v1607530616/download_ahvevg.png')
+    #   }
+    # end
   end
 
   def show
@@ -42,5 +43,19 @@ class PlacesController < ApplicationController
 
   def place_params
     params.require(:place).permit(:name, :address, :category, :story, :photo, tag_list: [])
+  end
+
+  def filter_by_location
+    if params[:location].present?
+      @places = Place.near(params[:location], 10)
+    else
+      @places = Place.all
+    end
+    if params[:category].present?
+      @places = @places.select { |place| place.category == params[:category] }
+    end
+    if params[:tag_list].present?
+      @places = @places.select { |place| params[:tag_list].all? { |tag| place.tag_list.include?(tag) } } 
+    end
   end
 end

@@ -28,10 +28,10 @@ class Place < ApplicationRecord
     "women owned",
     "locally sourced",
     "fair trade",
-    "organic"
+    "organic",
+    "vegetarian"
     ]
   end
-
   # list of categories with method
   def self.all_cats
     [
