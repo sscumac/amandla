@@ -42,4 +42,12 @@ class Place < ApplicationRecord
     "Beauty and Wellness"
     ]
   end
+
+  def average_reviews
+    #total_reviews = 0
+    total_reviews = self.reviews.count
+    return 0 if total_reviews == 0
+    self.reviews.sum(:rating).to_f / total_reviews
+  end
+
 end

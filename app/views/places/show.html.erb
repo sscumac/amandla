@@ -4,7 +4,7 @@
   <h1><%= @place.name %> </h1>
   <h6><%= @place.category %> </h6>
   <% @place.visits.each do |visit| %>
-  <h6 class="rating-place"><i class="fas fa-seedling"></i> <%= visit.average_reviews %></h6>
+  <h6 class="rating-place"><i class="fas fa-seedling"></i> <%= @place.average_reviews %></h6>
   <% end %>
   <div class="avatar-show avatar-bordered" style="background-image: url(https://kitt.lewagon.com/placeholder/users/krokrob);">
   </div>
@@ -18,11 +18,48 @@
 
   <div class="d-flex justify-content-center">
     <% @place.tag_list.each do |tag|%>
-      <div class="text-center mx-1">
-        <i class="fab fa-envira tag-icons"></i>
-       <p id="text-green"><%= tag  %></p>
-      </div>
-
+      <% if tag == "plant-based" %>
+        <div class="text-center mx-1">
+          <i class="fas fa-leaf tag-icons"></i>
+          <p id="text-green"><%= tag  %></p>
+        </div>
+      <% end %>
+      <% if tag == "LGBT-friendly" %>
+        <div class="text-center mx-1">
+          <i class="fas fa-rainbow tag-icons"></i>
+          <p id="text-green"><%= tag  %></p>
+        </div>
+      <% end %>
+      <% if tag == "women owned" %>
+        <div class="text-center mx-1">
+          <i class="fas fa-venus-double tag-icons"></i>
+          <p id="text-green"><%= tag  %></p>
+        </div>
+      <% end %>
+      <% if tag == "locally sourced" %>
+        <div class="text-center mx-1">
+          <i class="far fa-street-view tag-icons"></i>
+          <p id="text-green"><%= tag  %></p>
+        </div>
+      <% end %>
+      <% if tag == "fair trade" %>
+        <div class="text-center mx-1">
+          <i class="far fa-handshake tag-icons"></i>
+          <p id="text-green"><%= tag  %></p>
+        </div>
+      <% end %>
+      <% if tag == "organic" %>
+        <div class="text-center mx-1">
+          <i class="fab fa-envira tag-icons"></i>
+          <p id="text-green"><%= tag  %></p>
+        </div>
+      <% end %>
+      <% if tag == "vegetarian" %>
+        <div class="text-center mx-1">
+          <i class="fas fa-pepper-hot tag-icons"></i>
+          <p id="text-green"><%= tag  %></p>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
@@ -30,12 +67,15 @@
 
   <p><strong><%= (@place.user.about_me).upcase %></strong> </p>
 
+  <div class="owl-carousel">
+    <div> <img src="https://images.adsttc.com/media/images/5de8/74f9/3312/fdbc/3500/005b/newsletter/Culturist_5.jpg?1575515353" class="w-100"> </div>
+    <div> <img src="https://res.cloudinary.com/dpnjiruwh/image/upload/v1607529121/images_xf4hsk.jpg" class="w-100"> </div>
+    <div> <img src="https://soycomocomo.es/media/2018/06/forn-veritas.jpg" class="w-100"> </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+  </div>
 
-    <div class="show-carrousel">
-
-        <img src="https://res.cloudinary.com/dpnjiruwh/image/upload/v1607529121/images_xf4hsk.jpg" class="w-100">
-
-    </div>
 
 <div>
 

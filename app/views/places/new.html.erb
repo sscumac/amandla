@@ -18,7 +18,6 @@
             input_html: {class: 'category-selector'},
             :label => "Which critiria do you fulfil? (Choose as many you need)",
             as: :check_boxes, collection: Place.all_tags %>
-            <%= f.input :google_maps_url, :label => "What's your google.map link?" %>
 
         <%= f.input :story, :label => "Tell us more (will be displayed)" %>
 
