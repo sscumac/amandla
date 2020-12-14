@@ -1,5 +1,4 @@
 class VisitsController < ApplicationController
-
   def index
     @visits = current_user.visits
   end
@@ -14,5 +13,4 @@ class VisitsController < ApplicationController
       redirect_to place_path(@place), notice: "boooo"
     end
   end
-
 end
