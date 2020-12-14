@@ -3,7 +3,9 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= cl_image_path @place.photo.key, crop: :fill %>)">
   <h1><%= @place.name %> </h1>
   <h6><%= @place.category %> </h6>
-  <h6 class="rating-place"><i class="fas fa-seedling"></i> 4.5</h6>
+  <% @place.visits.each do |visit| %>
+  <h6 class="rating-place"><i class="fas fa-seedling"></i> <%= visit.average_reviews %></h6>
+  <% end %>
   <div class="avatar-show avatar-bordered" style="background-image: url(https://kitt.lewagon.com/placeholder/users/krokrob);">
   </div>
 
