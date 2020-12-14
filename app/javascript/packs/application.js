@@ -29,6 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initOwl } from '../plugins/init_owl';
 
 
 // TEMPORARY HERE - UNDER CONSTRUCTION
@@ -62,4 +63,7 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   initMapbox();
   previewImageOnFileSelect();
+  initOwl();
 });
+
+

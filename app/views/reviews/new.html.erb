@@ -3,8 +3,8 @@
   <h1><%= @visit.place.name %> </h1>
   <%= simple_form_for [@visit, @review] do |f| %>
     <%= f.input :rating, collection: 0..5 %>
-    <%= f.input :content %>
-    <%= f.submit "SUBMIT",  class:"btn-create-business" %>
+    <%= f.input :content%>
+    <%= f.submit "SUBMIT",  class:"btn-create-business fixed-bottom" %>
   <% end %>
 </div>
 
