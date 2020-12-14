@@ -32,7 +32,7 @@ fair_tacos = Place.create!(
     category: "Restaurant",
     user: ilse,
     story: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget tincidunt augue, sit amet tincidunt nisl. Nunc ultrices, orci non ultrices vulputate, libero turpis facilisis ante, at ultricies ipsum nulla nec odio. Integer ut euismod libero. Maecenas augue lorem, varius tincidunt libero in, hendrerit vestibulum sapien. Nam volutpat urna ipsum, ut fermentum metus venenatis et. Sed ac lectus eget nisl consectetur vehicula at vel sapien. Donec et tortor sit amet turpis dictum iaculis vitae a nisi. Quisque risus risus, facilisis a vulputate non, facilisis non ipsum. Suspendisse aliquam metus vitae ante hendrerit varius. Vestibulum vitae urna sit amet mauris commodo finibus. Nulla cursus molestie mauris ut vehicula. Nunc eget erat nulla.",
-    google_maps_url: "https://goo.gl/maps/4pmmFKCFF252nzMW9"
+    # google_maps_url: "https://goo.gl/maps/4pmmFKCFF252nzMW9"
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
 
@@ -48,7 +48,7 @@ hansel_and_granel = Place.create!(
     category: "Groceries",
     user: ilse,
     story: "I left behind 13 years of work in a non-profit foundation to set up Handsel y Granel a few months ago, an intimate and careful establishment that sells products in bulk.",
-    google_maps_url: "https://goo.gl/maps/3Pirr9QFGQ4XTd6v7"
+    # google_maps_url: "https://goo.gl/maps/3Pirr9QFGQ4XTd6v7"
 )
 hansel_and_granel.tag_list.add("women owned", "organic", "fair trade")
 
@@ -64,7 +64,7 @@ les_tres_gourmets = Place.create!(
     category: "Restaurant",
     user: ilse,
     story: "I left behind 13 years of work in a non-profit foundation to set up Les Tres Gourmets a few months ago, an intimate and careful establishment that sells meals made with love.",
-    google_maps_url: "https://g.page/lestresgourmets?share"
+    # google_maps_url: "https://g.page/lestresgourmets?share"
 )
 les_tres_gourmets.tag_list.add("women owned", "organic", "vegetarian")
 
@@ -80,7 +80,7 @@ kaoni_wellbeing = Place.create!(
     category: "Beauty and Wellness",
     user: ilse,
     story: "I left behind 13 years of work in a non-profit foundation to set up Kaoni Wellbeing a few months ago, an intimate and careful establishment that looks after your wellbeing.",
-    google_maps_url: "https://goo.gl/maps/huwsN2qJQXkxGjRu6"
+    # google_maps_url: "https://goo.gl/maps/huwsN2qJQXkxGjRu6"
 )
 kaoni_wellbeing.tag_list.add("women owned", "organic", "fair trade")
 
@@ -96,7 +96,7 @@ woki_organic_market = Place.create!(
     category: "Groceries",
     user: sebastian,
     story: "I left behind 13 years of work in a non-profit foundation to set up Woki a few months ago, an intimate and careful establishment that sells organic products.",
-    google_maps_url: "https://goo.gl/maps/PrMY3WmjbzqppVRF7"
+    # google_maps_url: "https://goo.gl/maps/PrMY3WmjbzqppVRF7"
 )
 woki_organic_market.tag_list.add("organic", "fair trade")
 
@@ -113,7 +113,7 @@ two_thirds = Place.create!(
     category: "Clothing and Fabrics",
     user: sebastian,
     story: "I left behind 13 years of work in a non-profit foundation to set up Two Thirds a few months ago, an intimate and careful establishment that sells amazing, sustainable clothing",
-    google_maps_url: "https://g.page/TWOTHIRDS_BCN?share"
+    # google_maps_url: "https://g.page/TWOTHIRDS_BCN?share"
 )
 two_thirds.tag_list.add("organic", "fair trade")
 
@@ -129,7 +129,7 @@ sukhi_rugs = Place.create!(
     category: "Clothing and Fabrics",
     user: ilse,
     story: "I left behind 13 years of work in a non-profit foundation to set up Rukhi a few months ago, an intimate and careful establishment that sells the best, sustainably-made rugs",
-    google_maps_url: "https://goo.gl/maps/z7PjrNCp9bxiumCW7"
+    # google_maps_url: "https://goo.gl/maps/z7PjrNCp9bxiumCW7"
 )
 sukhi_rugs.tag_list.add("women owned", "organic", "fair trade")
 
@@ -145,7 +145,7 @@ nomad_coffee_lab = Place.create!(
     category: "Cafe",
     user: sebastian,
     story: "I left behind 13 years of work in a non-profit foundation to set up Nomad a few months ago, an intimate and careful establishment that makes incredible coffee, guilt-free",
-    google_maps_url: "https://goo.gl/maps/7mYyrjSyERZHHcDq5"
+    # google_maps_url: "https://goo.gl/maps/7mYyrjSyERZHHcDq5"
 )
 nomad_coffee_lab.tag_list.add("organic", "fair trade")
 
@@ -161,7 +161,7 @@ restaurant_ohbo = Place.create!(
     category: "Restaurant",
     user: sebastian,
     story: "I left behind 13 years of work in a non-profit foundation to set up Ohbo a few months ago, an intimate and careful establishment that makes delicious organic food",
-    google_maps_url: "https://g.page/restaurante-oh-bo?share"
+    # google_maps_url: "https://g.page/restaurante-oh-bo?share"
 )
 restaurant_ohbo.tag_list.add("organic")
 
@@ -177,7 +177,7 @@ the_magnificent = Place.create!(
     category: "Cafe",
     user: ilse,
     story: "I left behind 13 years of work in a non-profit foundation to set up The Magnificent a few months ago, an intimate and careful establishment that makes lovely coffee",
-    google_maps_url: "https://goo.gl/maps/ZoUCejpqTq2kd5kE8"
+    # google_maps_url: "https://goo.gl/maps/ZoUCejpqTq2kd5kE8"
 )
 the_magnificent.tag_list.add("women owned","fair trade")
 

@@ -16,7 +16,7 @@ class Place < ApplicationRecord
   validates :address, presence: true
   validates :category, presence: true
   validates :story, presence: true, length: { minimum: 75 }
-  validates :google_maps_url, presence: true
+  # validates :google_maps_url, presence: true
 
   # list of tags with method
 
