@@ -6,8 +6,13 @@
   <% @place.visits.each do |visit| %>
   <h6 class="rating-place"><i class="fas fa-seedling"></i> <%= @place.average_reviews %></h6>
   <% end %>
-  <div class="avatar-show avatar-bordered" style="background-image: url(https://kitt.lewagon.com/placeholder/users/krokrob);">
+  <% if @place.user.photo.attached? %>
+    <div class="avatar-show avatar-bordered" style="background-image: url(<%= cl_image_tag @place.user.photo.key %>);">
+  <% else %>
+    <div class="avatar-show avatar-bordered" style="background-image: url(https://avatars2.githubusercontent.com/u/71880114?v=4);">
+  <% end %>
   </div>
+
 
 </div>
 
