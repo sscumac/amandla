@@ -102,10 +102,10 @@
     <div class="ratings-show pt-3 p-2">
       <div class="d-flex justify-content-between">
         <div class="d-flex justify-content-start mt-3 ml-0 ratings-global">
-          <i class="fas fa-seedling" id="leaf"></i> <p id="rating-number">4.9</p>
+          <i class="fas fa-seedling" id="leaf"></i> <p id="rating-number"><%= @place.average_reviews %></p>
         </div>
         <div class="d-flex justify-content-end">
-          <p class="opinions"> <%= Review.count %> reviews</p>
+          <p class="opinions"> <%= @place.reviews.count %> reviews</p>
         </div>
       </div>
 
@@ -114,7 +114,22 @@
 
         <h6 class="ratings-people"><%= review.content  %></h6>
         <div class="d-flex justify-content-left mt-3 ml-0 little-rating">
-          <p id="really-little">4.5</p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+          <p id="really-little"><%= (review.rating).to_f %>
+            <% if review.rating == 5 %>
+              </p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+            <% end %>
+            <% if review.rating == 4 %>
+              </p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+            <% end %>
+            <% if review.rating == 3 %>
+              </p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+            <% end %>
+            <% if review.rating == 2 %>
+              </p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i>
+            <% end %>
+            <% if review.rating == 1 %>
+              </p><i class="fas fa-seedling leafy"></i>
+            <% end %>
         </div>
         <hr>
       <% end %>
