@@ -52,7 +52,7 @@
       <p>Ricky, 13th Dec 2019</p>
       <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere.</h6>
       <div class="d-flex justify-content-between mt-3 mr-2">
-        <button type="button" class="ask-show">ASK THE OWNER</button>
+        <%= link_to "ASK THE OWNER", new_place_question_path(@place), class: 'ask-show' %>
         <button type="button" class="show-more">SHOW MORE <i class="fas fa-caret-down"></i></button>
       </div>
     </div>
