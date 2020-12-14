@@ -1,0 +1,8 @@
+<%= render 'shared/navbar_pages', title: "Leave a question" %>
+<div class="container p-3">
+  <h1><%= @place.name %> </h1>
+  <%= simple_form_for [@place, @question] do |f| %>
+    <%= f.input :content%>
+    <%= f.submit "ASK",  class:"btn-create-business" %>
+  <% end %>
+</div>
