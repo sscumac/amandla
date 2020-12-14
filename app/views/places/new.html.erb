@@ -1,6 +1,7 @@
 <%= render 'shared/navbar_pages', title: 'Add your business' %>
-<div class="form container">
-      <%= simple_form_for [@place] do |f| %>
+
+    <%= simple_form_for [@place] do |f| %>
+      <div class="form container">
         <%= f.input :name, :label => "What's your business name?" %>
         <%= f.input :address, :label => "What's the address?" %>
         <%= f.input :category, as: :radio_buttons,
@@ -18,7 +19,6 @@
             input_html: {class: 'category-selector'},
             :label => "Which critiria do you fulfil? (Choose as many you need)",
             as: :check_boxes, collection: Place.all_tags %>
-            <%= f.input :google_maps_url, :label => "What's your google.map link?" %>
 
         <%= f.input :story, :label => "Tell us more (will be displayed)" %>
 
@@ -30,10 +30,6 @@
             as: :file %>
           <%= image_tag "", width: 200, class: "d-none", id: "photo-preview" %>
         </div>
-
-        <%= f.submit "Create",  class:"btn-create-business" %>
-      <% end %>
-    </div>
-  </div>
-
-</div>
+      </div>
+      <%= f.submit "Create",  class:"btn-create-business px-0" %>
+    <% end %>
