@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
-
+    
     filter_by_location
 
     @markers = @places.map do |place|
@@ -17,6 +17,8 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    # @questions = Question.find(@place.question_ids)
+    @answered_questions = @place.user.answered_questions
     @markers = [{
       lat: @place.latitude,
       lng: @place.longitude,

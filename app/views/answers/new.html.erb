@@ -1,8 +1,8 @@
 <%= render 'shared/navbar_pages', title: "Answer a question" %>
 <div class="container p-3">
-  <h1><%= @question.content %> </h1>
+  <h5><%= @question.content %> </h5>
   <%= simple_form_for [@question, @answer] do |f| %>
-    <%= f.input :content%>
+    <%= f.input :content, label: "Your answer", notice: "Answer submitted" %>
     <%= f.submit "ANSWER",  class:"btn-create-business" %>
   <% end %>
 </div>

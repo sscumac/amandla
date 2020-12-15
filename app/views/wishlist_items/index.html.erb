@@ -7,7 +7,7 @@
   <% @wishlist_items.each do |item| %>
     <div class="place-card">
       <% if current_user.on_wishlist?(item.place) %>
-        <%=  link_to wishlist_item_path(current_user.wishlist_item_of(item.place)), method: :delete, remote: true do %>
+        <%=  link_to wishlist_item_path(current_user.wishlist_item_of(item.place), wishlist: true), method: :delete, remote: true do %>
           <i class="fas fa-heart wish-icon"></i>
         <% end  %>
       <% else %>

@@ -1,5 +1,6 @@
 <%= render 'shared/navbar_main' %>
   <div class="container">
+
     <% if user_signed_in? %>
       <div class="user-info">
         <div class="user-image" style="margin-top: 20px;">
@@ -7,9 +8,11 @@
         </div>
         <br>
         <div class="account-items">
+          <% if current_user.place.present? %>
           <div class="account-item">
-            <%= link_to "Messages", "#", class: "account-link" %>
+            <%= link_to "Open Questions", questions_path , class: "account-link" %>
           </div>
+          <% end %>
 
           <div class="account-item">
             <%= link_to "Recently visited", visits_path, class: "account-link" %>

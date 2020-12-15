@@ -1,8 +1,78 @@
 .mapboxgl-popup {
-  max-width: 200px;
+  min-width: 200px;
+
 }
 
 .mapboxgl-popup-content {
+  min-width: 180px;
+  max-width: 180px;
+  max-width: 180px;
+  max-height: 180px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  padding: 0px;
+  border-radius: 10px;
+    &:focus {
+      border: none;
+      outline: none;
+    }
 }
+
+.mapboxgl-popup-close-button {
+  font-size: 25px;
+  font-weight: 500;
+  color:rgba(252, 237, 203, 1);
+  top: 3px;
+  right: 3px;
+
+}
+
+.mapboxgl-canvas:focus, .place-card-link:focus {
+  border: none;
+  outline: none;
+}
+
+.card-image-map {
+  background-size: cover;
+  height: 180px;
+  background-position: center center;
+  color: white;
+  border-radius: 10px;
+  position: relative;
+}
+
+.card-container-map {
+  text-align: center;
+}
+
+
+.place-card-link {
+  text-decoration: none;
+  color: black;
+   &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.card-place-name-map {
+  padding-top: 60px;
+  margin-left: 6px;
+  margin-right: 6px;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.card-category-map {
+  color: rgba(252, 237, 203, 1);
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+
+
