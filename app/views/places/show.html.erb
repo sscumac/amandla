@@ -80,13 +80,13 @@
 
     <div class="question-answer p-4 pb-5">
       <h5>Ask <%= @place.user.first_name %> anything: </h5>
-      <h6> <strong>Q:</strong> where are your coffee beans sourced?</h6>
-      <p>Ricky, 13th Dec 2019</p>
-      <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere.</h6>
-      <hr>
-      <h6> <strong>Q:</strong>  Where are your coffee beans sourced?</h6>
-      <p>Ricky, 13th Dec 2019</p>
-      <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere.</h6>
+
+        <h6> <% @answered_questions.each do |question| %> </h6>
+            <h6> <strong>Q:</strong>  <%= question.content %> </h6>
+            <p> <%= question.user.first_name %>, <%= question.created_at.strftime("%b %d, %Y") %></p>
+            <h6> A: <%= question.answer.content %> </h6>
+        <% end %>
+  
       <div class="d-flex justify-content-between mt-3 mr-2">
         <button type="button" class="show-more">SHOW MORE <i class="fas fa-caret-down"></i></button>
         <%= link_to "ASK THE OWNER", new_place_question_path(@place), class: 'btn-dark-green' %>

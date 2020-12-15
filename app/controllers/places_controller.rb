@@ -17,6 +17,8 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    # @questions = Question.find(@place.question_ids)
+    @answered_questions = @place.user.answered_questions
     @markers = [{
       lat: @place.latitude,
       lng: @place.longitude,
