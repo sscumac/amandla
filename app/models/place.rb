@@ -50,4 +50,9 @@ class Place < ApplicationRecord
     self.reviews.sum(:rating).to_f / total_reviews
   end
 
+  def distance_to_place(current_lat, current_lon, place_lat, place_lon)
+    Geocoder::Calculations.distance_between([current_lat, current_lon], [place_lat, place_lon])
+    # Geocoder::Calculations.distance_between([47.858205, 2.294359], [40.748433, -73.985655])
+  end
+
 end

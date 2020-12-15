@@ -44,7 +44,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :category, :google_maps_url, :story, :photo, tag_list: [])
+    params.require(:place).permit(:name, :address, :category, :story, :photo, tag_list: [])
   end
 
   def filter_by_location
@@ -60,4 +60,5 @@ class PlacesController < ApplicationController
       @places = @places.select { |place| params[:tag_list].all? { |tag| place.tag_list.include?(tag) } }
     end
   end
+
 end
