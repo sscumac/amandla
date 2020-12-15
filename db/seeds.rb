@@ -138,7 +138,7 @@ fair_tacos = Place.create!(
     story: "Delicious, authentically-made vegetarian Tacos! Made with plenty of love and good vibes. Come join!",
     google_maps_url: "https://goo.gl/maps/4pmmFKCFF252nzMW9"
 
-   
+
 
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
@@ -206,8 +206,8 @@ woki_organic_market = Place.create!(
     category: "Groceries",
     user: Marc,
     story: "Organic, guilt-free products that nourish your body and help create a better world",
-    google_maps_url: "https://goo.gl/maps/PrMY3WmjbzqppVRF7
-    
+    google_maps_url: "https://goo.gl/maps/PrMY3WmjbzqppVRF7"
+
 
 )
 woki_organic_market.tag_list.add("organic", "fair trade")
