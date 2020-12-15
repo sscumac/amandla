@@ -1,43 +1,26 @@
-<div class="search_by_filter">
-  <div class="container">
-    <div class="filter-content">
-      <%= form_tag places_path , method: :get do %>  <%# form goes has default method "Post", thats why you must spcifiy "get" (Post redirects to Create) %>
-        <div class="search-bar">
-          <%= text_field_tag :location,
-            params[:location],
-            class: "form-control",
-            placeholder: "Filter by location" %>
-        </div>
-        <div class="container-btn-clear">
-          <%= link_to "Clear Filters", places_path, class: "btn-clear-filter" %>
-        </div>
-        <div class="filter-content">
-          <div class="filter-category">
-            <h5 class="filter-h5"> Sort by one category </h5>
+<div class="d-none" id="search-filter">
+  <a href="/places" class="icons clear">
+    <i class="fas fa-smile"></i> Give me all!
+  </a>
+  <%= simple_form_for :place, url: places_path, method: :get  do |f| %>
+    <div class="form container">
+      <%= f.input :address, :label => "Find by location", required: false %>
+      <%= f.input :category, as: :radio_buttons,
+          collection_wrapper_tag: 'div',
+          collection_wrapper_class: 'category-wrapper',
+          item_wrapper_class: 'category-item',
+          input_html: {class: 'category-selector'},
+          :label => "Type of business (Choose only one)",
+          as: :radio_buttons, collection: Place.all_cats %>
 
-            <% Place.all_cats.each do |cat| %>
-
-              <%= radio_button_tag 'place_category', cat, @cat == cat, class: "category-selector #{cat.downcase.gsub /\s+/, '_'}"%>
-              <label for="place_category" class="form-check-label collection-radio-buttons collection"><%= cat %></label>
-            <% end %>
-          </div>
-
-          <div class="filter-tag">
-            <h5 class="filter-h5"> Sort by tags (as many you want) </h5>
-
-            <% Place.all_tags.each do |tag| %>
-            <label for="place_tag" class="form-check-label collection_check_box_tag"><%= tag %></label>
-              <br><%= check_box_tag 'tag_list[]', tag, @tag == tag, class: "category-selector" %>
-            <% end %>
-          </div>
-
-          <div class="btn-apply">
-            <%= button_tag(type: "submit") do %>
-            <i class="fas btn-apply-filters"><h6 class="btn-text">APPLY FILTERS</h6></i>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+      <%= f.input :tag_list, as: :radio_buttons,
+          collection_wrapper_tag: 'div',
+          collection_wrapper_class: 'category-wrapper',
+          item_wrapper_class: 'category-item',
+          input_html: {class: 'category-selector'},
+          :label => "Which critiria do you fulfil? (Choose as many you need)",
+          as: :check_boxes, collection: Place.all_tags %>
     </div>
-  </div>
+    <%= f.submit "Apply filters",  class:"btn-create-business px-0" %>
+  <% end %>
 </div>

@@ -30,6 +30,8 @@ import "bootstrap";
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initOwl } from '../plugins/init_owl';
+import { initFilterBtn } from '../components/init_filter_btn';
+import { initMapBtn } from '../components/init_map_btn';
 
 
 // TEMPORARY HERE - UNDER CONSTRUCTION
@@ -64,6 +66,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   previewImageOnFileSelect();
   initOwl();
+  initFilterBtn();
+  initMapBtn();
 });
-
-

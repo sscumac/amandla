@@ -1,0 +1,28 @@
+#search-filter {
+  z-index: 20;
+  position: fixed;
+  top: 67px;
+  overflow-y: scroll;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FEF9EF;
+  margin-bottom: 5vh;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.btn-create-business {
+  position: sticky;
+  bottom: 26px;
+}
+
+.clear {
+  font-size: 18px;
+  padding: 8px;
+  margin-right: 8px;
+  text-align: center;
+  display: block;
+}

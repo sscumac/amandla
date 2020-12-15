@@ -17,8 +17,9 @@ const initMapbox = () => {
         });
 
         const markers = JSON.parse(mapElement.dataset.markers);
-        
-        markers.forEach((marker) => {
+
+        if (markers.length > 0) {
+          markers.forEach((marker) => {
             // Pass the element as an argument to the new marker
             const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
@@ -33,9 +34,11 @@ const initMapbox = () => {
                 .setLngLat([marker.lng, marker.lat])
                 .setPopup(popup)
                 .addTo(map);
-        });
-        
-        fitMapToMarkers(map, markers);
+          });
+
+          fitMapToMarkers(map, markers);
+        }
+
     }
 };
 

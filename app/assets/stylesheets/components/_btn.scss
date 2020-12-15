@@ -28,7 +28,6 @@
     display: block;
     border: none;
 }
-
 .btn-apply {
   position: relative;
   border: none;
@@ -44,26 +43,16 @@
   border: none;
 }
 
-.btn-text {
-  font-family: montserrat;
-  font-weight: 600;
-  font-size: 14px;
+.btn-clear-filters {
+    font-family: montserrat;
+    padding: 16px;
+    background-color: #F7D383;
+    color:#274B53;
+    border-radius: 6px;
+    float: right;
+    margin: 8px 18px 8px 0px;
 }
 
-.container-btn-clear {
-  text-align: center;
-  width: 120px;
-  height: 44px;
-  margin-left: 15px;
-  padding: 10px;
-  background: #F7D383;
-  border-radius: 0px 0px 8px 8px;
-
-}
-
-.btn-clear-filter {
-  font-family: montserrat;
-  font-weight: 600;
-  font-size: 14px;
+a {
   color: #299D90;
 }

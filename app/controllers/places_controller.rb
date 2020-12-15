@@ -1,8 +1,6 @@
 class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
-    # raise
-
 
     filter_by_location
 
@@ -48,16 +46,16 @@ class PlacesController < ApplicationController
   end
 
   def filter_by_location
-    if params[:location].present?
+    if params[:place] && params[:place][:location].present?
       @places = Place.geocoded.near(params[:location], 10)
     else
       @places = Place.geocoded
     end
-    if params[:category].present?
-      @places = @places.select { |place| place.category == params[:category] }
+    if params[:place] && params[:place][:category].present?
+      @places = @places.select { |place| place.category == params[:place][:category] }
     end
-    if params[:tag_list].present?
-      @places = @places.select { |place| params[:tag_list].all? { |tag| place.tag_list.include?(tag) } }
+    if params[:place] && params[:place][:tag_list][1].present?
+      @places = @places.select { |place| params[:place][:tag_list].drop(1).all? { |tag| place.tag_list.include?(tag) } }
     end
   end
 end
