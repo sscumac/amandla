@@ -37,15 +37,16 @@
               <% end %>
             </div>
             <div class="card-details">
-              <div class="item"><i class="fas fa-seedling"></i>4,9</div>
+              <div class="item"><i class="fas fa-seedling"></i>
+                <%= place.average_reviews %>
+              </div>
               <div class="item">0,3 km</div>
             </div>
             <% end %>
-            </div>
           </div>
       <% end %>
   </div>
-</div>
+
 <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"

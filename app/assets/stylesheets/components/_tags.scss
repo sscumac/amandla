@@ -1,9 +1,13 @@
 #place_tag_list_plant-based + label::after {
   content: "\f06c";
+  height: 78px;
+  padding-top: 12px;
 }
 
 #place_tag_list_fair_trade + label::after {
   content: "\f2b5";
+  height: 78px;
+  padding-top: 12px;
 }
 
 #place_tag_list_women_owned +label::after {
@@ -20,8 +24,12 @@
 
 #place_tag_list_organic +label::after {
  content: "\f4d8";
+ height: 78px;
+ padding-top: 12px;
 }
 
 #place_tag_list_vegetarian +label::after {
  content: "\f816";
+ height: 78px;
+ padding-top: 12px;
 }

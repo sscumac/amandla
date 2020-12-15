@@ -13,6 +13,7 @@
     top: 5%;
     right: 5%;
     z-index: 3;
+    font-size: 29px;
   }
 }
 
@@ -75,6 +76,7 @@
 .card-details i {
   color: #299D90;
   padding-right: 2px;
+
 }
 
 .card-details .item {
@@ -95,4 +97,9 @@
   font-size: 14px;
   font-weight: 300;
   line-height: 16px;
+}
+
+.fa-heart:before {
+    content: "\f004";
+    color: #F7D383;
 }

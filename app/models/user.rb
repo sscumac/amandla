@@ -19,6 +19,10 @@ class User < ApplicationRecord
     self.place.questions.select { |question| question.answer.nil? }
   end
 
+  def answered_questions
+    self.place.questions.select { |question| !question.answer.nil? }
+  end
+
   def on_wishlist?(place)
     self.wishlist_items.any?{|wish| wish.place == place}
   end

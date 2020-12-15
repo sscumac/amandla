@@ -1,5 +1,4 @@
 class VisitsController < ApplicationController
-
   def index
     @visits = current_user.visits
   end
@@ -9,10 +8,10 @@ class VisitsController < ApplicationController
     @visit = Visit.new(user: current_user)
     @visit.place = @place
     if @visit.save
-      redirect_to @place.google_maps_url, notice: "successfull" #when visits index page set up, redirect to that page
+      # redirect_to @place.google_maps_url, notice: "successfull" #when visits index page set up, redirect to that page
+      redirect_to "https://www.google.com/maps/dir//#{@place.latitude},#{@place.longitude}"
     else
       redirect_to place_path(@place), notice: "boooo"
     end
   end
-
 end
