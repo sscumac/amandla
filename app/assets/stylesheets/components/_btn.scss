@@ -28,3 +28,40 @@
     display: block;
     border: none;
 }
+
+.btn-dark-green {
+  all: unset;
+  background-color: #1D373C;
+  color: #F7D383;
+  font-size: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.position-bottom {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+}
+
+.btn-link-green {
+  all: unset;
+  color: #274B53;
+  font-size: 12px;
+  width: 100px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: #274B53;
+  }
+}
+
+.position-bottom-left {
+  position: absolute;
+  bottom: 20px;
+  left: 14px;
+  text-decoration: none;
+}
+
