@@ -28,3 +28,42 @@
     display: block;
     border: none;
 }
+
+.btn-apply {
+  position: relative;
+  border: none;
+}
+
+.btn-apply-filters {
+  color: #F7D383;
+  background-color: #299D90;
+  text-transform: uppercase;
+  width: 300px;
+  padding: 16px;
+  display: block;
+  border: none;
+}
+
+.btn-text {
+  font-family: montserrat;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.container-btn-clear {
+  text-align: center;
+  width: 120px;
+  height: 44px;
+  margin-left: 15px;
+  padding: 10px;
+  background: #F7D383;
+  border-radius: 0px 0px 8px 8px;
+
+}
+
+.btn-clear-filter {
+  font-family: montserrat;
+  font-weight: 600;
+  font-size: 14px;
+  color: #299D90;
+}
