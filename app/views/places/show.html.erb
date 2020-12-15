@@ -2,9 +2,7 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= cl_image_path @place.photo.key, crop: :fill %>)">
   <h1><%= @place.name %> </h1>
   <h6><%= @place.category %> </h6>
-  <% @place.visits.each do |visit| %>
   <h6 class="rating-place"><i class="fas fa-seedling"></i> <%= (@place.average_reviews).truncate(1) %></h6>
-  <% end %>
   <% if @place.user.photo.attached? %>
     <div class="avatar-show avatar-bordered" style="background-image: url(<%= cl_image_tag @place.user.photo.key %>);">
   <% else %>
@@ -81,16 +79,48 @@
     <div class="question-answer p-4 pb-5">
       <h5>Ask <%= @place.user.first_name %> anything: </h5>
 
-        <h6> <% @answered_questions.each do |question| %> </h6>
-            <h6> <strong>Q:</strong>  <%= question.content %> </h6>
-            <p> <%= question.user.first_name %>, <%= question.created_at.strftime("%b %d, %Y") %></p>
-            <h6> A: <%= question.answer.content %> </h6>
+        <% @answered_questions.first(3).each do |question| %>
+          <h6> <strong>Q:</strong>  <%= question.content %> </h6>
+          <p> <%= question.user.first_name %>, <%= question.created_at.strftime("%b %d, %Y") %></p>
+          <h6> A: <%= question.answer.content %> </h6>
+          <hr>
         <% end %>
-  
-      <div class="d-flex justify-content-between mt-3 mr-2">
-        <button type="button" class="show-more">SHOW MORE <i class="fas fa-caret-down"></i></button>
-        <%= link_to "ASK THE OWNER", new_place_question_path(@place), class: 'btn-dark-green' %>
-      </div>
+
+        <p>
+          <a class="btn-link-green position-bottom-left" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            SHOW MORE <i class="fas fa-caret-down"></i>
+          </a>
+        </p>
+
+        <div class="collapse" id="collapseExample">
+          <div class="ratings-people">
+            <% @answered_questions[3..-1].each do |question| %>
+              <h6> <strong>Q:</strong>  <%= question.content %> </h6>
+              <p> <%= question.user.first_name %>, <%= question.created_at.strftime("%b %d, %Y") %></p>
+              <h6> A: <%= question.answer.content %> </h6>
+              <hr>
+            <% end %>
+          </div>
+        </div>
+        <%= link_to "ASK THE OWNER", new_place_question_path(@place), class: 'btn-dark-green position-bottom' %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
     <div class="ratings-show p-4 pb-5">
@@ -129,13 +159,13 @@
       <% end %>
 
       <p>
-        <a class="btn-link-green position-bottom-left" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a class="btn-link-green position-bottom-left" data-toggle="collapse" href="#collapseReviews" role="button" aria-expanded="false" aria-controls="collapseReviews">
           SHOW MORE <i class="fas fa-caret-down"></i>
         </a>
       </p>
-      <div class="collapse" id="collapseExample">
+      <div class="collapse" id="collapseReviews">
         <div class="ratings-people">
-          <% @place.reviews.first(3).each do |review| %>
+          <% @place.reviews[3..-1].each do |review| %>
             <p id="who-said"> <%= review.visit.user.first_name %>, <%= review.created_at.strftime("%b %d, %Y") %> </p>
 
             <h6 class="ratings-people"><%= review.content  %></h6>
@@ -162,8 +192,8 @@
         </div>
       </div>
       <% if current_user.visits.any? { |visit| visit.place == @place } %>
-          <%= button_to "LEAVE AN OPINION", new_visit_review_path(current_user.visits.find_by(place: @place)), class: "btn-dark-green position-bottom", method: :get %>
-        <% end %>
+        <%= button_to "LEAVE AN OPINION", new_visit_review_path(current_user.visits.find_by(place: @place)), class: "btn-dark-green position-bottom", method: :get %>
+      <% end %>
     </div>
 
 

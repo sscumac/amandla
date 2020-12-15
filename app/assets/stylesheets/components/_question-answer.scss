@@ -1,5 +1,12 @@
 .question-answer {
   background-color: #274B53;
+  position: relative;
+
+  .btn-link-green.position-bottom-left {
+    color: #FCEDCB;
+    bottom: 24px;
+    left: 24px;
+  }
 }
 
 .question-answer h5 {
