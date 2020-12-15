@@ -1,13 +1,17 @@
 <div class="home-wrapper">
-  <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    <% if current_user %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    <% else  %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    <% end %>
     <div class="home-content">
-      <div class="logo">
-<!--! Place the logo here -->
+      <div class="logo-home">
+        <img src="https://res.cloudinary.com/dpnjiruwh/image/upload/v1607942783/Amandla_logo_oqhbdp.png" alt="Amandla" width="300px">
       </div>
       <div class="home-text-icon">
         <h2 class="h2-home">Help create the<br>change</h2>
-        <i class="fas fa-map-marker-alt"></i>
-        <h5 class="h5-home">SUPPORT BUSINESSES THAT ARE ALIGNED<br>WITH YOUR BELIEFS.</h5>
+        <i class="fas fa-globe-americas"></i>
+        <h5 class="h5-home">SUPPORT BUSINESSES THAT ARE ALIGNED WITH YOUR BELIEFS.</h5>
         <div class="search-bar">
           <%= form_tag places_path, method: :get do %>
             <%= text_field_tag :location,
@@ -15,7 +19,7 @@
               class: "form-control",
               placeholder: "Introduce your location" %>
             <%= button_tag(type: "submit", class: "btn-search") do %>
-              <i class="fas fa-search"></i>
+              <i class="fas fa-map-marker-alt"></i>
             <% end %>
           <% end %>
         </div>

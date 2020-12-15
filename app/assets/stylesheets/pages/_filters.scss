@@ -1,0 +1,81 @@
+.filter-h5{
+  font-family: montserrat;
+  font-weight: 100;
+  color: #1D373C;
+  font-size: 16px;
+}
+
+.search_by_filter {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  border-radius: 8px;
+  z-index: 10;
+  background-color: white;
+}
+
+.filter-content {
+  text-align: center;
+  height: 80vh;
+}
+
+.filter-category {
+  text-align: left;
+}
+
+.filter-tag{
+  text-align: left;
+}
+
+
+.bar + label::after {
+  content: "\f561";
+}
+
+.bar:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+
+.restaurant + label::after {
+  content: "\f2e7";
+}
+
+#place_category_Restaurant:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+
+.cafe + label::after {
+  content: "\f0f4";
+}
+
+#place_category_Cafe:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+.clothing_and_fabrics + label::after {
+  content: "\f553";
+}
+
+#place_category_Clothing_and_fabrics:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+.groceries + label::after {
+  content: "\f07a";
+}
+
+#place_category_Groceries:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
+.beauty_and_wellness + label::after {
+  content: "\f5bb";
+}
+
+#place_category_Beauty_and_wellness:checked + label {
+  border-color: #299D90;
+  color: #299D90;
+}
