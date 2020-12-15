@@ -1,8 +1,10 @@
 class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
-    # raise
+    
     filter_by_location
+    
+    @location_coord = Geocoder.search(params[:location]).first.coordinates
 
     @markers = @places.map do |place|
 
