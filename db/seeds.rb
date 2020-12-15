@@ -145,6 +145,7 @@ fair_tacos = Place.create!(
     user: Dani,
     story: "Delicious, authentically-made vegetarian Tacos! Made with plenty of love and good vibes. Come join!"
    
+
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
 
