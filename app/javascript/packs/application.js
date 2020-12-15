@@ -30,6 +30,8 @@ import "bootstrap";
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initOwl } from '../plugins/init_owl';
+import { initStarRating } from '../plugins/init_star_rating';
+
 
 
 // TEMPORARY HERE - UNDER CONSTRUCTION
@@ -65,5 +67,8 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   initOwl();
 });
+
+initStarRating();
+
 
 
