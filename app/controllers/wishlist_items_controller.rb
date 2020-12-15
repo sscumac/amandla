@@ -9,7 +9,11 @@ class WishlistItemsController < ApplicationController
     @wishlist = WishlistItem.new(user: current_user)
     @wishlist.place = @place
     if @wishlist.save
-      redirect_to places_path(anchor: "place_#{@place.id}")
+      if params[:visits] == "true"
+        redirect_to visits_path( anchor: "place_#{@place.id}")
+      else
+        redirect_to places_path(anchor: "place_#{@place.id}")
+      end
     else
       redirect_to place_path(@place), notice: "boooo"
     end
@@ -18,7 +22,13 @@ class WishlistItemsController < ApplicationController
   def destroy
     @wishlist = WishlistItem.find(params[:id])
     @wishlist.destroy
-    redirect_to places_path( anchor: "place_#{@wishlist.place.id}")
+    if params[:wishlist] == "true"
+      redirect_to wishlist_items_path
+    elsif params[:visits] == "true"
+      redirect_to visits_path( anchor: "place_#{@wishlist.place.id}")
+    else
+      redirect_to places_path( anchor: "place_#{@wishlist.place.id}")
+    end
   end
 
 end

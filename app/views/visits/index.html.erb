@@ -8,13 +8,13 @@
   <% @visits.each do |visit| %>
 
 
-    <div class="place-card">
+    <div class="place-card" id="place_<%=visit.place.id %>">
       <% if current_user.on_wishlist?(visit.place) %>
-        <%=  link_to wishlist_item_path(current_user.wishlist_item_of(visit.place)), method: :delete, remote: true do %>
+        <%=  link_to wishlist_item_path(current_user.wishlist_item_of(visit.place), visits: true), method: :delete, remote: true do %>
           <i class="fas fa-heart wish-icon"></i>
         <% end  %>
       <% else %>
-        <%=  link_to place_wishlist_items_path(visit.place), method: :post, remote: true do %>
+        <%=  link_to place_wishlist_items_path(visit.place, visits: true), method: :post, remote: true do %>
           <i class="far fa-heart wish-icon"></i>
         <% end  %>
       <% end  %>
