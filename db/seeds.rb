@@ -144,8 +144,6 @@ fair_tacos = Place.create!(
     category: "Restaurant",
     user: Dani,
     story: "Delicious, authentically-made vegetarian Tacos! Made with plenty of love and good vibes. Come join!"
-   
-
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
 
@@ -176,7 +174,6 @@ les_tres_gourmets = Place.create!(
     category: "Restaurant",
     user: Blanca,
     story: "We make delicious, home-made meals made with love, using only seasonal vegetables most of which are locally-sourced"
-
 )
 les_tres_gourmets.tag_list.add("women owned", "organic", "vegetarian")
 

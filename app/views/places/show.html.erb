@@ -1,22 +1,17 @@
-
 <%= render 'shared/navbar_main' %>
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= cl_image_path @place.photo.key, crop: :fill %>)">
   <h1><%= @place.name %> </h1>
   <h6><%= @place.category %> </h6>
   <% @place.visits.each do |visit| %>
-  <h6 class="rating-place"><i class="fas fa-seedling"></i> <%= @place.average_reviews %></h6>
+  <h6 class="rating-place"><i class="fas fa-seedling"></i> <%= (@place.average_reviews).truncate(1) %></h6>
   <% end %>
   <% if @place.user.photo.attached? %>
     <div class="avatar-show avatar-bordered" style="background-image: url(<%= cl_image_tag @place.user.photo.key %>);">
   <% else %>
-    <div class="avatar-show avatar-bordered" style="background-image: url(https://avatars2.githubusercontent.com/u/71880114?v=4);">
+    <div class="avatar-show avatar-bordered" style="background-image: url(https://image.shutterstock.com/image-vector/default-avatar-profile-icon-grey-260nw-1545687092.jpg);">
   <% end %>
   </div>
-
-
 </div>
-
-
 
 <div class="card-show">
   <p><strong><%= @place.user.first_name %></strong>  </p>
@@ -68,28 +63,22 @@
     <% end %>
   </div>
 
+  <p class="p-4"><strong><%= (@place.user.about_me).upcase %></strong> </p>
 
-
-  <p><strong><%= (@place.user.about_me).upcase %></strong> </p>
-
-  <div class="owl-carousel">
+  <div class="owl-carousel carousel-height">
     <div> <img src="https://images.adsttc.com/media/images/5de8/74f9/3312/fdbc/3500/005b/newsletter/Culturist_5.jpg?1575515353" class="w-100"> </div>
     <div> <img src="https://res.cloudinary.com/dpnjiruwh/image/upload/v1607529121/images_xf4hsk.jpg" class="w-100"> </div>
     <div> <img src="https://soycomocomo.es/media/2018/06/forn-veritas.jpg" class="w-100"> </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
   </div>
-
 
 <div>
 
-    <div class="story-show">
+    <div class="story-show px-4">
       <h5 id="about-place">About <%= @place.name %> </h5>
       <p><%= @place.story %> </p>
     </div>
 
-    <div class="question-answer p-2">
+    <div class="question-answer p-4 pb-5">
       <h5>Ask <%= @place.user.first_name %> anything: </h5>
       <h6> <strong>Q:</strong> where are your coffee beans sourced?</h6>
       <p>Ricky, 13th Dec 2019</p>
@@ -99,15 +88,15 @@
       <p>Ricky, 13th Dec 2019</p>
       <h6>A: Our beans  are organically shade-grown and sourced from a social cooperative in Kenyaere.</h6>
       <div class="d-flex justify-content-between mt-3 mr-2">
-        <%= link_to "ASK THE OWNER", new_place_question_path(@place), class: 'ask-show' %>
         <button type="button" class="show-more">SHOW MORE <i class="fas fa-caret-down"></i></button>
+        <%= link_to "ASK THE OWNER", new_place_question_path(@place), class: 'btn-dark-green' %>
       </div>
     </div>
 
-    <div class="ratings-show pt-3 p-2">
+    <div class="ratings-show p-4 pb-5">
       <div class="d-flex justify-content-between">
         <div class="d-flex justify-content-start mt-3 ml-0 ratings-global">
-          <i class="fas fa-seedling" id="leaf"></i> <p id="rating-number"><%= @place.average_reviews %></p>
+          <i class="fas fa-seedling" id="leaf"></i> <p id="rating-number"><%= (@place.average_reviews).truncate(1) %></p>
         </div>
         <div class="d-flex justify-content-end">
           <p class="opinions"> <%= @place.reviews.count %> reviews</p>
@@ -119,7 +108,7 @@
 
         <h6 class="ratings-people"><%= review.content  %></h6>
         <div class="d-flex justify-content-left mt-3 ml-0 little-rating">
-          <p id="really-little"><%= (review.rating).to_f %>
+          <p id="really-little"><%= review.rating %>
             <% if review.rating == 5 %>
               </p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
             <% end %>
@@ -139,17 +128,46 @@
         <hr>
       <% end %>
 
-      <div class="d-flex justify-content-between mt-3 mr-2">
-        <% # TODO: Refactor this into model methods %>
-        <% if current_user.visits.any? { |visit| visit.place == @place } %>
-          <%= button_to "LEAVE AN OPINION", new_visit_review_path(current_user.visits.find_by(place: @place)), class: "ask-show", method: :get %>
-        <% end %>
+      <p>
+        <a class="btn-link-green position-bottom-left" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          SHOW MORE <i class="fas fa-caret-down"></i>
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="ratings-people">
+          <% @place.reviews.first(3).each do |review| %>
+            <p id="who-said"> <%= review.visit.user.first_name %>, <%= review.created_at.strftime("%b %d, %Y") %> </p>
 
-        <button type="button" class="show-more-ratings"><strong>SHOW MORE <i class="fas fa-caret-down"></i></strong> </button>
+            <h6 class="ratings-people"><%= review.content  %></h6>
+            <div class="d-flex justify-content-left mt-3 ml-0 little-rating">
+              <p id="really-little"><%= review.rating %>
+                <% if review.rating == 5 %>
+                  </p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+                <% end %>
+                <% if review.rating == 4 %>
+                  </p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+                <% end %>
+                <% if review.rating == 3 %>
+                  </p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i> <i class="fas fa-seedling leafy"></i>
+                <% end %>
+                <% if review.rating == 2 %>
+                  </p><i class="fas fa-seedling leafy"></i><i class="fas fa-seedling leafy"></i>
+                <% end %>
+                <% if review.rating == 1 %>
+                  </p><i class="fas fa-seedling leafy"></i>
+                <% end %>
+            </div>
+            <hr>
+          <% end %>
+        </div>
       </div>
-
-
+      <% if current_user.visits.any? { |visit| visit.place == @place } %>
+          <%= button_to "LEAVE AN OPINION", new_visit_review_path(current_user.visits.find_by(place: @place)), class: "btn-dark-green position-bottom", method: :get %>
+        <% end %>
     </div>
+
+
+
 </div>
   <div id="map"
      style="width: 100%; height: 600px;"
@@ -167,4 +185,4 @@
 
 
 <% #add googlr maps link to place,place_visits_path(@place) %>
-<%= link_to "lets go!", place_visits_path(@place), method: :post, class: 'card-link' %>
+<%= link_to "Lets go!", place_visits_path(@place), method: :post, class: 'card-link' %>
