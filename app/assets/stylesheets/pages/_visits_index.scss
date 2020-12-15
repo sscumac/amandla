@@ -1,0 +1,37 @@
+.visit-link {
+  a {
+    text-decoration: none !important;
+  }
+}
+
+
+.card-details-visits {
+  height: 50px;
+  background-color: #1D373C;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+    .review {
+        background-color: #1D373C;
+        color: #F7D383;
+        font-size: 12px;
+        padding-top: 15px;
+        text-align: center;
+    }
+}
+
+.card-category {
+  color: #F7D383;
+  font-weight: lighter;
+}
+
+.visit-date {
+  color: white;
+  font-weight: lighter;
+}
+
+
+

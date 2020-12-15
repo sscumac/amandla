@@ -10,6 +10,8 @@
 
 #place_category_bar + label::after {
   content: "\f561";
+  height: 78px;
+  padding-top: 12px;
 }
 
 #place_category_bar:checked + label {
@@ -19,6 +21,8 @@
 
 #place_category_restaurant + label::after {
   content: "\f2e7";
+  height: 78px;
+  padding-top: 12px;
 }
 
 #place_category_restaurant:checked + label {
@@ -28,6 +32,8 @@
 
 #place_category_cafe + label::after {
   content: "\f0f4";
+  height: 78px;
+  padding-top: 12px;
 }
 
 #place_category_cafe:checked + label {
@@ -44,6 +50,8 @@
 }
 #place_category_groceries + label::after {
   content: "\f07a";
+  height: 78px;
+  padding-top: 12px;
 }
 
 #place_category_groceries:checked + label {
