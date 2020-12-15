@@ -66,6 +66,60 @@ Clau = User.create!(
   about_me: "lover of all things real, natural and organic"
 )
 
+
+Blanca = User.create!(
+  email: "blanca@amandla.com",
+  password: "password",
+  first_name: "Blanca",
+  last_name: "Puges",
+  about_me: "Holistic nutritionist, I believe food is the only medicine we need"
+)
+
+Vanessa = User.create!(
+  email: "vanessa@amandla.com",
+  password: "password",
+  first_name: "Vanessa",
+  last_name: "Diaz",
+  about_me: "There needs to be way more harmony between the beauty industry and nature. We hope to lead this charge"
+)
+
+Marc = User.create!(
+  email: "marc@amandla.com",
+  password: "password",
+  first_name: "Marc",
+  last_name: "Santi",
+  about_me: "A strong desire to have a greater connection to, and awareness of, our food and the processes involved"
+)
+
+Lutz = User.create!(
+  email: "lutz@amandla.com",
+  password: "password",
+  first_name: "Lutz",
+  last_name: "Schwenke",
+  about_me: "A passion for the ocean and environmental activism, trying to make clothing more sustainable"
+)
+
+Nasia = User.create!(
+  email: "nasia@amandla.com",
+  password: "password",
+  first_name: "Nasia",
+  last_name: "Burnet",
+  about_me: "All about ethical living!"
+)
+
+Pierre = User.create!(
+  email: "pierre@amandla.com",
+  password: "password",
+  first_name: "Pierre",
+  last_name: "Le Roux",
+  about_me: "Coffee-obsessed husband and father. Want to keep serving the best coffees while ensuring the daughter can do the same one day"
+)
+
+Manu = User.create!(
+  email: "manu@amandla.com",
+  password: "password",
+
+
 Blanca = User.create!(
   email: "blanca@amandla.com",
   password: "password",
@@ -137,7 +191,6 @@ fair_tacos = Place.create!(
     user: Dani,
     story: "Delicious, authentically-made vegetarian Tacos! Made with plenty of love and good vibes. Come join!"
    
-
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
 
@@ -166,9 +219,9 @@ les_tres_gourmets = Place.create!(
     address: "Carrer de Casanova, 118, 08036, Barcelona",
     name: "Les Tres Gourmets",
     category: "Restaurant",
-
     user: Blanca,
     story: "We make delicious, home-made meals made with love, using only seasonal vegetables most of which are locally-sourced"
+
 )
 les_tres_gourmets.tag_list.add("women owned", "organic", "vegetarian")
 
@@ -182,7 +235,6 @@ kaoni_wellbeing = Place.create!(
     address: "Carrer de Saragossa, 39, 08006 Barcelona",
     name: "Kaoni Wellbeing",
     category: "Beauty and Wellness",
-
     user: Vanessa,
     story: "A warm and peaceful space that looks after your wellbeing well being kind to our earth and it's inhabitants"
 )
@@ -214,7 +266,6 @@ two_thirds = Place.create!(
     address: "Carrer del Monestir, 23, 08034 Barcelona",
     name: "Two Thirds",
     category: "Clothing and Fabrics",
-
     user: Lutz,
     story: "Two Thirds is a Barcelona-based Bcorp brand which sells amazing, sustainable clothing for the outdoor enthusiast"
 )
