@@ -5,8 +5,8 @@
 <div class="card-container pt-3">
   <h3> Here are your pending questions </h3>
   <br>
-  <% @questions.each do |question| %>
-  <%# <% @pending_questions.each do |question| %> 
+  <%# <% @questions.each do |question| %> 
+  <% @pending_questions.each do |question| %>
      <%= question.created_at.strftime("%b %d, %Y") %>
      <%= question.content %>
      <%= link_to "Answer question", new_question_answer_path(question), class: "account-link" %>
