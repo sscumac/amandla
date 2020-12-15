@@ -29,6 +29,21 @@
     border: none;
 }
 
+.btn-apply {
+  position: relative;
+  border: none;
+}
+
+.btn-apply-filters {
+    color: #F7D383;
+    background-color: #299D90;
+    text-transform: uppercase;
+    width: 300px;
+    padding: 16px;
+    display: block;
+    border: none;
+}
+
 .btn-dark-green {
   all: unset;
   background-color: #1D373C;
@@ -40,6 +55,20 @@
   padding-bottom: 8px;
 }
 
+.btn-clear-filters {
+    font-family: montserrat;
+    padding: 16px;
+    background-color: #F7D383;
+    color:#274B53;
+    border-radius: 6px;
+    float: right;
+    margin: 8px 18px 8px 0px;
+}
+
+a {
+  color: #299D90;
+}
+  
 .position-bottom {
   position: absolute;
   bottom: 14px;
