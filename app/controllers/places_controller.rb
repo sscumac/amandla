@@ -4,6 +4,9 @@ class PlacesController < ApplicationController
     
     filter_by_location
 
+    location_coord
+    
+
     @markers = @places.map do |place|
 
       {
@@ -44,7 +47,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :category, :google_maps_url, :story, :photo, tag_list: [])
+    params.require(:place).permit(:name, :address, :category, :story, :photo, tag_list: [])
   end
 
   def filter_by_location
@@ -60,4 +63,13 @@ class PlacesController < ApplicationController
       @places = @places.select { |place| params[:place][:tag_list].drop(1).all? { |tag| place.tag_list.include?(tag) } }
     end
   end
+
+  def location_coord
+    if params[:location].present?
+      @location_coord = Geocoder.search(params[:location]).first.coordinates
+    else
+      @location_coord = [41.40539057735755, 2.1647695790020993] # lewagon barcelona
+    end
+  end
+
 end
