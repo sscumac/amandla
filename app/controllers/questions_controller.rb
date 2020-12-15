@@ -1,8 +1,8 @@
 class QuestionsController < ApplicationController
 
   def index
-    # @pending_questions = current_user.pending_questions
-    @questions = Question.all
+    @pending_questions = current_user.pending_questions
+    # @questions = Question.all
 
   end
 
@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
     @question.place = @place
     @question.user = current_user
     if @question.save
-      redirect_to place_path(@place), notice: "Question succesfully asked"
+      redirect_to place_path(@place), notice: "Question submitted"
     else
       render :new
     end

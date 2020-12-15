@@ -49,6 +49,14 @@ Louis = User.create!(
   last_name: "Duquesne",
   about_me: "If I dont win you over with my charm and moves, I'll win you over with my cooking"
 )
+
+Ricky = User.create!(
+  email: "ricky@amandla.com",
+  password: "password",
+  first_name: "Ricky",
+  last_name: "Schoeman",
+  about_me: "New to Barcelona, keen to explore!"
+)
 #business owner users
 Dani = User.create!(
   email: "dani@amandla.com",
@@ -135,11 +143,7 @@ fair_tacos = Place.create!(
     name: "Fair Tacos",
     category: "Restaurant",
     user: Dani,
-    story: "Delicious, authentically-made vegetarian Tacos! Made with plenty of love and good vibes. Come join!",
-
-
-
-
+    story: "Delicious, authentically-made vegetarian Tacos! Made with plenty of love and good vibes. Come join!"
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
 
@@ -154,8 +158,7 @@ hansel_and_granel = Place.create!(
     name: "Hansel & Granel",
     category: "Groceries",
     user: Clau,
-    story: "I left behind 13 years of work in a non-profit foundation to set up Handsel y Granel a few months ago, an intimate and careful establishment that sells products in bulk.",
-    #
+    story: "I left behind 13 years of work in a non-profit foundation to set up Handsel y Granel a few months ago, an intimate and careful establishment that sells products in bulk."
 )
 hansel_and_granel.tag_list.add("women owned", "organic", "fair trade")
 
@@ -169,10 +172,8 @@ les_tres_gourmets = Place.create!(
     address: "Carrer de Casanova, 118, 08036, Barcelona",
     name: "Les Tres Gourmets",
     category: "Restaurant",
-
     user: Blanca,
-    story: "We make delicious, home-made meals made with love, using only seasonal vegetables most of which are locally-sourced",
-
+    story: "We make delicious, home-made meals made with love, using only seasonal vegetables most of which are locally-sourced"
 )
 les_tres_gourmets.tag_list.add("women owned", "organic", "vegetarian")
 
@@ -186,11 +187,8 @@ kaoni_wellbeing = Place.create!(
     address: "Carrer de Saragossa, 39, 08006 Barcelona",
     name: "Kaoni Wellbeing",
     category: "Beauty and Wellness",
-
     user: Vanessa,
-    story: "A warm and peaceful space that looks after your wellbeing well being kind to our earth and it's inhabitants",
-
-
+    story: "A warm and peaceful space that looks after your wellbeing well being kind to our earth and it's inhabitants"
 )
 kaoni_wellbeing.tag_list.add("women owned", "organic", "fair trade")
 
@@ -205,10 +203,7 @@ woki_organic_market = Place.create!(
     name: "Woki Organic Market",
     category: "Groceries",
     user: Marc,
-    story: "Organic, guilt-free products that nourish your body and help create a better world",
-
-
-
+    story: "Organic, guilt-free products that nourish your body and help create a better world"
 )
 woki_organic_market.tag_list.add("organic", "fair trade")
 
@@ -223,11 +218,8 @@ two_thirds = Place.create!(
     address: "Carrer del Monestir, 23, 08034 Barcelona",
     name: "Two Thirds",
     category: "Clothing and Fabrics",
-
     user: Lutz,
-    story: "Two Thirds is a Barcelona-based Bcorp brand which sells amazing, sustainable clothing for the outdoor enthusiast",
-
-
+    story: "Two Thirds is a Barcelona-based Bcorp brand which sells amazing, sustainable clothing for the outdoor enthusiast"
 )
 two_thirds.tag_list.add("organic", "fair trade")
 
@@ -242,8 +234,7 @@ sukhi_rugs = Place.create!(
     name: "Sukhi Rugs",
     category: "Clothing and Fabrics",
     user: Nasia,
-    story: "I left behind 13 years of work in a non-profit foundation to set up Rukhi a few months ago, an intimate and careful establishment that sells the best, sustainably-made rugs",
-    #
+    story: "I left behind 13 years of work in a non-profit foundation to set up Rukhi a few months ago, an intimate and careful establishment that sells the best, sustainably-made rugs"
 )
 sukhi_rugs.tag_list.add("women owned", "organic", "fair trade")
 
@@ -258,8 +249,7 @@ nomad_coffee_lab = Place.create!(
     name: "Nomad Coffee Lab",
     category: "Cafe",
     user: Pierre,
-    story: "I left behind 13 years of work in a non-profit foundation to set up Nomad a few months ago, an intimate and careful establishment that makes incredible coffee, guilt-free",
-    #
+    story: "I left behind 13 years of work in a non-profit foundation to set up Nomad a few months ago, an intimate and careful establishment that makes incredible coffee, guilt-free"
 )
 nomad_coffee_lab.tag_list.add("organic", "fair trade")
 
@@ -274,8 +264,7 @@ restaurant_ohbo = Place.create!(
     name: "Restaurant Ohbo",
     category: "Restaurant",
     user: Manu,
-    story: "I left behind 13 years of work in a non-profit foundation to set up Ohbo a few months ago, an intimate and careful establishment that makes delicious organic food",
-    #
+    story: "I left behind 13 years of work in a non-profit foundation to set up Ohbo a few months ago, an intimate and careful establishment that makes delicious organic food"
 )
 restaurant_ohbo.tag_list.add("organic")
 
@@ -290,8 +279,7 @@ the_magnificent = Place.create!(
     name: "The Magnificent",
     category: "Cafe",
     user: Lisa,
-    story: "I left behind 13 years of work in a non-profit foundation to set up The Magnificent a few months ago, an intimate and careful establishment that makes lovely coffee",
-    #
+    story: "I left behind 13 years of work in a non-profit foundation to set up The Magnificent a few months ago, an intimate and careful establishment that makes lovely coffee"
 )
 the_magnificent.tag_list.add("women owned","fair trade")
 
@@ -307,10 +295,6 @@ wishlist_item_1 = WishlistItem.create!(
   place: fair_tacos
 )
 
-visit_1 = Visit.create!(
-  user: Renan,
-  place: fair_tacos
-)
 
 #fair tacos Questions
 question_1 = Question.create!(
@@ -914,6 +898,106 @@ answer_50 = Answer.create!(
   content: "Yes we are expanding to other parts of the city"
 )
 
+visit_1 = Visit.create!(
+  user: Renan,
+  place: fair_tacos
+)
+
+visit_2 = Visit.create!(
+  user: Jaume,
+  place: fair_tacos
+)
+
+visit_3 = Visit.create!(
+  user: Ana,
+  place: fair_tacos
+)
+
+visit_4 = Visit.create!(
+  user: Ana,
+  place: hansel_and_granel
+)
+
+visit_5 = Visit.create!(
+  user: Leonardo,
+  place: hansel_and_granel
+)
+
+visit_6 = Visit.create!(
+  user: Louis,
+  place: hansel_and_granel
+)
+
+visit_7 = Visit.create!(
+  user: Louis,
+  place: kaoni_wellbeing
+)
+
+visit_8 = Visit.create!(
+  user: Ana,
+  place: kaoni_wellbeing
+)
+
+visit_9 = Visit.create!(
+  user: Jaume,
+  place: kaoni_wellbeing
+)
+
+visit_10 = Visit.create!(
+  user: Renan,
+  place: kaoni_wellbeing
+)
+
+visit_11 = Visit.create!(
+  user: Leonardo,
+  place: kaoni_wellbeing
+)
+
+visit_12 = Visit.create!(
+  user: Ricky,
+  place: hansel_and_granel
+)
+
+visit_13 = Visit.create!(
+  user: Ricky,
+  place: les_tres_gourmets
+)
+
+visit_14 = Visit.create!(
+  user: Ricky,
+  place: two_thirds
+)
+
+visit_15 = Visit.create!(
+  user: Renan,
+  place: woki_organic_market
+)
+
+visit_16 = Visit.create!(
+  user: Jaume,
+  place: sukhi_rugs
+)
+
+visit_17 = Visit.create!(
+  user: Louis,
+  place: nomad_coffee_lab
+)
+
+visit_18 = Visit.create!(
+  user: Leonardo,
+  place: restaurant_ohbo
+)
+
+visit_19 = Visit.create!(
+  user: Ricky,
+  place: the_magnificent
+)
+
+visit_20 = Visit.create!(
+  user: Louis,
+  place: the_magnificent
+)
+
 review_1 = Review.create!(
   visit: visit_1,
   content: "Favorite place in the city!",
@@ -921,88 +1005,118 @@ review_1 = Review.create!(
 )
 
 review_2 = Review.create!(
-  visit: visit_1,
+  visit: visit_2,
   content: "Magical place doing their bit. Highly recommend",
-  rating: 5
+  rating: 4
 )
 
 review_3 = Review.create!(
-  visit: visit_1,
+  visit: visit_3,
   content: "Really cool spot with everything you need, guilt-free",
   rating: 4
 )
 
-# review_1 = Review.create!(
-#   visit: visit_2,
-#   content: "Favorite place in the city!",
-#   rating: 5
-# )
+review_4 = Review.create!(
+  visit: visit_4,
+  content: "I can really hard to please, but this place did just that!",
+  rating: 3
+)
 
-# review_2 = Review.create!(
-#   visit: visit_2,
-#   content: "Magical place doing their bit. Highly recommend",
-#   rating: 5
-# )
+review_5 = Review.create!(
+  visit: visit_5,
+  content: "Great place, great to meet and chat to the lovely owner too",
+  rating: 4
+)
 
-# review_3 = Review.create!(
-#   visit: visit_2,
-#   content: "Really cool spot with everything you need, guilt-free",
-#   rating: 4
-# )
+review_6 = Review.create!(
+  visit: visit_6,
+  content: "Favorite place in the city!",
+  rating: 5
+)
 
-# review_1 = Review.create!(
-#   visit: visit_3,
-#   content: "Favorite place in the city!",
-#   rating: 5
-# )
+review_7 = Review.create!(
+  visit: visit_7,
+  content: "Magical place doing their bit. Highly recommend",
+  rating: 5
+)
 
-# review_2 = Review.create!(
-#   visit: visit_3,
-#   content: "Magical place doing their bit. Highly recommend",
-#   rating: 5
-# )
+review_8 = Review.create!(
+  visit: visit_8,
+  content: "Really cool spot with everything you need, guilt-free",
+  rating: 4
+)
 
-# review_3 = Review.create!(
-#   visit: visit_3,
-#   content: "Really cool spot with everything you need, guilt-free",
-#   rating: 4
-# )
+review_9 = Review.create!(
+  visit: visit_9,
+  content: "Favorite place in the city!",
+  rating: 5
+)
 
-# review_1 = Review.create!(
-#   visit: visit_4,
-#   content: "Favorite place in the city!",
-#   rating: 5
-# )
+review_10 = Review.create!(
+  visit: visit_10,
+  content: "Magical place doing their bit. Highly recommend",
+  rating: 5
+)
 
-# review_2 = Review.create!(
-#   visit: visit_4,
-#   content: "Magical place doing their bit. Highly recommend",
-#   rating: 5
-# )
+review_11 = Review.create!(
+  visit: visit_11,
+  content: "Really cool spot with everything you need, guilt-free",
+  rating: 4
+)
 
-# review_3 = Review.create!(
-#   visit: visit_4,
-#   content: "Really cool spot with everything you need, guilt-free",
-#   rating: 4
-# )
+review_12 = Review.create!(
+  visit: visit_12,
+  content: "A new favorite!",
+  rating: 4
+)
 
-# review_1 = Review.create!(
-#   visit: visit_5,
-#   content: "Favorite place in the city!",
-#   rating: 5
-# )
+review_13 = Review.create!(
+  visit: visit_13,
+  content: "Food is sooooo good!",
+  rating: 4
+)
 
-# review_2 = Review.create!(
-#   visit: visit_5,
-#   content: "Magical place doing their bit. Highly recommend",
-#   rating: 5
-# )
+review_14 = Review.create!(
+  visit: visit_14,
+  content: "In love with their clothing!",
+  rating: 4
+)
 
-# review_3 = Review.create!(
-#   visit: visit_5,
-#   content: "Really cool spot with everything you need, guilt-free",
-#   rating: 4
-# )
+review_15 = Review.create!(
+  visit: visit_15,
+  content: "Favorite place in the city!",
+  rating: 5
+)
+
+review_16 = Review.create!(
+  visit: visit_16,
+  content: "Magical place doing their bit. Highly recommend",
+  rating: 5
+)
+
+review_17 = Review.create!(
+  visit: visit_17,
+  content: "Really cool spot with everything you need, guilt-free",
+  rating: 4
+)
+
+review_18 = Review.create!(
+  visit: visit_18,
+  content: "I used to find healthy, organic food boring. Not anymore!",
+  rating: 4
+)
+
+review_19 = Review.create!(
+  visit: visit_19,
+  content: "Amazing cafe! Could spend all day here!",
+  rating: 4
+)
+
+review_20 = Review.create!(
+  visit: visit_20,
+  content: "Good coffee, food, and music. Ticks all the boxes",
+  rating: 5
+)
 
 
 puts "total users: #{User.count}"
