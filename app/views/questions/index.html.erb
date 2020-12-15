@@ -9,6 +9,7 @@
   <%# <% @pending_questions.each do |question| %> 
      <%= question.created_at.strftime("%b %d, %Y") %>
      <%= question.content %>
+     <%= link_to "Answer question", new_question_answer_path(question), class: "account-link" %>
     <% end %>
   <%# <%= button_to "LEAVE AN OPINION", new_visit_review_path(visit), class: "ask-show", method: :get %>
 </div>
