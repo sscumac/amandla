@@ -135,9 +135,7 @@ fair_tacos = Place.create!(
     name: "Fair Tacos",
     category: "Restaurant",
     user: Dani,
-    story: "Delicious, authentically-made vegetarian Tacos! Made with plenty of love and good vibes. Come join!",
-    google_maps_url: "https://goo.gl/maps/4pmmFKCFF252nzMW9"
-
+    story: "Delicious, authentically-made vegetarian Tacos! Made with plenty of love and good vibes. Come join!"
    
 
 )
@@ -154,8 +152,7 @@ hansel_and_granel = Place.create!(
     name: "Hansel & Granel",
     category: "Groceries",
     user: Clau,
-    story: "I left behind 13 years of work in a non-profit foundation to set up Handsel y Granel a few months ago, an intimate and careful establishment that sells products in bulk.",
-    # google_maps_url: "https://goo.gl/maps/3Pirr9QFGQ4XTd6v7"
+    story: "I left behind 13 years of work in a non-profit foundation to set up Handsel y Granel a few months ago, an intimate and careful establishment that sells products in bulk."
 )
 hansel_and_granel.tag_list.add("women owned", "organic", "fair trade")
 
@@ -171,8 +168,7 @@ les_tres_gourmets = Place.create!(
     category: "Restaurant",
 
     user: Blanca,
-    story: "We make delicious, home-made meals made with love, using only seasonal vegetables most of which are locally-sourced",
-    google_maps_url: "https://g.page/lestresgourmets?share"
+    story: "We make delicious, home-made meals made with love, using only seasonal vegetables most of which are locally-sourced"
 )
 les_tres_gourmets.tag_list.add("women owned", "organic", "vegetarian")
 
@@ -188,9 +184,7 @@ kaoni_wellbeing = Place.create!(
     category: "Beauty and Wellness",
 
     user: Vanessa,
-    story: "A warm and peaceful space that looks after your wellbeing well being kind to our earth and it's inhabitants",
-    google_maps_url: "https://goo.gl/maps/huwsN2qJQXkxGjRu6"
-
+    story: "A warm and peaceful space that looks after your wellbeing well being kind to our earth and it's inhabitants"
 )
 kaoni_wellbeing.tag_list.add("women owned", "organic", "fair trade")
 
@@ -205,10 +199,7 @@ woki_organic_market = Place.create!(
     name: "Woki Organic Market",
     category: "Groceries",
     user: Marc,
-    story: "Organic, guilt-free products that nourish your body and help create a better world",
-    google_maps_url: "https://goo.gl/maps/PrMY3WmjbzqppVRF7"
-    
-
+    story: "Organic, guilt-free products that nourish your body and help create a better world"
 )
 woki_organic_market.tag_list.add("organic", "fair trade")
 
@@ -225,9 +216,7 @@ two_thirds = Place.create!(
     category: "Clothing and Fabrics",
 
     user: Lutz,
-    story: "Two Thirds is a Barcelona-based Bcorp brand which sells amazing, sustainable clothing for the outdoor enthusiast",
-    google_maps_url: "https://g.page/TWOTHIRDS_BCN?share"
-
+    story: "Two Thirds is a Barcelona-based Bcorp brand which sells amazing, sustainable clothing for the outdoor enthusiast"
 )
 two_thirds.tag_list.add("organic", "fair trade")
 
@@ -242,8 +231,7 @@ sukhi_rugs = Place.create!(
     name: "Sukhi Rugs",
     category: "Clothing and Fabrics",
     user: Nasia,
-    story: "I left behind 13 years of work in a non-profit foundation to set up Rukhi a few months ago, an intimate and careful establishment that sells the best, sustainably-made rugs",
-    # google_maps_url: "https://goo.gl/maps/z7PjrNCp9bxiumCW7"
+    story: "I left behind 13 years of work in a non-profit foundation to set up Rukhi a few months ago, an intimate and careful establishment that sells the best, sustainably-made rugs"
 )
 sukhi_rugs.tag_list.add("women owned", "organic", "fair trade")
 
@@ -258,8 +246,7 @@ nomad_coffee_lab = Place.create!(
     name: "Nomad Coffee Lab",
     category: "Cafe",
     user: Pierre,
-    story: "I left behind 13 years of work in a non-profit foundation to set up Nomad a few months ago, an intimate and careful establishment that makes incredible coffee, guilt-free",
-    # google_maps_url: "https://goo.gl/maps/7mYyrjSyERZHHcDq5"
+    story: "I left behind 13 years of work in a non-profit foundation to set up Nomad a few months ago, an intimate and careful establishment that makes incredible coffee, guilt-free"
 )
 nomad_coffee_lab.tag_list.add("organic", "fair trade")
 
@@ -274,8 +261,7 @@ restaurant_ohbo = Place.create!(
     name: "Restaurant Ohbo",
     category: "Restaurant",
     user: Manu,
-    story: "I left behind 13 years of work in a non-profit foundation to set up Ohbo a few months ago, an intimate and careful establishment that makes delicious organic food",
-    # google_maps_url: "https://g.page/restaurante-oh-bo?share"
+    story: "I left behind 13 years of work in a non-profit foundation to set up Ohbo a few months ago, an intimate and careful establishment that makes delicious organic food"
 )
 restaurant_ohbo.tag_list.add("organic")
 
@@ -290,8 +276,7 @@ the_magnificent = Place.create!(
     name: "The Magnificent",
     category: "Cafe",
     user: Lisa,
-    story: "I left behind 13 years of work in a non-profit foundation to set up The Magnificent a few months ago, an intimate and careful establishment that makes lovely coffee",
-    # google_maps_url: "https://goo.gl/maps/ZoUCejpqTq2kd5kE8"
+    story: "I left behind 13 years of work in a non-profit foundation to set up The Magnificent a few months ago, an intimate and careful establishment that makes lovely coffee"
 )
 the_magnificent.tag_list.add("women owned","fair trade")
 
