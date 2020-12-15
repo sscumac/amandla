@@ -3,8 +3,9 @@ class PlacesController < ApplicationController
   def index
     
     filter_by_location
+
+    location_coord
     
-    @location_coord = Geocoder.search(params[:location]).first.coordinates
 
     @markers = @places.map do |place|
 
@@ -60,6 +61,14 @@ class PlacesController < ApplicationController
     end
     if params[:tag_list].present?
       @places = @places.select { |place| params[:tag_list].all? { |tag| place.tag_list.include?(tag) } }
+    end
+  end
+
+  def location_coord
+    if params[:location].present?
+      @location_coord = Geocoder.search(params[:location]).first.coordinates
+    else
+      @location_coord = [41.40539057735755, 2.1647695790020993] # lewagon barcelona
     end
   end
 
