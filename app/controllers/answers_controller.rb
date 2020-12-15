@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
 
-  def new 
+  def new
     @question = Question.find(params[:question_id])
     @answer = Answer.new
   end
@@ -8,8 +8,10 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     @answer = Answer.new(answer_params)
-    if @answer.save
-      redirect_to place_path(@place)
+    @answer.user = current_user
+    @answer.question = @question
+    if @answer.save!
+      redirect_to questions_path, notice: "Answer submitted"
     else
       render :new # jumps to view "new"
     end

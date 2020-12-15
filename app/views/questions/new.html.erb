@@ -2,7 +2,7 @@
 <div class="container p-3">
   <h1><%= @place.name %> </h1>
   <%= simple_form_for [@place, @question] do |f| %>
-    <%= f.input :content%>
+    <%= f.input :content, label: "Your question" %>
     <%= f.submit "ASK",  class:"btn-create-business" %>
   <% end %>
 </div>
