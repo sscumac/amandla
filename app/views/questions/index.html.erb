@@ -1,16 +1,24 @@
-<%= render 'shared/navbar_pages', title: 'Your Questions' %>
+<%= render 'shared/navbar_pages', title: 'Open Questions' %>
 
 <div class="index-container pt-3">
 
 <div class="card-container pt-3">
-  <h3> Here are your pending questions </h3>
-  <br>
-  <%# <% @questions.each do |question| %> 
   <% @pending_questions.each do |question| %>
-     <%= question.created_at.strftime("%b %d, %Y") %>
-     <%= question.content %>
-     <%= link_to "Answer question", new_question_answer_path(question), class: "account-link" %>
-    <% end %>
+    <div class="question-card">
+      <div class="question-user-details">
+        <%= question.user.first_name %>
+        <%= question.user.last_name %>,
+        <%= question.created_at.strftime("%b %d, %Y") %>
+      </div>
+      <div class="question-content">
+        <%= question.content %>
+      </div>
+      <div class= "answer-section">
+        <%= link_to "REPLY", new_question_answer_path(question), class: 'btn-dark-green' %>
+      </div>
+    </div>
+  <% end %>
+  
   <%# <%= button_to "LEAVE AN OPINION", new_visit_review_path(visit), class: "ask-show", method: :get %>
 </div>
 </div>
