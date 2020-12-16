@@ -12,17 +12,19 @@
         <h2 class="h2-home">Help create the<br>change</h2>
         <i class="fas fa-globe-americas"></i>
         <h5 class="h5-home">SUPPORT BUSINESSES THAT ARE ALIGNED WITH YOUR BELIEFS.</h5>
-        <div class="search-bar">
-          <%= form_tag places_path, method: :get do %>
-            <%= text_field_tag :location,
-              params[:location],
-              class: "form-control",
-              placeholder: "Introduce your location" %>
-            <%= button_tag(type: "submit", class: "btn-search") do %>
-              <i class="fas fa-map-marker-alt"></i>
+        
+        <div class="search-section">
+          <%= link_to "SEARCH AROUND YOU", "#", id: "my_location", class: "btn-location-home" %>
+          <div class="search-bar">
+            <%= form_tag places_path, method: :get do %> 
+              <input type="text" id="place_location" name="place[location]" class="form-control" placeholder="..or search by location"  >
+              <%= button_tag(type: "submit", class: "btn-search-home") do %>
+                <i class="fas fa-map-marker-alt"></i>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
+        
       </div>
     </div>
   </div>
