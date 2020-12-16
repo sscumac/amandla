@@ -2,6 +2,7 @@
 
     <%= simple_form_for [@place] do |f| %>
       <div class="form container">
+        <div class="form-inputs">
         <%= f.input :name, :label => "What's your business name?" %>
         <%= f.input :address, :label => "What's the address?" %>
         <%= f.input :category, as: :radio_buttons,
@@ -30,6 +31,7 @@
             as: :file %>
           <%= image_tag "", width: 200, class: "d-none", id: "photo-preview" %>
         </div>
+      </div>
       </div>
       <%= f.submit "Create",  class:"btn-create-business px-0" %>
     <% end %>

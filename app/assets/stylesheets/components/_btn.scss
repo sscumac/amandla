@@ -87,6 +87,19 @@ a {
   }
 }
 
+.btn-link-green-larger {
+  all: unset;
+  color: #274B53;
+  font-size: 18px;
+  width: 100px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: #274B53;
+  }
+}
+
 .position-bottom-left {
   position: absolute;
   bottom: 20px;
