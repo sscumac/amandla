@@ -4,21 +4,21 @@
 <div class="index-container">
 
   <div class="top-container">
-    Places in Barcelona
-    <div class="icons" >
-        <div id="search-filter-btn">
-          <i class="fas fa-sliders-h"></i>Filters
+    <div class="container pb-3 pl-0">
+    Your search results
+      <div class="icons" >
+          <div id="search-filter-btn">
+            <i class="fas fa-sliders-h indexicon"></i>
+          </div>
+      <div class="right-icon ml-3">
+        <div class="search-map-btn">
+          <i class="fas fa-map-marked-alt indexicon"></i>
         </div>
-    <div class="right-icon">
-      <div class="search-map-btn">
-        <i class="fas fa-map-marked-alt"></i>Map
-      </div>
-      <div class="search-list-btn">
-        <i class="fas fa-list-ul"></i>List
+        <div class="search-list-btn d-none">
+          <i class="fas fa-list-ul indexicon"></i>
+        </div>
       </div>
     </div>
-
-
   </div>
   <div class="card-container">
       <% @places.each do |place| %>
