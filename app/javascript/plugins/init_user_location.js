@@ -1,4 +1,6 @@
 
+// const location = document.querySelector(".search-bar");
+
 function initUserLocation() {
   // select button for my location
   const myLocation = document.querySelector("#my_location")
@@ -11,10 +13,12 @@ function initUserLocation() {
       navigator.geolocation.getCurrentPosition((data) => {
         const lat = data.coords.latitude;
         const lon = data.coords.longitude;
-        console.log(lat, lon);
+        window.location.href = `/places?place[location]=${lat},${lon}`
       });
     });
   }
+
+  // location.innerHTML = `${data.name}, ${data.sys.country}`;
   
 }
 

@@ -14,7 +14,8 @@
         <h5 class="h5-home">SUPPORT BUSINESSES THAT ARE ALIGNED WITH YOUR BELIEFS.</h5>
         <div class="search-bar">
           <%= form_tag places_path, method: :get do %>
-            <%= text_field_tag :location,
+            <input type="text" id="place_location" name="place[location]">
+            <%#= text_field_tag :location,
               params[:location],
               class: "form-control",
               placeholder: "Introduce your location" %>
