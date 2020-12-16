@@ -3,10 +3,12 @@ const initFilterBtn = () => {
   const btn = document.getElementById("search-filter-btn");
   const body_filter = document.querySelector("body");
 
-  btn.addEventListener('click', () =>{
-    list.classList.remove("d-none");
-    body_filter.classList.add("no-scroll");
-  })
+  if (btn) {
+    btn.addEventListener('click', () =>{
+      list.classList.remove("d-none");
+      body_filter.classList.add("no-scroll");
+    })
+  }
 }
 
 export {initFilterBtn};
