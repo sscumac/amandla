@@ -6,6 +6,10 @@
         <%=  link_to account_path do %>
         <i class="fas fa-times"></i>
         <% end %>
+      <% elsif controller_name == "questions" && action_name == "index" %>
+        <%=  link_to account_path do %>
+        <i class="fas fa-times"></i>
+        <% end %>
       <% else %>
         <%=  link_to :back do %>
         <i class="fas fa-times"></i>
