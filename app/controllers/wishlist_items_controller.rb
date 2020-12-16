@@ -15,7 +15,7 @@ class WishlistItemsController < ApplicationController
         redirect_to places_path(anchor: "place_#{@place.id}")
       end
     else
-      redirect_to place_path(@place), notice: "boooo"
+      redirect_to new_user_session_path, notice: "boooo"
     end
   end
 

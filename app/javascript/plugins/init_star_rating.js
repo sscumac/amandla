@@ -2,10 +2,14 @@ import "jquery-bar-rating";
 import $ from 'jquery';
 
 const initStarRating = () => {
-  $('#review_rating').barrating({
-    theme: 'fontawesome-stars',
-    icon: 'test'
-  });
+  const stars = document.getElementById("review_rating");
+
+  if (stars) {
+    $('#review_rating').barrating({
+      theme: 'fontawesome-stars',
+      icon: 'test'
+    });
+  }
 };
 
 export { initStarRating };

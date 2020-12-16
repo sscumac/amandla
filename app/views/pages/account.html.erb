@@ -3,30 +3,57 @@
 
     <% if user_signed_in? %>
       <div class="user-info">
-        <div class="user-image" style="margin-top: 20px;">
+        <div class="user-image" >
           <div class="avatar avatar-bordered py-10" style="background-image: url(https://avatars0.githubusercontent.com/u/64172452?v=4);"></div>
         </div>
-        <br>
+
         <div class="account-items">
           <% if current_user.place.present? %>
           <div class="account-item">
-            <%= link_to "Open Questions", questions_path , class: "account-link" %>
+            <%= link_to questions_path do%>
+
+              <div class= "account-link">
+                <i class="fas fa-question account-icon"></i>
+                Open Questions
+              </div>
+            <% end %>
           </div>
           <% end %>
 
           <div class="account-item">
-            <%= link_to "Recently visited", visits_path, class: "account-link" %>
+            <%= link_to visits_path do %>
+              <div class= "account-link">
+                <i class="fas fa-walking account-icon"></i>
+                Recently visited
+              </div>
+            <%  end  %>
           </div>
 
           <div class="account-item">
-            <%= link_to "Add your business", new_place_path, class: "account-link" %>
+            <%= link_to new_place_path do %>
+              <div class= "account-link">
+                <i class="fas fa-building account-icon"></i>
+                Add your business
+              </div>
+            <%  end  %>
           </div>
           <hr>
           <div class="account-item">
-            <%= link_to "Edit profile", edit_user_registration_path, class: "account-link" %>
+            <%= link_to edit_user_registration_path do %>
+              <div class= "account-link">
+                <i class="far fa-edit account-icon"></i>
+                Edit profile
+              </div>
+            <%  end  %>
           </div>
           <div class="account-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "account-link" %>
+            <%= link_to visits_path, method: :delete do %>
+              <div class= "account-link ">
+                <i class="fas fa-sign-out-alt account-icon"></i>
+                Log out
+              </div>
+            <%  end  %>
+
           </div>
         </div>
       </div>
