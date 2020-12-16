@@ -989,7 +989,7 @@ visit_13 = Visit.create!(
 )
 
 visit_14 = Visit.create!(
-  user: Ricky,
+  user: Leonardo,
   place: two_thirds
 )
 

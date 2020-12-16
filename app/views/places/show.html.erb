@@ -131,23 +131,25 @@
           <h6> A: <%= question.answer.content %> </h6>
           <hr>
         <% end %>
+      
+        <% if @answered_questions.count > 3 %>
+          <p>
+            <a class="btn-link-green position-bottom-left" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              SHOW MORE <i class="fas fa-caret-down"></i>
+            </a>
+          </p>
 
-        <p>
-          <a class="btn-link-green position-bottom-left" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            SHOW MORE <i class="fas fa-caret-down"></i>
-          </a>
-        </p>
-
-        <div class="collapse" id="collapseExample">
-          <div class="ratings-people">
-            <%# @answered_questions[3..-1].each do |question| %>
-              <!-- <h6> <strong>Q:</strong>  <%#= question.content %> </h6>
-              <p> <%#= question.user.first_name %>, <%#= question.created_at.strftime("%b %d, %Y") %></p>
-              <h6> A: <%#= question.answer.content %> </h6>
-              <hr> -->
-            <%# end %>
+          <div class="collapse" id="collapseExample">
+            <div class="ratings-people">
+              <% @answered_questions[3..-1].each do |question| %>
+                <h6> <strong>Q:</strong>  <%= question.content %> </h6>
+                <p> <%= question.user.first_name %>, <%= question.created_at.strftime("%b %d, %Y") %></p>
+                <h6> A: <%= question.answer.content %> </h6>
+                <hr>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
         <%= link_to "ASK THE OWNER", new_place_question_path(@place), class: 'btn-dark-green position-bottom' %>
 
     </div>
