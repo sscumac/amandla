@@ -3,6 +3,7 @@ class Place < ApplicationRecord
   acts_as_taggable_on :tags # or whatever you would like to call your tag list.
 
   has_one_attached :photo
+  has_many_attached :photos_venue
   has_many :visits, dependent: :destroy
   has_many :reviews, through: :visits
   has_many :wishlist_items
