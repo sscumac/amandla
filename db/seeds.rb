@@ -154,6 +154,14 @@ lisa = User.create!(
   about_me: "Inherited the family passion for coffee. Passionate women-rights activist and urban farmer"
 )
 
+beth = User.create!(
+  email: "beth@amandla.com",
+  password: "password",
+  first_name: "Beth",
+  last_name: "Smith",
+  about_me: "All about woman-empowerment and the environment. More compassion, less ego"
+)
+
 puts "Completed"
 
 puts "Creating places"
@@ -327,6 +335,22 @@ file = URI.open('https://cafeselmagnifico.com/wp-content/uploads/2020/09/el-magn
 the_magnificent.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 the_magnificent.save!
+
+
+the_glass_house = Place.create!(
+    address: "C. de Villarroel, 1, 08011 Barcelona",
+    name: "The glass house",
+    category: "Groceries",
+    user: beth,
+    story: "I left behind 13 years of work in a non-profit foundation to set up The Magnificent a few months ago, an intimate and careful establishment that makes lovely coffee"
+)
+the_glass_house.tag_list.add("women owned", "organic", "fair trade")
+
+# image related
+file = URI.open('https://images.unsplash.com/photo-1545601445-4d6a0a0565f0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80')
+the_glass_house.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+the_glass_house.save!
 
 puts "Completed"
 
@@ -942,6 +966,18 @@ answer_50 = Answer.create!(
   question: question_50,
   content: "Yes we are expanding to other parts of the city"
 )
+#glass house qs
+question_51 = Question.create!(
+  user: Jaume,
+  place: the_glass_house,
+  content: "Are there more locations?"
+)
+
+answer_51 = Answer.create!(
+  user: beth,
+  question: question_51,
+  content: "no, just one location for now"
+)
 
 visit_1 = Visit.create!(
   user: Renan,
@@ -1041,6 +1077,11 @@ visit_19 = Visit.create!(
 visit_20 = Visit.create!(
   user: Louis,
   place: the_magnificent
+)
+
+visit_21 = Visit.create!(
+  user: Leonardo,
+  place: the_glass_house
 )
 
 puts "Completed"
@@ -1166,6 +1207,13 @@ review_20 = Review.create!(
   content: "Good coffee, food, and music. Ticks all the boxes",
   rating: 5
 )
+
+review_21 = Review.create!(
+  visit: visit_21,
+  content: "Not my favorite place, definitely better places out there",
+  rating: 2
+)
+
 
 puts "Completed"
 

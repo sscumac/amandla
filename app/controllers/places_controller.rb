@@ -2,9 +2,11 @@ class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
   def index
 
+    location_coord
+
     filter_by_location
 
-    location_coord
+    
 
     @markers = @places.map do |place|
 
@@ -50,8 +52,13 @@ class PlacesController < ApplicationController
   end
 
   def filter_by_location
-    if params[:place] && params[:place][:location].present?
+    if params[:location].present?
       @places = Place.geocoded.near(params[:location], 10)
+      @places = @places.sort_by {|place| place.distance_to_place(@location_coord[0], @location_coord[1], place.latitude, place.longitude)}
+    elsif params[:place] && params[:place][:address].present?
+      @places = Place.geocoded.near(params[:place][:address], 10)
+
+      @places = @places.sort_by {|place| place.distance_to_place(@location_coord[0], @location_coord[1], place.latitude, place.longitude)}
     else
       @places = Place.geocoded
     end
