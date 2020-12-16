@@ -5,7 +5,6 @@ class PlacesController < ApplicationController
     filter_by_location
 
     location_coord
-    
 
     @markers = @places.map do |place|
 
@@ -67,6 +66,8 @@ class PlacesController < ApplicationController
   def location_coord
     if params[:location].present?
       @location_coord = Geocoder.search(params[:location]).first.coordinates
+    elsif params[:place][:address].present?
+      @location_coord = Geocoder.search(params[:place][:address]).first.coordinates
     else
       @location_coord = [41.40539057735755, 2.1647695790020993] # lewagon barcelona
     end
