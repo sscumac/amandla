@@ -1,6 +1,7 @@
 .account-items {
-  margin-top: 50px;
+  margin-top: 80px;
   font-size: 20px;
+  padding: 0 20px;
 }
 
 
@@ -28,4 +29,17 @@
       text-decoration: none;
       color: #F7D383;
     }
+    .fa {
+      margin-right: 3px;
+    }
+}
+
+.account-icon {
+  color: #299D90;
+  margin-right: 3px;
+  min-width: 30px;
+}
+
+.user-image {
+  margin-top: 80px;
 }
