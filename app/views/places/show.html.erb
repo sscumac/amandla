@@ -36,7 +36,7 @@
       <% end %>
       <% if tag == "locally sourced" %>
         <div class="text-center mx-1">
-          <i class="far fa-street-view tag-icons"></i>
+          <i class="fas fa-street-view tag-icons"></i>
           <p id="text-green"><%= tag  %></p>
         </div>
       <% end %>
@@ -131,7 +131,7 @@
           <h6> A: <%= question.answer.content %> </h6>
           <hr>
         <% end %>
-      
+
         <% if @answered_questions.count > 3 %>
           <p>
             <a class="btn-link-green position-bottom-left" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
