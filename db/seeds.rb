@@ -185,6 +185,16 @@ hansel_and_granel.tag_list.add("women owned", "organic", "fair trade")
 file = URI.open('http://iaminthemoodforfood.com/wp-content/uploads/2015/06/hanselgranel.jpg')
 hansel_and_granel.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
+file = URI.open('https://3.bp.blogspot.com/-L8_7umb8wc0/WjulNtlLdjI/AAAAAAAAAHs/od8qpt2iFmwi8D_sHZCz2iLZ_EySex53wCLcBGAs/s1600/IMG_5618.jpg')
+hansel_and_granel.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://t1.salir.ltmcdn.com/es/places/9/6/3/img_127369_gra-de-gracia_0_600.jpg')
+hansel_and_granel.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://api.super.so/asset/pepmaps.com/3f7abe54-7042-42e1-af62-46054a21431e.jpg?w=2000')
+hansel_and_granel.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+
 hansel_and_granel.save!
 
 les_tres_gourmets = Place.create!(
@@ -245,6 +255,16 @@ two_thirds.tag_list.add("organic", "fair trade")
 # image related
 file = URI.open('https://cdn.shopify.com/s/files/1/0995/5544/files/3_ebe0e568-2300-473f-af1d-d98b91d8f48a_1920x.jpg?v=1606807525')
 two_thirds.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://barcelona.lecool.com/files/2014/10/twothirds-3-e1413312802244.jpg')
+two_thirds.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.we-heart.com/upload-images/twothirdsbarcelona4@2x.jpg')
+two_thirds.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://kaikucaffelatte.com/blog/wp-content/uploads/2016/07/Kaiku-Caffe-Latte-Tienda-Moda-Barcelona-TwoThirds.jpg')
+two_thirds.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
 
 two_thirds.save!
 
