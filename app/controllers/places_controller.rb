@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show ]
+  skip_before_action :authenticate_user!, only: [ :index ]
   def index
 
     filter_by_location
