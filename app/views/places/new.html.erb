@@ -27,9 +27,19 @@
           <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'},
             wrapper_html: { class: 'mb-0 d-flex align-items-center'},
             label_html: { class: 'upload-photo mb-0'},
-            label: '📷 Upload a photo',
+            label: '📷 Primary photo',
             as: :file %>
           <%= image_tag "", width: 200, class: "d-none", id: "photo-preview" %>
+        </div>
+        <div class="container p-0">
+        <%= f.input :photos_venue, as: :file, input_html: { multiple: true, class: 'd-none' },
+            wrapper_html: { class: 'mb-0 d-flex align-items-center'},
+            label_html: { class: 'upload-photo mb-0'},
+            label: '📷 Aditional photos',
+            as: :file %>
+            <div class="my-3" id="results">
+
+            </div>
         </div>
       </div>
       </div>
