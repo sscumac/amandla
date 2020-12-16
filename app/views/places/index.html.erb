@@ -1,7 +1,7 @@
 
 <%= render 'shared/navbar_main' %>
 <%= render 'filter_places' %>
-<div class="index-container">
+<div class="index-container ">
 
   <div class="top-container">
     <div class="container pb-3 pl-0">
@@ -61,13 +61,18 @@
         </div>
       <% end %>
   </div>
+
 </div>
 
 
   <div id="map" class="d-none"
      style="width: 100%; height: 800px;"
      data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+  </div>
+   <div style="margin-bottom: 67px">
+  </div>
 
 
 

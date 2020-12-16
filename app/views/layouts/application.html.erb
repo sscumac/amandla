@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Amandla</title>
+    <title> Amandla | Platform for conscious comsumption </title>
+    <meta name="description" content="Amandla is a platform for conscious consumers looking to find businesses that are aligned with their beliefs. Join us and help create the change.">
+    <meta property="og:title" content="Amandla - Help create the change">
+    <meta property="og:image" content="https://res.cloudinary.com/dpnjiruwh/image/upload/v1608126590/concious_consumer_ry28n2.jpg">
+    <meta property="og:description" content="Amandla is a platform for conscious consumers looking to find businesses that are aligned with their beliefs. Join us and help create the change.">
+    <meta property="og:site_name" content="Amandla"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,8 +24,8 @@
   <body style="background-color: #fef9ef" >
 
     <%= render 'shared/flashes' %>
-    <div class="spacing">
+
     <%= yield %>
-    </div>
+
   </body>
 </html>

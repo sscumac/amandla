@@ -2,9 +2,11 @@ class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
   def index
 
+    location_coord
+
     filter_by_location
 
-    location_coord
+    
 
     @markers = @places.map do |place|
 
@@ -46,7 +48,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :category, :story, :photo, tag_list: [])
+    params.require(:place).permit(:name, :address, :category, :story, :photo, tag_list: [], photos_venue: [])
   end
 
   def filter_by_location

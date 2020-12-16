@@ -2,6 +2,7 @@
 <div class="index-container pt-3">
 
 <div class="card-container pt-3">
+  <div class="wishlist-container" style="margin-bottom: 67px" >
   <h3> My wishlist </h3>
   <br>
   <% @wishlist_items.each do |item| %>
@@ -35,6 +36,7 @@
       <% end %>
     </div>
   <% end %>
+</div>
 </div>
 </div>
 <%= render 'shared/navbar_bottom' %>

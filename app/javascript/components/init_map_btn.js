@@ -1,9 +1,11 @@
+import { initMapbox } from "../plugins/init_mapbox";
+
 const initMapBtn = () => {
   const map = document.getElementById("map");
   const btn_map = document.querySelector(".search-map-btn");
   const list = document.querySelector(".card-container");
   const btn_list = document.querySelector(".search-list-btn");
-
+  let notrendered = true;
 
   if (btn_map) {
     btn_map.addEventListener('click', () => {
@@ -11,6 +13,11 @@ const initMapBtn = () => {
       map.classList.remove("d-none");
       btn_map.classList.add("d-none");
       btn_list.classList.remove("d-none");
+      if (notrendered) {
+        initMapbox();
+        notrendered = false;
+      }
+
     })
 
     btn_list.addEventListener('click', () => {

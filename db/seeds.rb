@@ -154,6 +154,14 @@ lisa = User.create!(
   about_me: "Inherited the family passion for coffee. Passionate women-rights activist and urban farmer"
 )
 
+beth = User.create!(
+  email: "beth@amandla.com",
+  password: "password",
+  first_name: "Beth",
+  last_name: "Smith",
+  about_me: "All about woman-empowerment and the environment. More compassion, less ego"
+)
+
 puts "Completed"
 
 puts "Creating places"
@@ -184,6 +192,16 @@ hansel_and_granel.tag_list.add("women owned", "organic", "fair trade")
 # image related
 file = URI.open('http://iaminthemoodforfood.com/wp-content/uploads/2015/06/hanselgranel.jpg')
 hansel_and_granel.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://3.bp.blogspot.com/-L8_7umb8wc0/WjulNtlLdjI/AAAAAAAAAHs/od8qpt2iFmwi8D_sHZCz2iLZ_EySex53wCLcBGAs/s1600/IMG_5618.jpg')
+hansel_and_granel.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://t1.salir.ltmcdn.com/es/places/9/6/3/img_127369_gra-de-gracia_0_600.jpg')
+hansel_and_granel.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://api.super.so/asset/pepmaps.com/3f7abe54-7042-42e1-af62-46054a21431e.jpg?w=2000')
+hansel_and_granel.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
 
 hansel_and_granel.save!
 
@@ -246,6 +264,16 @@ two_thirds.tag_list.add("organic", "fair trade")
 file = URI.open('https://cdn.shopify.com/s/files/1/0995/5544/files/3_ebe0e568-2300-473f-af1d-d98b91d8f48a_1920x.jpg?v=1606807525')
 two_thirds.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
+file = URI.open('https://barcelona.lecool.com/files/2014/10/twothirds-3-e1413312802244.jpg')
+two_thirds.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.we-heart.com/upload-images/twothirdsbarcelona4@2x.jpg')
+two_thirds.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://kaikucaffelatte.com/blog/wp-content/uploads/2016/07/Kaiku-Caffe-Latte-Tienda-Moda-Barcelona-TwoThirds.jpg')
+two_thirds.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+
 two_thirds.save!
 
 sukhi_rugs = Place.create!(
@@ -307,6 +335,22 @@ file = URI.open('https://cafeselmagnifico.com/wp-content/uploads/2020/09/el-magn
 the_magnificent.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 the_magnificent.save!
+
+
+the_glass_house = Place.create!(
+    address: "C. de Villarroel, 1, 08011 Barcelona",
+    name: "The glass house",
+    category: "Groceries",
+    user: beth,
+    story: "I left behind 13 years of work in a non-profit foundation to set up The Magnificent a few months ago, an intimate and careful establishment that makes lovely coffee"
+)
+the_glass_house.tag_list.add("women owned", "organic", "fair trade")
+
+# image related
+file = URI.open('https://images.unsplash.com/photo-1545601445-4d6a0a0565f0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80')
+the_glass_house.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+the_glass_house.save!
 
 puts "Completed"
 
@@ -922,6 +966,18 @@ answer_50 = Answer.create!(
   question: question_50,
   content: "Yes we are expanding to other parts of the city"
 )
+#glass house qs
+question_51 = Question.create!(
+  user: Jaume,
+  place: the_glass_house,
+  content: "Are there more locations?"
+)
+
+answer_51 = Answer.create!(
+  user: beth,
+  question: question_51,
+  content: "no, just one location for now"
+)
 
 visit_1 = Visit.create!(
   user: Renan,
@@ -989,7 +1045,7 @@ visit_13 = Visit.create!(
 )
 
 visit_14 = Visit.create!(
-  user: Ricky,
+  user: Leonardo,
   place: two_thirds
 )
 
@@ -1021,6 +1077,11 @@ visit_19 = Visit.create!(
 visit_20 = Visit.create!(
   user: Louis,
   place: the_magnificent
+)
+
+visit_21 = Visit.create!(
+  user: Leonardo,
+  place: the_glass_house
 )
 
 puts "Completed"
@@ -1146,6 +1207,13 @@ review_20 = Review.create!(
   content: "Good coffee, food, and music. Ticks all the boxes",
   rating: 5
 )
+
+review_21 = Review.create!(
+  visit: visit_21,
+  content: "Not my favorite place, definitely better places out there",
+  rating: 2
+)
+
 
 puts "Completed"
 

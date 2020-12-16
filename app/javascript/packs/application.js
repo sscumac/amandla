@@ -62,6 +62,44 @@ const displayPreview = (input) => {
 
 // ------------------------------
 
+const previewMultipleImagesOnFileSelect = () => {
+  // we select the photo input
+  const input = document.getElementById('place_photos_venue');
+  if (input) {
+    // we add a listener to know when a new picture is uploaded
+    input.addEventListener('change', () => {
+      // we call the displayPreview function (who retrieve the image url and display it)
+      displayMultiplePreviews(input);
+    })
+  }
+}
+
+const displayMultiplePreviews = (input) => {
+  document.getElementById('results').innerHTML = "";
+
+  if (input.files && input.files[0]) {
+
+    Array.from(input.files).forEach((file) => {
+      const reader = new FileReader();
+      var img = document.createElement('img');
+
+      reader.onload = (event) => {
+        img.src = event.currentTarget.result;
+      }
+      reader.readAsDataURL(file)
+
+      document.getElementById('results').appendChild(img);
+
+    })
+
+  }
+}
+
+
+
+
+// ------------------------------
+
 
 document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
@@ -71,6 +109,7 @@ document.addEventListener('turbolinks:load', () => {
   initFilterBtn();
   initMapBtn();
   initUserLocation();
+  previewMultipleImagesOnFileSelect();
 });
 
 initStarRating();

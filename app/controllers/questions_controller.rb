@@ -1,9 +1,9 @@
 class QuestionsController < ApplicationController
 
   def index
+
     @pending_questions = current_user.pending_questions
     # @questions = Question.all
-
   end
 
   def new

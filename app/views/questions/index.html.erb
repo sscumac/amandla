@@ -1,7 +1,6 @@
 <%= render 'shared/navbar_pages', title: 'Open Questions' %>
 
 <div class="index-container pt-3">
-
 <div class="card-container pt-3">
   <% @pending_questions.each do |question| %>
     <div class="question-card">
@@ -18,7 +17,7 @@
       </div>
     </div>
   <% end %>
-  
+
   <%# <%= button_to "LEAVE AN OPINION", new_visit_review_path(visit), class: "ask-show", method: :get %>
 </div>
 </div>
