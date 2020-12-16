@@ -20,18 +20,20 @@
       </div>
     </div>
   </div>
-  <div class="card-container">
+  <div class="card-container mt-3">
       <% @places.each do |place| %>
 
           <div class="place-card" id="place_<%= place.id %>">
-            <% if current_user.on_wishlist?(place) %>
-                <%=  link_to wishlist_item_path(current_user.wishlist_item_of(place)), method: :delete, remote: true do %>
-                  <i class="fas fa-heart wish-icon"></i>
-                <% end  %>
-              <% else %>
-                <%=  link_to place_wishlist_items_path(place), method: :post, remote: true do %>
-                  <i class="far fa-heart wish-icon"></i>
-                <% end  %>
+            <% if user_signed_in? %>
+              <% if current_user.on_wishlist?(place) %>
+                    <%=  link_to wishlist_item_path(current_user.wishlist_item_of(place)), method: :delete, remote: true do %>
+                      <i class="fas fa-heart wish-icon"></i>
+                    <% end  %>
+                <% else %>
+                  <%=  link_to place_wishlist_items_path(place), method: :post, remote: true do %>
+                    <i class="far fa-heart wish-icon"></i>
+                  <% end  %>
+                <% end %>
               <% end %>
             <%= link_to place_path(place), class: "place-card-link" do %>
             <% if place.photo.attached? %>
@@ -53,7 +55,7 @@
             </div>
             <% end %>
           </div>
-      <% end %>
+        <% end %>
   </div>
 </div>
 
