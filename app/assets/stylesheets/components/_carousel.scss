@@ -2,6 +2,10 @@
   // height: 270px;
 }
 
+.owl-carousel {
+  touch-action: manipulation;
+}
+
 .owl-carousel .owl-item img {
     display: block;
     width: 100%;
