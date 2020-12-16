@@ -29,20 +29,21 @@
     border: none;
 }
 
+.btn-apply-filters {
+    color: #F7D383;
+    background-color: #299D90;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 16px;
+    display: block;
+    border: none;
+}
+
 .btn-apply {
   position: relative;
   border: none;
 }
 
-.btn-apply-filters {
-    color: #F7D383;
-    background-color: #299D90;
-    text-transform: uppercase;
-    width: 300px;
-    padding: 16px;
-    display: block;
-    border: none;
-}
 
 .btn-dark-green {
   all: unset;
@@ -68,7 +69,7 @@
 a {
   color: #299D90;
 }
-  
+
 .position-bottom {
   position: absolute;
   bottom: 14px;
