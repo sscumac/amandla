@@ -2,8 +2,8 @@
   color: #299D90;
   background-color: #FEF9EF;
   position: absolute;
-  top: 0;
   right: 0;
+  top: 25px;
   padding: 6px;
   width: 37px;
   border-radius: 5px;
@@ -53,6 +53,34 @@
   padding-right: 16px;
   padding-top: 8px;
   padding-bottom: 8px;
+}
+
+.btn-location-home {
+  all: unset;
+  background-color: #1D373C;
+  color: #F7D383;
+  font-size: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  position: absolute;
+  top: -17px;
+  left: 0;
+  width: 89%;
+  border-radius: 6px;
+}
+
+.btn-search-home {
+  color: #299D90;
+  background-color: #FEF9EF;
+  position: absolute;
+  right: 3px;
+  top: 1px;
+  padding: 6px;
+  width: 37px;
+  border-radius: 5px;
+  border: none;
 }
 
 .btn-clear-filters {

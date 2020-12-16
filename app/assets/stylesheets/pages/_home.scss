@@ -63,7 +63,9 @@
 }
 
 .search-bar {
-  position: relative;
+  position: absolute;
+  top: 20px;
+  width: 100%;
 }
 
 .form-control {
@@ -72,4 +74,8 @@
   border-radius: 5px;
   background-color: #FEF9EF;
 
+}
+
+.search-section {
+  position: relative;
 }
