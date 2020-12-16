@@ -118,9 +118,9 @@ lutz = User.create!(
   about_me: "A passion for the ocean and environmental activism, trying to make clothing more sustainable"
 )
 
-#file = URI.open('https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
-#lutz.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-#lutz.save!
+file = URI.open('https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+lutz.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+lutz.save!
 
 nasia = User.create!(
   email: "nasia@amandla.com",
