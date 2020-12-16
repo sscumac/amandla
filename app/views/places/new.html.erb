@@ -17,7 +17,7 @@
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
-            :label => "Which critiria do you fulfil? (Choose as many you need)",
+            :label => "Which critiria do you fulfil? (Choose as many you think)",
             as: :check_boxes, collection: Place.all_tags %>
 
         <%= f.input :story, :label => "Tell us more (will be displayed)", :input_html => {:rows => 10} %>

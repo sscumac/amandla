@@ -1,5 +1,6 @@
 require "open-uri"
 
+puts "Destroying database"
 Review.destroy_all
 Answer.destroy_all
 Question.destroy_all
@@ -7,8 +8,10 @@ WishlistItem.destroy_all
 Visit.destroy_all
 Place.destroy_all
 User.destroy_all
+puts "Database cleaned"
 
 
+puts "Creating users to ask questions"
 #review/question askers
 Renan = User.create!(
   email: "renan@amandla.com",
@@ -57,8 +60,12 @@ Ricky = User.create!(
   last_name: "Schoeman",
   about_me: "New to Barcelona, keen to explore!"
 )
+
+puts "Completed"
+
+puts "Creating users for business owners"
 #business owner users
-Dani = User.create!(
+dani = User.create!(
   email: "dani@amandla.com",
   password: "password",
   first_name: "Dani",
@@ -66,7 +73,7 @@ Dani = User.create!(
   about_me: "Proud vegetarian taco maker, trying to lighten my load on the planet"
 )
 
-Clau = User.create!(
+clau = User.create!(
   email: "clau@amandla.com",
   password: "password",
   first_name: "Clau",
@@ -74,7 +81,11 @@ Clau = User.create!(
   about_me: "lover of all things real, natural and organic"
 )
 
-Blanca = User.create!(
+file = URI.open('https://image.freepik.com/free-photo/modern-woman-taking-selfie_23-2147893976.jpg')
+clau.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+clau.save!
+
+blanca = User.create!(
   email: "blanca@amandla.com",
   password: "password",
   first_name: "Blanca",
@@ -82,7 +93,7 @@ Blanca = User.create!(
   about_me: "Holistic nutritionist, I believe food is the only medicine we need"
 )
 
-Vanessa = User.create!(
+vanessa = User.create!(
   email: "vanessa@amandla.com",
   password: "password",
   first_name: "Vanessa",
@@ -90,7 +101,8 @@ Vanessa = User.create!(
   about_me: "There needs to be way more harmony between the beauty industry and nature. We hope to lead this charge"
 )
 
-Marc = User.create!(
+
+marc = User.create!(
   email: "marc@amandla.com",
   password: "password",
   first_name: "Marc",
@@ -98,7 +110,7 @@ Marc = User.create!(
   about_me: "A strong desire to have a greater connection to, and awareness of, our food and the processes involved"
 )
 
-Lutz = User.create!(
+lutz = User.create!(
   email: "lutz@amandla.com",
   password: "password",
   first_name: "Lutz",
@@ -106,7 +118,11 @@ Lutz = User.create!(
   about_me: "A passion for the ocean and environmental activism, trying to make clothing more sustainable"
 )
 
-Nasia = User.create!(
+#file = URI.open('https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+#lutz.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+#lutz.save!
+
+nasia = User.create!(
   email: "nasia@amandla.com",
   password: "password",
   first_name: "Nasia",
@@ -114,7 +130,7 @@ Nasia = User.create!(
   about_me: "All about ethical living!"
 )
 
-Pierre = User.create!(
+pierre = User.create!(
   email: "pierre@amandla.com",
   password: "password",
   first_name: "Pierre",
@@ -122,7 +138,7 @@ Pierre = User.create!(
   about_me: "Coffee-obsessed husband and father. Want to keep serving the best coffees while ensuring the daughter can do the same one day"
 )
 
-Manu = User.create!(
+manu = User.create!(
   email: "manu@amandla.com",
   password: "password",
   first_name: "Manolo",
@@ -130,7 +146,7 @@ Manu = User.create!(
   about_me: "On a mission to prove that healthy, organic food is far from boring! Especially traditional Catalan cuisine"
 )
 
-Lisa = User.create!(
+lisa = User.create!(
   email: "lisa@amandla.com",
   password: "password",
   first_name: "Lisa",
@@ -138,11 +154,14 @@ Lisa = User.create!(
   about_me: "Inherited the family passion for coffee. Passionate women-rights activist and urban farmer"
 )
 
+puts "Completed"
+
+puts "Creating places"
 fair_tacos = Place.create!(
     address: "Carrer del Torrent de l'Olla, 202, 08012 Barcelona",
     name: "Fair Tacos",
     category: "Restaurant",
-    user: Dani,
+    user: dani,
     story: "Delicious, authentically-made vegetarian Tacos! Made with plenty of love and good vibes. Come join!"
 )
 fair_tacos.tag_list.add("women owned", "vegetarian")
@@ -157,7 +176,7 @@ hansel_and_granel = Place.create!(
     address: "Avinguda de la Riera de Cassoles, 08012 Barcelona",
     name: "Hansel & Granel",
     category: "Groceries",
-    user: Clau,
+    user: clau,
     story: "I left behind 13 years of work in a non-profit foundation to set up Handsel y Granel a few months ago, an intimate and careful establishment that sells products in bulk."
 )
 hansel_and_granel.tag_list.add("women owned", "organic", "fair trade")
@@ -172,7 +191,7 @@ les_tres_gourmets = Place.create!(
     address: "Carrer de Casanova, 118, 08036, Barcelona",
     name: "Les Tres Gourmets",
     category: "Restaurant",
-    user: Blanca,
+    user: blanca,
     story: "We make delicious, home-made meals made with love, using only seasonal vegetables most of which are locally-sourced"
 )
 les_tres_gourmets.tag_list.add("women owned", "organic", "vegetarian")
@@ -187,7 +206,7 @@ kaoni_wellbeing = Place.create!(
     address: "Carrer de Saragossa, 39, 08006 Barcelona",
     name: "Kaoni Wellbeing",
     category: "Beauty and Wellness",
-    user: Vanessa,
+    user: vanessa,
     story: "A warm and peaceful space that looks after your wellbeing well being kind to our earth and it's inhabitants"
 )
 kaoni_wellbeing.tag_list.add("women owned", "organic", "fair trade")
@@ -202,7 +221,7 @@ woki_organic_market = Place.create!(
     address: "Carrer d'Astúries, 22, 08012 Barcelona",
     name: "Woki Organic Market",
     category: "Groceries",
-    user: Marc,
+    user: marc,
     story: "Organic, guilt-free products that nourish your body and help create a better world"
 )
 woki_organic_market.tag_list.add("organic", "fair trade")
@@ -218,7 +237,7 @@ two_thirds = Place.create!(
     address: "Carrer del Monestir, 23, 08034 Barcelona",
     name: "Two Thirds",
     category: "Clothing and Fabrics",
-    user: Lutz,
+    user: lutz,
     story: "Two Thirds is a Barcelona-based Bcorp brand which sells amazing, sustainable clothing for the outdoor enthusiast"
 )
 two_thirds.tag_list.add("organic", "fair trade")
@@ -233,7 +252,7 @@ sukhi_rugs = Place.create!(
     address: "Carrer del Comte Borrell, 162, 08015",
     name: "Sukhi Rugs",
     category: "Clothing and Fabrics",
-    user: Nasia,
+    user: nasia,
     story: "I left behind 13 years of work in a non-profit foundation to set up Rukhi a few months ago, an intimate and careful establishment that sells the best, sustainably-made rugs"
 )
 sukhi_rugs.tag_list.add("women owned", "organic", "fair trade")
@@ -248,7 +267,7 @@ nomad_coffee_lab = Place.create!(
     address: "Passatge Sert, 12, 08003 Barcelona",
     name: "Nomad Coffee Lab",
     category: "Cafe",
-    user: Pierre,
+    user: pierre,
     story: "I left behind 13 years of work in a non-profit foundation to set up Nomad a few months ago, an intimate and careful establishment that makes incredible coffee, guilt-free"
 )
 nomad_coffee_lab.tag_list.add("organic", "fair trade")
@@ -263,7 +282,7 @@ restaurant_ohbo = Place.create!(
     address: "Carrer del Dr. Fleming, 15, 08017 Barcelona",
     name: "Restaurant Ohbo",
     category: "Restaurant",
-    user: Manu,
+    user: manu,
     story: "I left behind 13 years of work in a non-profit foundation to set up Ohbo a few months ago, an intimate and careful establishment that makes delicious organic food"
 )
 restaurant_ohbo.tag_list.add("organic")
@@ -278,7 +297,7 @@ the_magnificent = Place.create!(
     address: "Carrer de l'Argenteria, 64, 08003 Barcelona",
     name: "The Magnificent",
     category: "Cafe",
-    user: Lisa,
+    user: lisa,
     story: "I left behind 13 years of work in a non-profit foundation to set up The Magnificent a few months ago, an intimate and careful establishment that makes lovely coffee"
 )
 the_magnificent.tag_list.add("women owned","fair trade")
@@ -289,11 +308,15 @@ the_magnificent.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image
 
 the_magnificent.save!
 
+puts "Completed"
+
 
 wishlist_item_1 = WishlistItem.create!(
   user: Renan,
   place: fair_tacos
 )
+
+puts "Creating questions and answers for places"
 
 
 #fair tacos Questions
@@ -327,32 +350,34 @@ question_5 = Question.create!(
   content: "Are you taking steps to be more sustainable? if so, what?"
 )
 #fair tacos answers
+
+
 answer_1 = Answer.create!(
-  user: Dani,
+  user: dani,
   question: question_1,
   content: "Mexico of course!"
 )
 
 answer_2 = Answer.create!(
-  user: Dani,
+  user: dani,
   question: question_2,
   content: "About 60% are. We are in the process of sourcing organic suppliers of the rest"
 )
 
 answer_3 = Answer.create!(
-  user: Dani,
+  user: dani,
   question: question_3,
   content: "Of course! We will happily adjust the spiceness according to your needs!"
 )
 
 answer_4 = Answer.create!(
-  user: Dani,
+  user: dani,
   question: question_4,
   content: "Unfortunately not Louis, but we make a deliscious eggplant taco which substitutes for fish"
 )
 
 answer_5 = Answer.create!(
-  user: Dani,
+  user: dani,
   question: question_5,
   content: "absolutely. We only supply compostable packaging and are on track to becomming fully organic"
 )
@@ -388,31 +413,31 @@ question_10 = Question.create!(
 )
 #hansel_and_granel questions
 answer_6 = Answer.create!(
-  user: Clau,
+  user: clau,
   question: question_6,
   content: "Yes, we have made sure to source only free-trade goods. We are directly involved in sourcing"
 )
 
 answer_7 = Answer.create!(
-  user: Clau,
+  user: clau,
   question: question_7,
   content: "We are directly involved in the sourcing, and have actually visited most of our suppliers in-person"
 )
 
 answer_8 = Answer.create!(
-  user: Clau,
+  user: clau,
   question: question_8,
   content: "At the moment, we are approximately 95% plastic-free and that 5% of plastic packaging is in very large bulk orders"
 )
 
 answer_9 = Answer.create!(
-  user: Clau,
+  user: clau,
   question: question_9,
   content: "Whenever possible, we source local. However for many of our powders like Maca and Cacao this is not possible"
 )
 
 answer_10 = Answer.create!(
-  user: Clau,
+  user: clau,
   question: question_10,
   content: "We are constantly reviewing ways to be more sustainable. At the moment we are working on regenerative certification with some suppliers"
 )
@@ -448,31 +473,31 @@ question_15 = Question.create!(
 )
 #les tres gourmets answers
 answer_11 = Answer.create!(
-  user: Blanca,
+  user: blanca,
   question: question_11,
   content: "No, we only cook vegetarian dishes :)"
 )
 
 answer_12 = Answer.create!(
-  user: Blanca,
+  user: blanca,
   question: question_12,
   content: "Yes, our meals are cooked in our on-site kitchen."
 )
 
 answer_13 = Answer.create!(
-  user: Blanca,
+  user: blanca,
   question: question_13,
   content: "Yes! We pride ourselves on only using seasonal veggies in our meals"
 )
 
 answer_14 = Answer.create!(
-  user: Blanca,
+  user: blanca,
   question: question_14,
   content: "We work very closely with all suppliers to ensure transparancy"
 )
 
 answer_15 = Answer.create!(
-  user: Blanca,
+  user: blanca,
   question: question_15,
   content: "Thank you! But no. Maybe in another life"
 )
@@ -508,31 +533,31 @@ question_20 = Question.create!(
 )
 #kaoni As
 answer_16 = Answer.create!(
-  user: Vanessa,
+  user: vanessa,
   question: question_16,
   content: "All the ingredients in our products are organically certified"
 )
 
 answer_17 = Answer.create!(
-  user: Vanessa,
+  user: vanessa,
   question: question_17,
   content: "Absolutely! It is our strictest criteria with suppliers"
 )
 
 answer_18 = Answer.create!(
-  user: Vanessa,
+  user: vanessa,
   question: question_18,
   content: "Yes! myself and another female friend own Kaoni"
 )
 
 answer_19 = Answer.create!(
-  user: Vanessa,
+  user: vanessa,
   question: question_19,
   content: "At Kaoni we have carefully created an environment of beauty and wellness in harmony with nature"
 )
 
 answer_20 = Answer.create!(
-  user: Vanessa,
+  user: vanessa,
   question: question_20,
   content: "All over. Ideally locally, however most of them are only grown outside of Cataluna, and Spain for that matter"
 )
@@ -568,31 +593,31 @@ question_25 = Question.create!(
 )
 #woki As
 answer_21 = Answer.create!(
-  user: Marc,
+  user: marc,
   question: question_21,
   content: "A very proud YES!"
 )
 
 answer_22 = Answer.create!(
-  user: Marc,
+  user: marc,
   question: question_22,
   content: "No, we are 3 male friends that own the Woki franchise. But most of our management teams are woman"
 )
 
 answer_23 = Answer.create!(
-  user: Marc,
+  user: marc,
   question: question_23,
   content: "No, we have shops in Born and Sant Gervasi"
 )
 
 answer_24 = Answer.create!(
-  user: Marc,
+  user: marc,
   question: question_24,
   content: "Not yet, but working on it!"
 )
 
 answer_25 = Answer.create!(
-  user: Marc,
+  user: marc,
   question: question_25,
   content: "Yes we are talks with some city council members about establishing proper urban-farming zones within the city"
 )
@@ -628,31 +653,31 @@ question_30 = Question.create!(
 )
 #twothirds As
 answer_26 = Answer.create!(
-  user: Lutz,
+  user: lutz,
   question: question_26,
   content: "Our cotton is certified organic"
 )
 
 answer_27 = Answer.create!(
-  user: Lutz,
+  user: lutz,
   question: question_27,
   content: "In Portugal"
 )
 
 answer_28 = Answer.create!(
-  user: Lutz,
+  user: lutz,
   question: question_28,
   content: "Absolutely! New selection will be launching April 2021"
 )
 
 answer_29 = Answer.create!(
-  user: Lutz,
+  user: lutz,
   question: question_29,
   content: "We're sponsoring some junior surf events in Galicia"
 )
 
 answer_30 = Answer.create!(
-  user: Lutz,
+  user: lutz,
   question: question_30,
   content: "Tanzania and Turkey"
 )
@@ -688,31 +713,31 @@ question_35 = Question.create!(
 )
 
 answer_31 = Answer.create!(
-  user: Nasia,
+  user: nasia,
   question: question_31,
   content: "Our cotton is certified organic"
 )
 
 answer_32 = Answer.create!(
-  user: Nasia,
+  user: nasia,
   question: question_32,
   content: "In Barcelona!"
 )
 
 answer_33 = Answer.create!(
-  user: Nasia,
+  user: nasia,
   question: question_33,
   content: "Absolutely!"
 )
 
 answer_34 = Answer.create!(
-  user: Nasia,
+  user: nasia,
   question: question_34,
   content: "My family is from there"
 )
 
 answer_35 = Answer.create!(
-  user: Nasia,
+  user: nasia,
   question: question_35,
   content: "Yes, only Nepal"
 )
@@ -748,31 +773,31 @@ question_40 = Question.create!(
 )
 #nomad as
 answer_36 = Answer.create!(
-  user: Pierre,
+  user: pierre,
   question: question_36,
   content: "All over the world, but from cooperatives in each country where the coffee is organically shade-grown"
 )
 
 answer_37 = Answer.create!(
-  user: Pierre,
+  user: pierre,
   question: question_37,
   content: "Yes, we buy from small-scale farmers paid above fair trade wages"
 )
 
 answer_38 = Answer.create!(
-  user: Pierre,
+  user: pierre,
   question: question_38,
   content: "Absolutely! Some delicious tapas!"
 )
 
 answer_39 = Answer.create!(
-  user: Pierre,
+  user: pierre,
   question: question_39,
   content: "Our Kenya blend"
 )
 
 answer_40 = Answer.create!(
-  user: Pierre,
+  user: pierre,
   question: question_40,
   content: "Yes we are expanding to other parts of the city"
 )
@@ -809,31 +834,31 @@ question_45 = Question.create!(
 )
 
 answer_41 = Answer.create!(
-  user: Manu,
+  user: manu,
   question: question_41,
   content: "We have a wonderful fish selection"
 )
 
 answer_42 = Answer.create!(
-  user: Manu,
+  user: manu,
   question: question_42,
   content: "Yes, our meals are cooked in our on-site kitchen."
 )
 
 answer_43 = Answer.create!(
-  user: Manu,
+  user: manu,
   question: question_43,
   content: "Yes! We pride ourselves on only using seasonal veggies in our meals"
 )
 
 answer_44 = Answer.create!(
-  user: Manu,
+  user: manu,
   question: question_44,
   content: "We work very closely with all suppliers to ensure transparancy"
 )
 
 answer_45 = Answer.create!(
-  user: Manu,
+  user: manu,
   question: question_45,
   content: "All. But our seafood is probably our greatest strength"
 )
@@ -869,31 +894,31 @@ question_50 = Question.create!(
 )
 
 answer_46 = Answer.create!(
-  user: Lisa,
+  user: lisa,
   question: question_46,
   content: "All over the world, but from cooperatives in each country where the coffee is organically shade-grown"
 )
 
 answer_47 = Answer.create!(
-  user: Lisa,
+  user: lisa,
   question: question_47,
   content: "Yes, we buy from small-scale farmers paid above fair trade wages"
 )
 
 answer_48 = Answer.create!(
-  user: Lisa,
+  user: lisa,
   question: question_48,
   content: "Absolutely! Some delicious tapas!"
 )
 
 answer_49 = Answer.create!(
-  user: Lisa,
+  user: lisa,
   question: question_49,
   content: "Our Kenya blend"
 )
 
 answer_50 = Answer.create!(
-  user: Lisa,
+  user: lisa,
   question: question_50,
   content: "Yes we are expanding to other parts of the city"
 )
@@ -997,6 +1022,10 @@ visit_20 = Visit.create!(
   user: Louis,
   place: the_magnificent
 )
+
+puts "Completed"
+
+puts "Creating reviews"
 
 review_1 = Review.create!(
   visit: visit_1,
@@ -1118,6 +1147,7 @@ review_20 = Review.create!(
   rating: 5
 )
 
+puts "Completed"
 
 puts "total users: #{User.count}"
 puts "total places: #{Place.count}"
