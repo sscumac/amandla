@@ -3,17 +3,22 @@ class WishlistItemsController < ApplicationController
     @wishlist_items = current_user.wishlist_items
   end
 
+
   def create
     # redirect to index page and add an anchor to the place - ajax in rails lecture reviewa
     @place = Place.find(params[:place_id])
     @wishlist = WishlistItem.new(user: current_user)
     @wishlist.place = @place
     if @wishlist.save
+
       if params[:visits] == "true"
         redirect_to visits_path( anchor: "place_#{@place.id}")
+      elsif params[:show] == "true"
+        redirect_to place_path(@wishlist.place.id)
       else
         redirect_to places_path(anchor: "place_#{@place.id}")
       end
+
     else
       redirect_to new_user_session_path, notice: "boooo"
     end
@@ -26,6 +31,8 @@ class WishlistItemsController < ApplicationController
       redirect_to wishlist_items_path
     elsif params[:visits] == "true"
       redirect_to visits_path( anchor: "place_#{@wishlist.place.id}")
+    elsif params[:show] == "true"
+      redirect_to place_path(@wishlist.place.id)
     else
       redirect_to places_path( anchor: "place_#{@wishlist.place.id}")
     end
