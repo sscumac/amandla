@@ -39,6 +39,12 @@ const initMapbox = () => {
           fitMapToMarkers(map, markers);
         }
 
+        // Disable zoom on showpage
+        const showInMap = document.querySelector(".map-in-show");
+
+        if (showInMap) {
+            map.scrollZoom.disable();
+        }
     }
 };
 
