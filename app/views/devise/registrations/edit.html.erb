@@ -21,6 +21,11 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+     <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'},
+            wrapper_html: { class: 'mb-0 d-flex align-items-center'},
+            label_html: { class: 'upload-photo mb-3'},
+            label: '📷 Add a new photo',
+            as: :file %>           
   </div>
 
   <div class="form-actions">
