@@ -13,7 +13,13 @@
         <%= question.content %>
       </div>
       <div class= "answer-section">
-        <%= link_to "REPLY", new_question_answer_path(question), class: 'btn-dark-green' %>
+        <%= link_to "REPLY", "#", class: 'btn-dark-green' %>
+      </div>
+      <div class="d-none" id="answer-form">
+        <%= simple_form_for [question, @answer] do |f| %>
+          <%= f.input :content, label: "Your answer", notice: "Answer submitted" %>
+          <%= f.submit "ANSWER",  class:"btn-create-business" %>
+        <% end %>
       </div>
     </div>
   <% end %>

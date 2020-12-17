@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 
     @pending_questions = current_user.pending_questions
     # @questions = Question.all
+    @answer = Answer.new
   end
 
   def new

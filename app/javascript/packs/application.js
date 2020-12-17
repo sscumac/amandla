@@ -34,6 +34,7 @@ import { initFilterBtn } from '../components/init_filter_btn';
 import { initMapBtn } from '../components/init_map_btn';
 import { initStarRating } from '../plugins/init_star_rating';
 import { initUserLocation } from '../plugins/init_user_location';
+import { initAnswerForm } from '../components/init_answer_form';
 
 
 // TEMPORARY HERE - UNDER CONSTRUCTION
@@ -110,6 +111,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapBtn();
   initUserLocation();
   previewMultipleImagesOnFileSelect();
+  initAnswerForm();
 });
 
 initStarRating();
