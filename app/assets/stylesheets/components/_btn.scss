@@ -129,6 +129,19 @@ a {
   }
 }
 
+.btn-link-cancel-larger {
+  all: unset;
+  color: #299D90;
+  font-size: 18px;
+  width: 100px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: #299D90;
+  }
+}
+
 .position-bottom-left {
   position: absolute;
   bottom: 20px;
