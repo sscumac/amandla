@@ -1136,7 +1136,7 @@ answer_50 = Answer.create!(
 )
 #glass house qs
 question_51 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: the_glass_house,
   content: "Are there more locations?"
 )
@@ -1261,7 +1261,7 @@ visit_20 = Visit.create!(
 )
 
 visit_21 = Visit.create!(
-  user: Leonardo,
+  user: leonardo,
   place: the_glass_house
 )
 
