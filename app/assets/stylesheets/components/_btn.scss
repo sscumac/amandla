@@ -70,6 +70,10 @@
   left: 0;
   width: 89%;
   border-radius: 6px;
+  &:hover {
+    color: #F7D383;
+    text-decoration: none;
+  }
 }
 
 .btn-search-home {
