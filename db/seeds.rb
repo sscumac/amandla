@@ -13,7 +13,7 @@ puts "Database cleaned"
 
 puts "Creating users to ask questions"
 #review/question askers
-Renan = User.create!(
+renan = User.create!(
   email: "renan@amandla.com",
   password: "password",
   first_name: "Renan",
@@ -21,7 +21,11 @@ Renan = User.create!(
   about_me: "Brazillian living in BCN"
 )
 
-Ana = User.create!(
+file = URI.open('https://avatars2.githubusercontent.com/u/64256060?v=4')
+renan.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+renan.save!
+
+ana = User.create!(
   email: "ana@amandla.com",
   password: "password",
   first_name: "Ana",
@@ -29,7 +33,11 @@ Ana = User.create!(
   about_me: "Violinist, conscious consumer"
 )
 
-Leonardo = User.create!(
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1603116328/mjiwx5rvblarcg0olpas.jpg')
+ana.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+ana.save!
+
+leonardo = User.create!(
   email: "leo@amandla.com",
   password: "password",
   first_name: "Leo",
@@ -37,7 +45,11 @@ Leonardo = User.create!(
   about_me: "Digital marketing master!"
 )
 
-Jaume = User.create!(
+file = URI.open('https://avatars0.githubusercontent.com/u/71294403?v=4')
+leonardo.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+leonardo.save!
+
+jaume = User.create!(
   email: "jaume@amandla.com",
   password: "password",
   first_name: "Jaume",
@@ -45,7 +57,11 @@ Jaume = User.create!(
   about_me: "ladies and loving. That's me"
 )
 
-Louis = User.create!(
+file = URI.open('https://avatars2.githubusercontent.com/u/41579230?v=4')
+jaume.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+jaume.save!
+
+louis = User.create!(
   email: "louis@amandla.com",
   password: "password",
   first_name: "Louis",
@@ -53,13 +69,21 @@ Louis = User.create!(
   about_me: "If I dont win you over with my charm and moves, I'll win you over with my cooking"
 )
 
-Ricky = User.create!(
+file = URI.open('https://avatars0.githubusercontent.com/u/64650914?v=4')
+louis.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+louis.save!
+
+ricky = User.create!(
   email: "ricky@amandla.com",
   password: "password",
   first_name: "Ricky",
   last_name: "Schoeman",
   about_me: "New to Barcelona, keen to explore!"
 )
+
+file = URI.open('https://avatars0.githubusercontent.com/u/64172452?v=4')
+ricky.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+ricky.save!
 
 puts "Completed"
 
@@ -72,6 +96,10 @@ dani = User.create!(
   last_name: "Domingo",
   about_me: "Proud vegetarian taco maker, trying to lighten my load on the planet"
 )
+
+file = URI.open('https://avatars0.githubusercontent.com/u/70454213?v=4')
+dani.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+dani.save!
 
 clau = User.create!(
   email: "clau@amandla.com",
@@ -93,6 +121,10 @@ blanca = User.create!(
   about_me: "Holistic nutritionist, I believe food is the only medicine we need"
 )
 
+file = URI.open('https://i.pinimg.com/originals/1b/d2/27/1bd227847cb695bdfb28ac551d988bc8.jpg')
+blanca.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+blanca.save!
+
 vanessa = User.create!(
   email: "vanessa@amandla.com",
   password: "password",
@@ -100,6 +132,10 @@ vanessa = User.create!(
   last_name: "Diaz",
   about_me: "There needs to be way more harmony between the beauty industry and nature. We hope to lead this charge"
 )
+
+file = URI.open('https://images14.eitb.eus/multimedia/recursos/participantes/concursantes/conquis2020/taldea1/vane.jpg')
+vanessa.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+vanessa.save!
 
 
 marc = User.create!(
@@ -109,6 +145,10 @@ marc = User.create!(
   last_name: "Santi",
   about_me: "A strong desire to have a greater connection to, and awareness of, our food and the processes involved"
 )
+
+file = URI.open('https://oralmemories.com/wp-content/uploads/2017/09/Marc-Vives.png')
+marc.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+marc.save!
 
 lutz = User.create!(
   email: "lutz@amandla.com",
@@ -130,6 +170,10 @@ nasia = User.create!(
   about_me: "All about ethical living!"
 )
 
+file = URI.open('https://mumabroad.com/wp-content/uploads/2020/01/Nasia-Burnet-co-founder-Sukhi-handmade-rugs-by-women-for-women-social-impact-scaled-e1591982621294.jpg')
+nasia.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+nasia.save!
+
 pierre = User.create!(
   email: "pierre@amandla.com",
   password: "password",
@@ -137,6 +181,10 @@ pierre = User.create!(
   last_name: "Le Roux",
   about_me: "Coffee-obsessed husband and father. Want to keep serving the best coffees while ensuring the daughter can do the same one day"
 )
+
+file = URI.open('https://barcelona.reshapingwork.net/wp-content/uploads/2019/06/oscar-pierre.jpg')
+pierre.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+pierre.save!
 
 manu = User.create!(
   email: "manu@amandla.com",
@@ -146,6 +194,10 @@ manu = User.create!(
   about_me: "On a mission to prove that healthy, organic food is far from boring! Especially traditional Catalan cuisine"
 )
 
+file = URI.open('https://cadenaser00.epimg.net/ser/imagenes/2018/11/21/television/1542795828_843947_1542795968_noticia_normal.jpg')
+manu.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+manu.save!
+
 lisa = User.create!(
   email: "lisa@amandla.com",
   password: "password",
@@ -153,6 +205,22 @@ lisa = User.create!(
   last_name: "Rowe",
   about_me: "Inherited the family passion for coffee. Passionate women-rights activist and urban farmer"
 )
+
+file = URI.open('https://www.opinion.com.bo/media/opinion/images/2020/06/28/2020062802211133961.png')
+lisa.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+lisa.save!
+
+malik = User.create!(
+  email: "malik@amandla.com",
+  password: "password",
+  first_name: "Malik",
+  last_name: "Soukri",
+  about_me: "Background in finance, taking steps towards being more environmentally and socially sustainable"
+)
+
+file = URI.open('https://avatars2.githubusercontent.com/u/72385340?v=4')
+malik.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+malik.save!
 
 puts "Completed"
 
@@ -169,6 +237,15 @@ fair_tacos.tag_list.add("women owned", "vegetarian")
 # image related
 file = URI.open('https://themerrythought.com/wp-content/uploads/IMG_6615.jpg')
 fair_tacos.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+file = URI.open('https://lataqueria.eu/wp-content/uploads/2020/08/passatge-font-thumbnail-new.jpg')
+fair_tacos.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0e/19/5b/b5/img-20170108-104406-largejpg.jpg')
+fair_tacos.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://barcelona.lecool.com/files/2012/07/taqueria_dentro.jpg')
+fair_tacos.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 fair_tacos.save!
 
@@ -210,6 +287,15 @@ les_tres_gourmets.tag_list.add("women owned", "organic", "vegetarian")
 file = URI.open('https://images.squarespace-cdn.com/content/v1/5e297d214c22026b05a67e7a/1587387672989-1YBKIZRUAXKNZU8TWA2I/ke17ZwdGBToddI8pDm48kHTHJlACqy9PR67J39ATHOp7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UfZ1qQlCBU8D8HwMSx19XWWhZWoAraqJt_ybhixA0kzVDVfRxgAIsQ7eQiOnQS3C_Q/DSC06095_websize.jpg?format=2500w')
 les_tres_gourmets.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
+file = URI.open('https://images.squarespace-cdn.com/content/v1/5e297d214c22026b05a67e7a/1587390285208-PFI582POT8C0WOJG8V45/ke17ZwdGBToddI8pDm48kI03AIqr8VMSlBCjBq-1huUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKc6BtiZruVgad08XqUqInMmM0yqmF4DIviRWiX0XxMJsJgxcms5m1Pc31EKTWe8C5v/DSC06292_websize.jpg?format=2500w')
+les_tres_gourmets.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://unbuendiaenbarcelona.com/wp-content/uploads/2019/02/IMG-20181205-WA0020.jpg')
+les_tres_gourmets.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/s720x720/120260952_183181519946678_7256563779497403729_o.jpg?_nc_cat=109&ccb=2&_nc_sid=9e2e56&_nc_ohc=eLfhXyYOKpEAX8UBVQa&_nc_ht=scontent-lga3-1.xx&tp=7&oh=82aac760338a1459cc06f23377502860&oe=5FE9D420')
+les_tres_gourmets.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
 les_tres_gourmets.save!
 
 kaoni_wellbeing = Place.create!(
@@ -225,6 +311,15 @@ kaoni_wellbeing.tag_list.add("women owned", "organic", "fair trade")
 file = URI.open("https://www.kaoni.es/wp-content/uploads/2019/04/AGA4384-1.jpg")
 kaoni_wellbeing.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
+file = URI.open('https://cdn1.treatwell.net/images/view/v2.i1177347.w1280.h800.xDB1310E9/')
+kaoni_wellbeing.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://media-cdn.tripadvisor.com/media/photo-m/1280/16/e9/6a/c7/entrada-de-kaoni.jpg')
+kaoni_wellbeing.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://cdn1.treatwell.net/images/view/v2.i2668976.w1280.h800.xCD4C75BE/')
+kaoni_wellbeing.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
 kaoni_wellbeing.save!
 
 woki_organic_market = Place.create!(
@@ -239,6 +334,15 @@ woki_organic_market.tag_list.add("organic", "fair trade")
 # image related
 file = URI.open('https://fastly.4sqi.net/img/general/200x200/3606159_qBMVs8784rwqgltbq_mU50vTQkE_U4W8S1XYMbStMsM.jpg')
 woki_organic_market.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://lh3.googleusercontent.com/-LtypI18hcwY/TXiuiMAWH2I/AAAAAAAAeiY/wc_YZwoMxoE/s640/422156688.jpg')
+woki_organic_market.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://media.cool-cities.com/woki_organic_market010_pe_x_mob.jpg?h=530')
+woki_organic_market.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.creaprojects.es/sites/default/files/portfolio/image/5size4_large.jpg')
+woki_organic_market.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 woki_organic_market.save!
 
@@ -281,6 +385,15 @@ sukhi_rugs.tag_list.add("women owned", "organic", "fair trade")
 file = URI.open('https://www.sukhi.es/pub/media/catalog/product/e/n/lited-braided-felt-asian-felt-ball-rugs.jpg')
 sukhi_rugs.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
+file = URI.open('https://www.thedesignsheppard.com/wp-content/uploads/2016/10/Sukhi_Overdyed-Patchwork-Rug-635x508.jpg')
+sukhi_rugs.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.sukhirugs.com/pub/media/wysiwyg/Blog/Sukhirugs-com/four-designs-of-unique-flat-weave-hygge-sukhi-rugs-in-different-colors.jpg')
+sukhi_rugs.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.easyrelooking.com/wp-content/uploads/Tappeto-Beni-Ourani_3.jpg')
+sukhi_rugs.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
 sukhi_rugs.save!
 
 nomad_coffee_lab = Place.create!(
@@ -295,6 +408,15 @@ nomad_coffee_lab.tag_list.add("organic", "fair trade")
 # image related
 file = URI.open('https://nomadcoffee.es/wp-content/uploads/2020/03/nomad_coffee_lab_shop_barcelona.jpg')
 nomad_coffee_lab.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://happyinspain.com/assets/uploads/2015/07/coffee-nomad1.jpg')
+nomad_coffee_lab.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://barcelona.lecool.com/files/2016/06/1-IMG_1195.jpg')
+nomad_coffee_lab.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://estaticos.elperiodico.com/resources/jpg/3/4/1517323351943.jpg')
+nomad_coffee_lab.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 nomad_coffee_lab.save!
 
@@ -311,6 +433,15 @@ restaurant_ohbo.tag_list.add("organic")
 file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/06/f6/3b/92/ohbo-organic-cafe.jpg')
 restaurant_ohbo.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
+file = URI.open('https://images.squarespace-cdn.com/content/v1/5ced0ce9c048c8000122a08b/1559659764694-GBYU4HW2Q1P0D9B0LFG3/ke17ZwdGBToddI8pDm48kN18azOU2uim5hsRbz6movgUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dtwYOJx-CYfqj9t40gyLNneEWcg90QZCueVFWrisuJvSW07ycm2Trb21kYhaLJjddA/separata-01.jpg?format=2500w')
+restaurant_ohbo.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.mundodeportivo.com/r/GODO/MD/p6/Ocio/Imagenes/2019/06/07/Recortada/img_emuntanola_20190607-095120_imagenes_md_otras_fuentes_4-calabacin_relleno_de_verduras_asadas_del_huerto-kdJH-U46272018777221G-572x381@MundoDeportivo-Web.jpg')
+restaurant_ohbo.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.bcnrestaurantes.com/img-trans/productos/22340/fotos/600-5d72263ad2d33-ohbo-organic-cafe.png')
+restaurant_ohbo.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
 restaurant_ohbo.save!
 
 the_magnificent = Place.create!(
@@ -326,13 +457,46 @@ the_magnificent.tag_list.add("women owned","fair trade")
 file = URI.open('https://cafeselmagnifico.com/wp-content/uploads/2020/09/el-magnifico-119-1280x1600.jpg')
 the_magnificent.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
+file = URI.open('https://331mrnu3ylm2k3db3s1xd1hg-wpengine.netdna-ssl.com/wp-content/uploads/2016/12/Sprudge-Barcelona_Coffee_Guide_SatansInside_Sara_Mason_17-740x494.jpg')
+the_magnificent.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://331mrnu3ylm2k3db3s1xd1hg-wpengine.netdna-ssl.com/wp-content/uploads/2016/12/Sprudge-Barcelona_Coffee_Guide_BlackRemedyInside02_Sara_Mason_05-740x494.jpg')
+the_magnificent.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://media.timeout.com/images/103897299/630/472/image.jpg')
+the_magnificent.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
 the_magnificent.save!
+
+conscious_couscous = Place.create!(
+    address: "Carrer Nou de la Rambla 22, 08001 Barcelona",
+    name: "Conscious Couscous",
+    category: "Restaurant",
+    user: malik,
+    story: "My love for cous cous was born in my childhood. Now that I live in Barcelona, I want to bring this love to the catalan people in a way they've never tasted before!"
+)
+conscious_couscous.tag_list.add("locally-sourced", "vegetarian")
+
+# image related
+file = URI.open('https://foodyt.com/media/uploads/ensalada_cuscus1.jpg')
+conscious_couscous.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+file = URI.open('https://ottolenghi.co.uk/media/contentmanager/content/cache/646x458//Ultimate-winter-couscous.jpg')
+conscious_couscous.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.thegourmetjournal.com/wp-content/uploads/2018/04/Los-100-mejores-restaurantes-Gourmet-Casual-de-Europa-2018.jpg')
+conscious_couscous.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.simplyscratch.com/wp-content/uploads/2014/01/Roasted-Vegetable-Couscous-www.SimplyScratch.com-tossy-toss.jpg')
+conscious_couscous.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+conscious_couscous.save!
 
 puts "Completed"
 
 
 wishlist_item_1 = WishlistItem.create!(
-  user: Renan,
+  user: renan,
   place: fair_tacos
 )
 
@@ -341,31 +505,31 @@ puts "Creating questions and answers for places"
 
 #fair tacos Questions
 question_1 = Question.create!(
-  user: Renan,
+  user: renan,
   place: fair_tacos,
   content: "Where do the Tacos come from?"
 )
 
 question_2 = Question.create!(
-  user: Ana,
+  user: ana,
   place: fair_tacos,
   content: "Are any of your ingredients organic?"
 )
 
 question_3 = Question.create!(
-  user: Leonardo,
+  user: leonardo,
   place: fair_tacos,
   content: "Do you serve Tacos that are not too spicy?"
 )
 
 question_4 = Question.create!(
-  user: Louis,
+  user: louis,
   place: fair_tacos,
   content: "No fish tacos?"
 )
 
 question_5 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: fair_tacos,
   content: "Are you taking steps to be more sustainable? if so, what?"
 )
@@ -403,31 +567,31 @@ answer_5 = Answer.create!(
 )
 #hansel_and_granel questions
 question_6 = Question.create!(
-  user: Renan,
+  user: renan,
   place: hansel_and_granel,
   content: "Are all of your products fair-trade?"
 )
 
 question_7 = Question.create!(
-  user: Ana,
+  user: ana,
   place: hansel_and_granel,
   content: "How do you ensure all of your products are fair trade?"
 )
 
 question_8 = Question.create!(
-  user: Leonardo,
+  user: leonardo,
   place: hansel_and_granel,
   content: "I've heard your shop is plastic-free, is this correct?"
 )
 
 question_9 = Question.create!(
-  user: Louis,
+  user: louis,
   place: hansel_and_granel,
   content: "Are any of your products locally-sourced?"
 )
 
 question_10 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: hansel_and_granel,
   content: "Are you taking steps to be more sustainable? if so, what?"
 )
@@ -463,31 +627,31 @@ answer_10 = Answer.create!(
 )
 #lest tres gourmets questions
 question_11 = Question.create!(
-  user: Renan,
+  user: renan,
   place: les_tres_gourmets,
   content: "No fish dishes?"
 )
 
 question_12 = Question.create!(
-  user: Ana,
+  user: ana,
   place: les_tres_gourmets,
   content: "Are your meals cooked on-site?"
 )
 
 question_13 = Question.create!(
-  user: Leonardo,
+  user: leonardo,
   place: les_tres_gourmets,
   content: "Do you only cook seasonal vegetables?"
 )
 
 question_14 = Question.create!(
-  user: Louis,
+  user: louis,
   place: les_tres_gourmets,
   content: "How do you ensure all of your ingredients are organic?"
 )
 
 question_15 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: les_tres_gourmets,
   content: "Will you marry me?!"
 )
@@ -523,31 +687,31 @@ answer_15 = Answer.create!(
 )
 #kaoni qs
 question_16 = Question.create!(
-  user: Renan,
+  user: renan,
   place: kaoni_wellbeing,
   content: "How are you organic?"
 )
 
 question_17 = Question.create!(
-  user: Ana,
+  user: ana,
   place: kaoni_wellbeing,
   content: "Are you products free of animal-testing?"
 )
 
 question_18 = Question.create!(
-  user: Leonardo,
+  user: leonardo,
   place: kaoni_wellbeing,
   content: "Is Kaoni just woman-owned?"
 )
 
 question_19 = Question.create!(
-  user: Louis,
+  user: louis,
   place: kaoni_wellbeing,
   content: "Why Kaoni?"
 )
 
 question_20 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: kaoni_wellbeing,
   content: "Where are most of your products sourced?"
 )
@@ -583,31 +747,31 @@ answer_20 = Answer.create!(
 )
 #woki qs
 question_21 = Question.create!(
-  user: Renan,
+  user: renan,
   place: woki_organic_market,
   content: "Are all your goods organic?"
 )
 
 question_22 = Question.create!(
-  user: Ana,
+  user: ana,
   place: woki_organic_market,
   content: "Are you women-owned?"
 )
 
 question_23 = Question.create!(
-  user: Leonardo,
+  user: leonardo,
   place: woki_organic_market,
   content: "Are you only located in Gracia?"
 )
 
 question_24 = Question.create!(
-  user: Louis,
+  user: louis,
   place: woki_organic_market,
   content: "Are any of your goods labeled regenerative"
 )
 
 question_25 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: woki_organic_market,
   content: "I heard you are organizing urban-farming projects, is this correct?"
 )
@@ -643,31 +807,31 @@ answer_25 = Answer.create!(
 )
 #twothirds qs
 question_26 = Question.create!(
-  user: Renan,
+  user: renan,
   place: two_thirds,
   content: "How are you organic?"
 )
 
 question_27 = Question.create!(
-  user: Ana,
+  user: ana,
   place: two_thirds,
   content: "Where are your clothes produced?"
 )
 
 question_28 = Question.create!(
-  user: Leonardo,
+  user: leonardo,
   place: two_thirds,
   content: "Do you have a summer range?"
 )
 
 question_29 = Question.create!(
-  user: Louis,
+  user: louis,
   place: two_thirds,
   content: "Do you sponsor any sporting events?"
 )
 
 question_30 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: two_thirds,
   content: "where is your cotton sourced?"
 )
@@ -703,31 +867,31 @@ answer_30 = Answer.create!(
 )
 #sukhi qs
 question_31 = Question.create!(
-  user: Renan,
+  user: renan,
   place: sukhi_rugs,
   content: "How are you organic?"
 )
 
 question_32 = Question.create!(
-  user: Ana,
+  user: ana,
   place: sukhi_rugs,
   content: "Where are your clothes produced?"
 )
 
 question_33 = Question.create!(
-  user: Leonardo,
+  user: leonardo,
   place: sukhi_rugs,
   content: "can you do custom pieces?"
 )
 
 question_34 = Question.create!(
-  user: Louis,
+  user: louis,
   place: sukhi_rugs,
   content: "Why Nepal"
 )
 
 question_35 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: sukhi_rugs,
   content: "only Nepal?"
 )
@@ -763,31 +927,31 @@ answer_35 = Answer.create!(
 )
 #nomad qs
 question_36 = Question.create!(
-  user: Renan,
+  user: renan,
   place: nomad_coffee_lab,
   content: "Where are your beans sourced?"
 )
 
 question_37 = Question.create!(
-  user: Ana,
+  user: ana,
   place: nomad_coffee_lab,
   content: "Are all your beans fair trade?"
 )
 
 question_38 = Question.create!(
-  user: Leonardo,
+  user: leonardo,
   place: nomad_coffee_lab,
   content: "Do you also serve food?"
 )
 
 question_39 = Question.create!(
-  user: Louis,
+  user: louis,
   place: nomad_coffee_lab,
   content: "Your best coffee?"
 )
 
 question_40 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: nomad_coffee_lab,
   content: "Are there more locations?"
 )
@@ -824,31 +988,31 @@ answer_40 = Answer.create!(
 
 
 question_41 = Question.create!(
-  user: Renan,
+  user: renan,
   place: restaurant_ohbo,
   content: "No fish dishes?"
 )
 
 question_42 = Question.create!(
-  user: Ana,
+  user: ana,
   place: restaurant_ohbo,
   content: "Are your meals cooked on-site?"
 )
 
 question_43 = Question.create!(
-  user: Leonardo,
+  user: leonardo,
   place: restaurant_ohbo,
   content: "Do you only cook seasonal vegetables?"
 )
 
 question_44 = Question.create!(
-  user: Louis,
+  user: louis,
   place: restaurant_ohbo,
   content: "How do you ensure all of your ingredients are organic?"
 )
 
 question_45 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: restaurant_ohbo,
   content: "Most popular dish?"
 )
@@ -884,31 +1048,31 @@ answer_45 = Answer.create!(
 )
 
 question_46 = Question.create!(
-  user: Renan,
+  user: renan,
   place: the_magnificent,
   content: "Where are your beans sourced?"
 )
 
 question_47 = Question.create!(
-  user: Ana,
+  user: ana,
   place: the_magnificent,
   content: "Are all your beans fair trade?"
 )
 
 question_48 = Question.create!(
-  user: Leonardo,
+  user: leonardo,
   place: the_magnificent,
   content: "Do you also serve food?"
 )
 
 question_49 = Question.create!(
-  user: Louis,
+  user: louis,
   place: the_magnificent,
   content: "Your best coffee?"
 )
 
 question_50 = Question.create!(
-  user: Jaume,
+  user: jaume,
   place: the_magnificent,
   content: "Are there more locations?"
 )
@@ -943,104 +1107,127 @@ answer_50 = Answer.create!(
   content: "Yes we are expanding to other parts of the city"
 )
 
+question_52 = Question.create!(
+  user: ana,
+  place: conscious_couscous,
+  content: "When is the new dessert menu being released?"
+)
+
+
+answer_52 = Answer.create!(
+  user: malik,
+  question: question_52,
+  content: "We are working very hard on it! We will release it in a week"
+)
+
 visit_1 = Visit.create!(
-  user: Renan,
+  user: renan,
   place: fair_tacos
 )
 
 visit_2 = Visit.create!(
-  user: Jaume,
+  user: jaume,
   place: fair_tacos
 )
 
 visit_3 = Visit.create!(
-  user: Ana,
+  user: ana,
   place: fair_tacos
 )
 
 visit_4 = Visit.create!(
-  user: Ana,
+  user: ana,
   place: hansel_and_granel
 )
 
 visit_5 = Visit.create!(
-  user: Leonardo,
+  user: leonardo,
   place: hansel_and_granel
 )
 
 visit_6 = Visit.create!(
-  user: Louis,
+  user: louis,
   place: hansel_and_granel
 )
 
 visit_7 = Visit.create!(
-  user: Louis,
+  user: louis,
   place: kaoni_wellbeing
 )
 
 visit_8 = Visit.create!(
-  user: Ana,
+  user: ana,
   place: kaoni_wellbeing
 )
 
 visit_9 = Visit.create!(
-  user: Jaume,
+  user: jaume,
   place: kaoni_wellbeing
 )
 
 visit_10 = Visit.create!(
-  user: Renan,
+  user: renan,
   place: kaoni_wellbeing
 )
 
 visit_11 = Visit.create!(
-  user: Leonardo,
+  user: leonardo,
   place: kaoni_wellbeing
 )
 
 visit_12 = Visit.create!(
-  user: Ricky,
+  user: ricky,
   place: hansel_and_granel
 )
 
 visit_13 = Visit.create!(
-  user: Ricky,
+  user: ricky,
   place: les_tres_gourmets
 )
 
 visit_14 = Visit.create!(
-  user: Leonardo,
+  user: leonardo,
   place: two_thirds
 )
 
 visit_15 = Visit.create!(
-  user: Renan,
+  user: renan,
   place: woki_organic_market
 )
 
 visit_16 = Visit.create!(
-  user: Jaume,
+  user: jaume,
   place: sukhi_rugs
 )
 
 visit_17 = Visit.create!(
-  user: Louis,
+  user: louis,
   place: nomad_coffee_lab
 )
 
 visit_18 = Visit.create!(
-  user: Leonardo,
+  user: leonardo,
   place: restaurant_ohbo
 )
 
 visit_19 = Visit.create!(
-  user: Ricky,
+  user: ricky,
   place: the_magnificent
 )
 
 visit_20 = Visit.create!(
-  user: Louis,
+  user: louis,
   place: the_magnificent
+)
+
+visit_22 = Visit.create!(
+  user: louis,
+  place: conscious_couscous
+)
+
+visit_23 = Visit.create!(
+  user: jaume,
+  place: conscious_couscous
 )
 
 puts "Completed"
@@ -1165,6 +1352,18 @@ review_20 = Review.create!(
   visit: visit_20,
   content: "Good coffee, food, and music. Ticks all the boxes",
   rating: 5
+)
+
+review_22 = Review.create!(
+  visit: visit_22,
+  content: "The cous cous was so fabulous! Will come back as soon as possible.",
+  rating: 5
+)
+
+review_23 = Review.create!(
+  visit: visit_23,
+  content: "Food was incredible. They source locally which gives the food local flavors. Will stay for dessert next!",
+  rating: 4
 )
 
 puts "Completed"
