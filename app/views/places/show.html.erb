@@ -1,5 +1,9 @@
 <%= render 'shared/navbar_main' %>
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= cl_image_path @place.photo.key, crop: :fill %>)">
+  <%=  link_to places_path do %>
+    <i class="fas fa-times back-icon-show"></i>
+  <% end %>
+
   <% if current_user.on_wishlist?(@place) %>
     <%=  link_to wishlist_item_path(current_user.wishlist_item_of(@place), show: true), method: :delete, remote: true do %>
       <i class="fas fa-heart wish-icon-show"></i>
