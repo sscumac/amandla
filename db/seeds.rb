@@ -222,6 +222,16 @@ file = URI.open('https://avatars2.githubusercontent.com/u/72385340?v=4')
 malik.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 malik.save!
 
+
+beth = User.create!(
+  email: "beth@amandla.com",
+  password: "password",
+  first_name: "Beth",
+  last_name: "Smith",
+  about_me: "All about woman-empowerment and the environment. More compassion, less ego"
+)
+
+
 puts "Completed"
 
 puts "Creating places"
@@ -468,6 +478,7 @@ the_magnificent.photos_venue.attach(io: file, filename: 'nes.jpg', content_type:
 
 the_magnificent.save!
 
+
 conscious_couscous = Place.create!(
     address: "Carrer Nou de la Rambla 22, 08001 Barcelona",
     name: "Conscious Couscous",
@@ -491,6 +502,23 @@ file = URI.open('https://www.simplyscratch.com/wp-content/uploads/2014/01/Roaste
 conscious_couscous.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 conscious_couscous.save!
+
+
+the_glass_house = Place.create!(
+    address: "C. de Villarroel, 1, 08011 Barcelona",
+    name: "The glass house",
+    category: "Groceries",
+    user: beth,
+    story: "I left behind 13 years of work in a non-profit foundation to set up The Magnificent a few months ago, an intimate and careful establishment that makes lovely coffee"
+)
+the_glass_house.tag_list.add("women owned", "organic", "fair trade")
+
+# image related
+file = URI.open('https://images.unsplash.com/photo-1545601445-4d6a0a0565f0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80')
+the_glass_house.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+the_glass_house.save!
+
 
 puts "Completed"
 
@@ -1106,6 +1134,18 @@ answer_50 = Answer.create!(
   question: question_50,
   content: "Yes we are expanding to other parts of the city"
 )
+#glass house qs
+question_51 = Question.create!(
+  user: Jaume,
+  place: the_glass_house,
+  content: "Are there more locations?"
+)
+
+answer_51 = Answer.create!(
+  user: beth,
+  question: question_51,
+  content: "no, just one location for now"
+)
 
 question_52 = Question.create!(
   user: ana,
@@ -1220,6 +1260,11 @@ visit_20 = Visit.create!(
   place: the_magnificent
 )
 
+visit_21 = Visit.create!(
+  user: Leonardo,
+  place: the_glass_house
+)
+
 visit_22 = Visit.create!(
   user: louis,
   place: conscious_couscous
@@ -1228,7 +1273,7 @@ visit_22 = Visit.create!(
 visit_23 = Visit.create!(
   user: jaume,
   place: conscious_couscous
-)
+
 
 puts "Completed"
 
@@ -1354,6 +1399,13 @@ review_20 = Review.create!(
   rating: 5
 )
 
+review_21 = Review.create!(
+  visit: visit_21,
+  content: "Not my favorite place, definitely better places out there",
+  rating: 2
+)
+
+
 review_22 = Review.create!(
   visit: visit_22,
   content: "The cous cous was so fabulous! Will come back as soon as possible.",
@@ -1365,6 +1417,8 @@ review_23 = Review.create!(
   content: "Food was incredible. They source locally which gives the food local flavors. Will stay for dessert next!",
   rating: 4
 )
+
+
 
 puts "Completed"
 

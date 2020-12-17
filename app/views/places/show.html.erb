@@ -1,5 +1,18 @@
 <%= render 'shared/navbar_main' %>
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= cl_image_path @place.photo.key, crop: :fill %>)">
+  <%=  link_to places_path do %>
+    <i class="fas fa-times back-icon-show"></i>
+  <% end %>
+
+  <% if current_user.on_wishlist?(@place) %>
+    <%=  link_to wishlist_item_path(current_user.wishlist_item_of(@place), show: true), method: :delete, remote: true do %>
+      <i class="fas fa-heart wish-icon-show"></i>
+    <% end  %>
+  <% else %>
+    <%=  link_to place_wishlist_items_path(@place, show: true), method: :post, remote: true do %>
+      <i class="far fa-heart wish-icon-show"></i>
+    <% end  %>
+  <% end %>
   <h1><%= @place.name %> </h1>
   <h6><%= @place.category %> </h6>
   <h6 class="rating-place"><i class="fas fa-seedling"></i> <%= (@place.average_reviews).truncate(1) %></h6>
@@ -10,6 +23,7 @@
   <% end %>
   </div>
 </div>
+
 
 <div class="card-show">
   <p><strong><%= @place.user.first_name %></strong>  </p>
