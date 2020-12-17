@@ -12,14 +12,20 @@
 
 #place_tag_list_women_owned +label::after {
  content: "\f226";
+ height: 78px;
+ padding-top: 12px;
 }
 
 #place_tag_list_locally_sourced +label::after {
  content: "\f21d";
+ height: 78px;
+ padding-top: 12px;
 }
 
 #place_tag_list_lgbt-friendly +label::after {
  content: "\f75b";
+ height: 78px;
+ padding-top: 12px;
 }
 
 #place_tag_list_organic +label::after {
