@@ -22,11 +22,14 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-     <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'},
-            wrapper_html: { class: 'mb-0 d-flex align-items-center'},
-            label_html: { class: 'upload-photo mb-3'},
-            label: '📷 Change photo',
-            as: :file %>
+      <div class="d-flex justify-content-between pb-3">
+        <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'},
+                    wrapper_html: { class: 'mb-0 d-flex align-items-center'},
+                    label_html: { class: 'upload-photo mb-3'},
+                    label: '📷 Change photo',
+                    as: :file %>
+        <%= image_tag "", width: 200, class: "d-none", id: "photo-preview" %>
+      </div>
   </div>
 
   <div class="form-actions">
