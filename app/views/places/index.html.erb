@@ -4,7 +4,7 @@
 <div class="index-container ">
 
   <div class="top-container">
-    <div class="container pb-3 pl-0">
+    <div class="container pl-0">
     Your search results
       <div class="icons" >
           <div id="search-filter-btn">
@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <div class="card-container mt-3">
+  <div class="card-container mt-3 pt-3">
       <% @places.each do |place| %>
 
           <div class="place-card" id="place_<%= place.id %>">
@@ -52,8 +52,8 @@
                 <%= (place.average_reviews).truncate(1) %>
               </div>
               <% if params[:place] && params[:place][:location].present? %>
-                <div class="item"> 
-                  <%= (place.distance_to_place(@location_coord[0], @location_coord[1], place.latitude, place.longitude)).truncate(1) %> km 
+                <div class="item">
+                  <%= (place.distance_to_place(@location_coord[0], @location_coord[1], place.latitude, place.longitude)).truncate(1) %> km
                 </div>
               <% end %>
             </div>
