@@ -486,7 +486,7 @@ conscious_couscous = Place.create!(
     user: malik,
     story: "My love for cous cous was born in my childhood. Now that I live in Barcelona, I want to bring this love to the catalan people in a way they've never tasted before!"
 )
-conscious_couscous.tag_list.add("locally-sourced", "vegetarian")
+conscious_couscous.tag_list.add("locally sourced", "vegetarian")
 
 # image related
 file = URI.open('https://foodyt.com/media/uploads/ensalada_cuscus1.jpg')
@@ -1273,7 +1273,7 @@ visit_22 = Visit.create!(
 visit_23 = Visit.create!(
   user: jaume,
   place: conscious_couscous
-
+)
 
 puts "Completed"
 

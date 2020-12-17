@@ -17,15 +17,17 @@
 .banner-show h6 {
   margin: 0;
   color: #F7D383;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 16px;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 20px;
+  text-shadow: 0px 0px 8px black;
 }
 
 .banner-show p {
   font-size: 20px;
   color: white;
   opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0px 0px 6px black;
 }
 
 .avatar-bordered {
