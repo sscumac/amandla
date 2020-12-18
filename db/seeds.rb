@@ -348,7 +348,7 @@ woki_organic_market.photo.attach(io: file, filename: 'nes.jpg', content_type: 'i
 file = URI.open('https://lh3.googleusercontent.com/-LtypI18hcwY/TXiuiMAWH2I/AAAAAAAAeiY/wc_YZwoMxoE/s640/422156688.jpg')
 woki_organic_market.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://media.cool-cities.com/woki_organic_market010_pe_x_mob.jpg?h=530')
+file = URI.open('https://media.cool-cities.com/woki_organic_market010_pe_x_mob.jpg')
 woki_organic_market.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 file = URI.open('https://www.creaprojects.es/sites/default/files/portfolio/image/5size4_large.jpg')
