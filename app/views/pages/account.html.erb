@@ -4,7 +4,12 @@
     <% if user_signed_in? %>
       <div class="user-info">
         <div class="user-image" >
-          <div class="avatar avatar-bordered py-10" style="background-image: url(https://avatars0.githubusercontent.com/u/64172452?v=4);"></div>
+          <% if @user.photo.attached? %>
+            <div class="avatar avatar-bordered py-10" style="background-image: url(<%= cl_image_path @user.photo.key %>);"></div>
+          <% else %>
+            <div class="avatar avatar-bordered py-10" style="background-image: url(https://image.shutterstock.com/image-vector/default-avatar-profile-icon-grey-260nw-1545687092.jpg);"></div>
+          <% end %>
+          <%# <div class="avatar avatar-bordered py-10" style="background-image: url(https://avatars0.githubusercontent.com/u/64172452?v=4);"></div> %>
         </div>
 
         <div class="account-items">
