@@ -5,5 +5,7 @@ class PagesController < ApplicationController
   end
 
   def account
+    @user = current_user
+    # raise
   end
 end
