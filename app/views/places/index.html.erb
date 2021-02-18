@@ -20,47 +20,62 @@
       </div>
     </div>
   </div>
-  <div class="card-container mt-3 pt-3">
-      <% @places.each do |place| %>
 
-          <div class="place-card" id="place_<%= place.id %>">
-            <% if user_signed_in? %>
-              <% if current_user.on_wishlist?(place) %>
-                    <%=  link_to wishlist_item_path(current_user.wishlist_item_of(place)), method: :delete, remote: true do %>
-                      <i class="fas fa-heart wish-icon"></i>
-                    <% end  %>
-                <% else %>
-                  <%=  link_to place_wishlist_items_path(place), method: :post, remote: true do %>
-                    <i class="far fa-heart wish-icon"></i>
-                  <% end  %>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6">
+        <!-- This div is centered and takes 6 columns -->
+
+
+        <div class="card-container mt-3 pt-3">
+            <% @places.each do |place| %>
+
+                <div class="place-card" id="place_<%= place.id %>">
+                  <% if user_signed_in? %>
+                    <% if current_user.on_wishlist?(place) %>
+                          <%=  link_to wishlist_item_path(current_user.wishlist_item_of(place)), method: :delete, remote: true do %>
+                            <i class="fas fa-heart wish-icon"></i>
+                          <% end  %>
+                      <% else %>
+                        <%=  link_to place_wishlist_items_path(place), method: :post, remote: true do %>
+                          <i class="far fa-heart wish-icon"></i>
+                        <% end  %>
+                      <% end %>
+                    <% end %>
+                  <%= link_to place_path(place), class: "place-card-link" do %>
+                  <% if place.photo.attached? %>
+                  <div class="card-image" style="background-image: linear-gradient(180deg, rgba(52, 100, 109, 0.08) 0%, rgba(15, 29, 31, 0.6) 100%), url(<%= cl_image_path place.photo.key, crop: :fit%>)">
+                  <% else %>
+                  <div class="card-image" style="background-image: linear-gradient(180deg, rgba(52, 100, 109, 0.08) 0%, rgba(15, 29, 31, 0.6) 100%), url(<%= cl_image_path "p1xxchyw9ygjdeiqaa1sp47g2zgw", crop: :fit%>)">
+                  <% end %>
+
+                    <div class="card-place-name"><%= place.name.capitalize %></div>
+                    <% place.tag_list.each do |tag| %>
+                      <div class="card-tags"><%= tag %></div>
+                    <% end %>
+                  </div>
+                  <div class="card-details">
+                    <div class="item"><i class="fas fa-seedling"></i>
+                      <%= (place.average_reviews).truncate(1) %>
+                    </div>
+                    <% if params[:place] && params[:place][:location].present? %>
+                      <div class="item">
+                        <%= (place.distance_to_place(@location_coord[0], @location_coord[1], place.latitude, place.longitude)).truncate(1) %> km
+                      </div>
+                    <% end %>
+                  </div>
                 <% end %>
-              <% end %>
-            <%= link_to place_path(place), class: "place-card-link" do %>
-            <% if place.photo.attached? %>
-            <div class="card-image" style="background-image: linear-gradient(180deg, rgba(52, 100, 109, 0.08) 0%, rgba(15, 29, 31, 0.6) 100%), url(<%= cl_image_path place.photo.key, crop: :fit%>)">
-            <% else %>
-            <div class="card-image" style="background-image: linear-gradient(180deg, rgba(52, 100, 109, 0.08) 0%, rgba(15, 29, 31, 0.6) 100%), url(<%= cl_image_path "p1xxchyw9ygjdeiqaa1sp47g2zgw", crop: :fit%>)">
-            <% end %>
-
-              <div class="card-place-name"><%= place.name.capitalize %></div>
-              <% place.tag_list.each do |tag| %>
-                <div class="card-tags"><%= tag %></div>
-              <% end %>
-            </div>
-            <div class="card-details">
-              <div class="item"><i class="fas fa-seedling"></i>
-                <%= (place.average_reviews).truncate(1) %>
               </div>
-              <% if params[:place] && params[:place][:location].present? %>
-                <div class="item">
-                  <%= (place.distance_to_place(@location_coord[0], @location_coord[1], place.latitude, place.longitude)).truncate(1) %> km
-                </div>
-              <% end %>
-            </div>
-          <% end %>
+            <% end %>
         </div>
-      <% end %>
+
+
+
+
+      </div>
+    </div>
   </div>
+
 
 </div>
 
