@@ -30,4 +30,8 @@ class User < ApplicationRecord
   def wishlist_item_of(place)
     self.wishlist_items.find_by(place: place)
   end
+
+  def admin?
+    self.email == "ricky@amandla.com"
+  end
 end

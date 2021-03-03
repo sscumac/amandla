@@ -31,7 +31,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+#railsAdmin gem:
+gem 'rails_admin', '~> 2.0'
+#cancancan gem:
+gem 'cancancan', '~> 1.15'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
