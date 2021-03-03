@@ -206,7 +206,7 @@ lisa = User.create!(
   about_me: "Inherited the family passion for coffee. Passionate women-rights activist and urban farmer"
 )
 
-file = URI.open('https://www.opinion.com.bo/media/opinion/images/2020/06/28/2020062802211133961.png')
+file = URI.open('https://res.cloudinary.com/rickyschoeman/image/upload/v1613555058/WhatsApp_Image_2021-02-16_at_11.38.08_1_t6ufzp.jpg')
 lisa.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 lisa.save!
 
@@ -303,7 +303,7 @@ les_tres_gourmets.photos_venue.attach(io: file, filename: 'nes.jpg', content_typ
 file = URI.open('https://unbuendiaenbarcelona.com/wp-content/uploads/2019/02/IMG-20181205-WA0020.jpg')
 les_tres_gourmets.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/s720x720/120260952_183181519946678_7256563779497403729_o.jpg?_nc_cat=109&ccb=2&_nc_sid=9e2e56&_nc_ohc=eLfhXyYOKpEAX8UBVQa&_nc_ht=scontent-lga3-1.xx&tp=7&oh=82aac760338a1459cc06f23377502860&oe=5FE9D420')
+file = URI.open('https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=653&q=80')
 les_tres_gourmets.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 les_tres_gourmets.save!
@@ -492,7 +492,7 @@ conscious_couscous.tag_list.add("locally sourced", "vegetarian")
 file = URI.open('https://foodyt.com/media/uploads/ensalada_cuscus1.jpg')
 conscious_couscous.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-file = URI.open('https://ottolenghi.co.uk/media/contentmanager/content/cache/646x458//Ultimate-winter-couscous.jpg')
+file = URI.open('https://images.unsplash.com/photo-1585238342070-61e1e768b1ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')
 conscious_couscous.photos_venue.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 file = URI.open('https://www.thegourmetjournal.com/wp-content/uploads/2018/04/Los-100-mejores-restaurantes-Gourmet-Casual-de-Europa-2018.jpg')
