@@ -32,6 +32,6 @@ class User < ApplicationRecord
   end
 
   def admin?
-    self.email == "ricky@amandla.com"
+    self.email == "admin1@amandla.com"
   end
 end
