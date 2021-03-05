@@ -10,6 +10,43 @@ Place.destroy_all
 User.destroy_all
 puts "Database cleaned"
 
+puts "Creating admins"
+
+admin1 = User.create!(
+  email: "admin1@amandla.com",
+  password: "amandlaadminlove",
+  first_name: "admin",
+  last_name: "admin",
+  about_me: "Developers of Amandla!"
+)
+
+file = URI.open('https://res.cloudinary.com/dpnjiruwh/image/upload/v1607942783/Amandla_logo_oqhbdp.png')
+admin1.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+admin1.save!
+
+admin2 = User.create!(
+  email: "admin2@amandla.com",
+  password: "amandlaadminlove",
+  first_name: "admin2",
+  last_name: "admin2",
+  about_me: "Developers of Amandla!"
+)
+
+file = URI.open('https://res.cloudinary.com/dpnjiruwh/image/upload/v1607942783/Amandla_logo_oqhbdp.png')
+admin2.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+admin2.save!
+
+ricky = User.create!(
+  email: "ricky@amandla.com",
+  password: "247890",
+  first_name: "Ricky",
+  last_name: "Schoeman",
+  about_me: "part of amandla admin"
+)
+
+file = URI.open('https://res.cloudinary.com/rickyschoeman/image/upload/v1613555058/WhatsApp_Image_2021-02-16_at_11.38.08_1_t6ufzp.jpg')
+ricky.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+ricky.save!
 
 puts "Creating users to ask questions"
 #review/question askers
@@ -72,18 +109,6 @@ louis = User.create!(
 file = URI.open('https://avatars0.githubusercontent.com/u/64650914?v=4')
 louis.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 louis.save!
-
-ricky = User.create!(
-  email: "ricky@amandla.com",
-  password: "password",
-  first_name: "Ricky",
-  last_name: "Schoeman",
-  about_me: "New to Barcelona, keen to explore!"
-)
-
-file = URI.open('https://avatars0.githubusercontent.com/u/64172452?v=4')
-ricky.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-ricky.save!
 
 puts "Completed"
 
